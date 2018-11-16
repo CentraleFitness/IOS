@@ -13,7 +13,7 @@ class ProgramEvent{
     var programtId:String? = nil
     var favorites:Bool? = nil
     var programPicture:String? = nil
-    var programDuration:Int? = nil
+        var programDuration:Int? = nil
     var programNote:String? = nil
     
     static func start_init(Dict: Dictionary<String, Any>) -> ProgramEvent
