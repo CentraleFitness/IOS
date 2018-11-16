@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0940"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D2F4E39D2D24F872B75C5039BF0562A"
+               BlueprintIdentifier = "E215D73787C22656E5695BDCF28A854C"
                BuildableName = "PopupController.framework"
                BlueprintName = "PopupController"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D2F4E39D2D24F872B75C5039BF0562A"
+            BlueprintIdentifier = "E215D73787C22656E5695BDCF28A854C"
             BuildableName = "PopupController.framework"
             BlueprintName = "PopupController"
             ReferencedContainer = "container:Pods.xcodeproj">

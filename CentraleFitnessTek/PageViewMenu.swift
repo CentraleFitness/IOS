@@ -15,7 +15,8 @@ class PageViewMenu: UIPageViewController, UIPageViewControllerDataSource, UIPage
        return [
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NavigationControllerProfil") as! NavigationControllerProfil,
                 UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewSession") as! ViewSession,
-        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewSocial") as! ViewSocial
+        ViewSocial(nibName: "ViewSocial", bundle: nil)
+        //UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewSocial") as! ViewSocial
         ]
     }()
     

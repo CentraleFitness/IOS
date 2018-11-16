@@ -5,6 +5,9 @@
       location = "group:CentraleFitnessTek.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:/Users/fabiensantoni/Documents/xcode_project/CentraleFitnessTek/CentraleFitnessTek/CentraleFitnessTek-Bridging-Header.h">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

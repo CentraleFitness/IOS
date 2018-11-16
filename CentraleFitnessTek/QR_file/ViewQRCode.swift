@@ -99,7 +99,7 @@ class ViewQRCode: UIViewController, QRCodeReaderViewControllerDelegate {
             "affiliation token": _affiliation_token
         ]
         
-        Alamofire.request("http://163.5.84.201:8080/affiliate", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request("\(network.ipAdress.rawValue)/affiliate", method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
                 if let json = response.result.value as? [String: Any] {
                     let error = json["error"] as? String
