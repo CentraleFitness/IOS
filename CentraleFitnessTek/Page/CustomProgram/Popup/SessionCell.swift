@@ -9,12 +9,14 @@
 import UIKit
 
 struct SessionCellMediaModel{
+    var stat: String!
     let logo: String!
     let name: String!
-    let duration: Int!
+    var duration: Int!
     let needauth: Bool!
     
     init(logo: String, name: String, duration: Int, needauth: Bool) {
+        self.stat = "Plus tard"
         self.logo = logo
         self.name = name
         self.duration = duration
@@ -31,24 +33,22 @@ class SessionCell: UICollectionViewCell {
     var viewModel: SessionCellMediaModel! {
         didSet{
             nameLabel.text = viewModel.name
-            timeLabel.text = String(viewModel.duration)
+            timeLabel.text = "temps: " + String(viewModel.duration)
             logoImage.image = base64Convert(base64String: viewModel.logo)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization codes
     }
     
     func base64Convert(base64String: String?) -> UIImage{
         if (base64String?.isEmpty)! {
-            print("Problème !!!!!!")
             let test: UIImage = UIImage(named: "image_1 2")!
             return (test)
         }
         else {
-            print("On est là !!!!!!!!!")
             // !!! Separation part is optional, depends on your Base64String !!!
             let temp = base64String?.components(separatedBy: ",")
             let dataDecoded : Data = Data(base64Encoded: temp![1], options: .ignoreUnknownCharacters)!

@@ -8,17 +8,86 @@
 
 import UIKit
 
-class ViewCustomProgramStart: UIViewController {
+class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var endButton: UIButton!
+    @IBOutlet weak var labelTime: UILabel!
+    @IBOutlet weak var tableview: UITableView!
+    
+    var indexSteps: Int = 0
+    var seconds = 0
+    var timer = Timer()
+    var isTimerRunning = false
+    var resumeTapped = false
+    
+    var steps: [SessionCellMediaModel]
+    
+    init(steps: [SessionCellMediaModel]){
+        
+        self.steps = steps
+        super.init(nibName: "ViewCustomProgramStart", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        pickStepsTime()
+        tableview.dataSource = self
+        tableview.dataSource = self
+        tableview.register(UINib(nibName: "ProgramStartCell", bundle: nil), forCellReuseIdentifier: "ProgramStartCell")
+        
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return steps.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProgramStartCell", for: indexPath) as! ProgramStartCell
+        
+        tableview.allowsSelection = false
+        cell.imageCell.image = base64Convert(base64String: steps[indexPath.item].logo)
+        cell.stat = steps[indexPath.item].stat
+        cell.seconds = steps[indexPath.item].duration
+        cell.labelType.text = steps[indexPath.item].name
+        return cell
+    }
+    
+    func pickStepsTime(){
+        var secondsStart: Int = 0
+        
+        for (i, step) in steps.enumerated(){
+         secondsStart = secondsStart + step.duration
+        }
+        seconds = secondsStart
+        labelTime.text = timeString(time: TimeInterval(seconds))
+    }
+    
+    func base64Convert(base64String: String?) -> UIImage{
+        if (base64String?.isEmpty)! {
+            let test: UIImage = UIImage(named: "image_1 2")!
+            return (test)
+        }
+        else {
+            
+            let temp = base64String?.components(separatedBy: ",")
+            let dataDecoded : Data = Data(base64Encoded: temp![1], options: .ignoreUnknownCharacters)!
+            let decodedimage = UIImage(data: dataDecoded)
+            return decodedimage!
+        }
     }
     
 
@@ -31,5 +100,82 @@ class ViewCustomProgramStart: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func startButtonTapped(_ sender: UIButton) {
+        if (indexSteps == 0){
+            steps[0].stat = "En cours"
+        }
+        if isTimerRunning == false {
+            runTimer()
+            self.startButton.isEnabled = false
+        }
+    }
+    
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(ViewCustomProgramStart.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+        pauseButton.isEnabled = true
+    }
+    
+    @IBAction func pauseButtonTapped(_ sender: UIButton) {
+        if self.resumeTapped == false {
+            timer.invalidate()
+            isTimerRunning = false
+            self.resumeTapped = true
+            self.pauseButton.setTitle("Resume",for: .normal)
+        } else {
+            runTimer()
+            self.resumeTapped = false
+            isTimerRunning = true
+            self.pauseButton.setTitle("Pause",for: .normal)
+        }
+    }
+    
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+//        timer.invalidate()
+//        seconds = 60
+//        labelTime.text = timeString(time: TimeInterval(seconds))
+//        isTimerRunning = false
+//        pauseButton.isEnabled = false
+//        startButton.isEnabled = true
+    }
+    
+    
+    @objc func updateTimer() {
+        if seconds < 1 {
+            timer.invalidate()
+            //Send alert to indicate time's up.
+        } else {
+            changeTableCell()
+            seconds -= 1
+            labelTime.text = timeString(time: TimeInterval(seconds))
+            //labelTime.text = String(seconds)
+            //            labelButton.setTitle(timeString(time: TimeInterval(seconds)), for: UIControlState.normal)
+        }
+    }
+    
+    func changeTableCell(){
+        if (steps[indexSteps].duration > 0){
+        steps[indexSteps].duration = steps[indexSteps].duration - 1
+        }
+        else{
+            steps[indexSteps].stat = "Finish"
+            if (indexSteps != steps.count){
+                indexSteps = indexSteps + 1
+            }
+            else{
+                return
+            }
+        }
+        tableview.reloadData()
+    }
+    
+    func timeString(time:TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
 
 }

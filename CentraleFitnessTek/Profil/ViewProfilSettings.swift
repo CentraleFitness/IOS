@@ -19,7 +19,7 @@ class ViewProfilSettings: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "disableSwipe"), object: nil)
         print("token profil settings")
         print(token)
         print("token profil settings")

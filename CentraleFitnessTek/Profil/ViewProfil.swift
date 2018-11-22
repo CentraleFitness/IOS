@@ -26,38 +26,18 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
         NotificationCenter.default.addObserver(self, selector: #selector(importImage), name: NSNotification.Name(rawValue: "showAlert"), object: nil)
         
-        
-        //myImageView.image = "icone_user_profil"
-        //myImageView.image = UIImage(named:#imageLiteral(resourceName: "icone_user_profil"))
-        //myImageView = UIImageView(image: profil_image)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "enableSwipe"), object: nil)
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-      //  let color = UIColor(named: "color_red")
-//        let shadowPath = UIBezierPath(rect: view.bounds)
-
-     /*   top_bar_view.layer.masksToBounds = false
-        top_bar_view.layer.shadowColor = color?.cgColor
-        top_bar_view.layer.shadowOffset = CGSize(width: 2, height: 4)
-        top_bar_view.layer.shadowOpacity = 0.3
-        top_bar_view.layer.shadowPath = shadowPath.cgPath
-        page.layer.masksToBounds = false
-        page.layer.shadowColor = color?.cgColor
-        page.layer.shadowOffset = CGSize(width: 2, height: 4)
-        page.layer.shadowOpacity = 0.3
-        page.layer.shadowPath = shadowPath.cgPath*/
-        // Do any additional setup after loading the view, typically from a nib.
-        //get_profil()
-  
-        print("token profil")
-        print(token)
         print("token profil")
         get_profil()
         
     }
     
-  /*  @objc func getToken(){
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "getToken"), object: String())
-    }*/
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "enableSwipe"), object: nil)
+    }
+    
     @IBAction func push_button_settings(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let exo = storyboard.instantiateViewController(withIdentifier: "viewProfilSettings") as! ViewProfilSettings
@@ -87,9 +67,7 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
             myImageView.image = image
-            //Now use image to create into NSData format
-            //let imageData:NSData = UIImagePNGRepresentation(myImageView.image!)! as NSData
-            //picture = picture + imageData.base64EncodedString()
+
             let imageData: NSData = UIImagePNGRepresentation(myImageView.image!)! as NSData
             let imageStr = imageData.base64EncodedString(options:.endLineWithCarriageReturn)
             self.picture = imageStr

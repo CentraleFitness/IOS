@@ -65,7 +65,7 @@ class ChallengesCell: UITableViewCell {
         }
     }
     
-    func base64Convert(base64String: String?) -> UIImage{
+    public func base64Convert(base64String: String?) -> UIImage{
         if (base64String?.isEmpty)! {
             print("Problème !!!!!!")
             let test: UIImage = UIImage(named: "image_1 2")!

@@ -33,11 +33,11 @@ class ViewCustomProgram: UIViewController {
         print("token Program")
         bgColorView.backgroundColor = UIColor.white
         //list = createArray()
-        getAfffiliation()
+        getAffiliation()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func getAfffiliation()
+    func getAffiliation()
     {
         let parameters: Parameters = [
             "token": self.token,
@@ -195,10 +195,9 @@ extension  ViewCustomProgram: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let myViewController = PopUpCustomProgram(name: list_events[indexPath.item].programName!, token: token, programtId: list_events[indexPath.item].programtId!)
+        let myViewController = PopUpCustomProgram(name: list_events[indexPath.item].programName!, token: token, programId: list_events[indexPath.item].programtId!)
         myViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         self.present(myViewController, animated: true, completion: nil)
-        print("rethegfwrg5")
         print(indexPath.row)
     }
  

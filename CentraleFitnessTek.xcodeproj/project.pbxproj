@@ -388,11 +388,11 @@
 				8AB7C54521691C3F000E6B67 /* Popup */,
 				8AB4E49921528D790011B2B4 /* CustomProgramStart */,
 				8A0AB7EB20D6AEDC000A1FA0 /* ViewCustomProgram.swift */,
+				8A0AB7E920D6AEDB000A1FA0 /* ViewCustomProgram.xib */,
 				8A8F670D214D5D3E007432B9 /* ProgramCell.xib */,
 				8A8F670F214D677F007432B9 /* ProgramCell.swift */,
 				8A8F6712214EBB52007432B9 /* Program.swift */,
 				8A8F6714214ECA24007432B9 /* ProgramEvent.swift */,
-				8A0AB7E920D6AEDB000A1FA0 /* ViewCustomProgram.xib */,
 			);
 			path = CustomProgram;
 			sourceTree = "<group>";
@@ -519,9 +519,9 @@
 			isa = PBXGroup;
 			children = (
 				8AB7C54621691D6D000E6B67 /* PopUpCustomProgram.swift */,
+				8AB7C54721691D6D000E6B67 /* PopUpCustomProgram.xib */,
 				8A110394218B5E6B00AAD784 /* SessionCell.swift */,
 				8A110395218B5E6B00AAD784 /* SessionCell.xib */,
-				8AB7C54721691D6D000E6B67 /* PopUpCustomProgram.xib */,
 			);
 			path = Popup;
 			sourceTree = "<group>";

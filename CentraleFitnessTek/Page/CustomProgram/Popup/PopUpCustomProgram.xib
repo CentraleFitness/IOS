@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,32 +28,43 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiF-16-iVa" customClass="DesignableView" customModule="CentraleFitnessTek" customModuleProvider="target">
                     <rect key="frame" x="32" y="178" width="311" height="311"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom du programme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWb-tW-jKc">
-                            <rect key="frame" x="28" y="36.5" width="244" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom du programme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWb-tW-jKc">
+                            <rect key="frame" x="79" y="37" width="153.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description du programme.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kj7-rg-wTI">
-                            <rect key="frame" x="28" y="72" width="244" height="31"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="31" id="iep-52-jxL"/>
-                            </constraints>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kj7-rg-wTI">
+                            <rect key="frame" x="10" y="77.5" width="291" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScJ-nv-W8r">
-                            <rect key="frame" x="2" y="280" width="149.5" height="29"/>
+                            <rect key="frame" x="6" y="263" width="143" height="40"/>
                             <color key="backgroundColor" red="1" green="0.34509804840000002" blue="0.53725492949999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="mcx-4f-gEM"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="Lancer le programme">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="launchButtonPressed:" destination="-1" eventType="touchUpInside" id="AQe-02-Fyd"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax9-eG-Xkd">
-                            <rect key="frame" x="159.5" y="280" width="149.5" height="29"/>
+                            <rect key="frame" x="162" y="263" width="143" height="40"/>
                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="9zr-8w-xVw"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="Annuler">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,13 +74,13 @@
                             </connections>
                         </button>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="whl-Pe-yLl">
-                            <rect key="frame" x="15.5" y="164" width="280" height="100"/>
+                            <rect key="frame" x="15.5" y="128" width="280" height="100"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="yEg-vi-tiG"/>
                             </constraints>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wzk-PK-Iax">
-                                <size key="itemSize" width="50" height="50"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wzk-PK-Iax">
+                                <size key="itemSize" width="90" height="90"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -79,21 +89,20 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="ScJ-nv-W8r" firstAttribute="top" secondItem="whl-Pe-yLl" secondAttribute="bottom" constant="16" id="6k8-DK-77L"/>
-                        <constraint firstItem="ScJ-nv-W8r" firstAttribute="width" secondItem="BiF-16-iVa" secondAttribute="width" multiplier="0.48" constant="0.45000000000000001" id="8hK-xh-f5t"/>
-                        <constraint firstItem="Kj7-rg-wTI" firstAttribute="leading" secondItem="BiF-16-iVa" secondAttribute="leading" constant="28" id="DWl-Rn-jbi"/>
+                        <constraint firstItem="ScJ-nv-W8r" firstAttribute="top" secondItem="whl-Pe-yLl" secondAttribute="bottom" constant="35" id="6k8-DK-77L"/>
+                        <constraint firstItem="ScJ-nv-W8r" firstAttribute="width" secondItem="BiF-16-iVa" secondAttribute="width" multiplier="0.46" id="8hK-xh-f5t"/>
+                        <constraint firstItem="Kj7-rg-wTI" firstAttribute="leading" secondItem="BiF-16-iVa" secondAttribute="leading" constant="10" id="DWl-Rn-jbi"/>
                         <constraint firstItem="whl-Pe-yLl" firstAttribute="centerX" secondItem="BiF-16-iVa" secondAttribute="centerX" id="H3g-3i-qdp"/>
-                        <constraint firstAttribute="trailing" secondItem="Ax9-eG-Xkd" secondAttribute="trailing" constant="2" id="LhU-Qw-DXV"/>
-                        <constraint firstItem="ScJ-nv-W8r" firstAttribute="leading" secondItem="BiF-16-iVa" secondAttribute="leading" constant="2" id="O4A-KL-Dpa"/>
-                        <constraint firstItem="whl-Pe-yLl" firstAttribute="top" secondItem="Kj7-rg-wTI" secondAttribute="bottom" constant="61" id="QYV-Ej-17L"/>
-                        <constraint firstItem="Kj7-rg-wTI" firstAttribute="top" secondItem="LWb-tW-jKc" secondAttribute="bottom" constant="15" id="T0d-QQ-PoZ"/>
-                        <constraint firstAttribute="trailing" secondItem="Kj7-rg-wTI" secondAttribute="trailing" constant="39" id="VP9-Zd-ckm"/>
-                        <constraint firstItem="Ax9-eG-Xkd" firstAttribute="width" secondItem="BiF-16-iVa" secondAttribute="width" multiplier="0.48" id="WBc-gM-PsP"/>
-                        <constraint firstItem="Kj7-rg-wTI" firstAttribute="leading" secondItem="LWb-tW-jKc" secondAttribute="leading" id="XDD-bS-yBu"/>
-                        <constraint firstItem="Kj7-rg-wTI" firstAttribute="trailing" secondItem="LWb-tW-jKc" secondAttribute="trailing" id="YzI-EM-2Lk"/>
+                        <constraint firstAttribute="trailing" secondItem="Ax9-eG-Xkd" secondAttribute="trailing" constant="6" id="LhU-Qw-DXV"/>
+                        <constraint firstItem="ScJ-nv-W8r" firstAttribute="leading" secondItem="BiF-16-iVa" secondAttribute="leading" constant="6" id="O4A-KL-Dpa"/>
+                        <constraint firstItem="LWb-tW-jKc" firstAttribute="centerX" secondItem="BiF-16-iVa" secondAttribute="centerX" id="P6W-8W-v8d"/>
+                        <constraint firstItem="whl-Pe-yLl" firstAttribute="top" secondItem="Kj7-rg-wTI" secondAttribute="bottom" constant="30" id="QYV-Ej-17L"/>
+                        <constraint firstItem="Kj7-rg-wTI" firstAttribute="top" secondItem="LWb-tW-jKc" secondAttribute="bottom" constant="20" id="T0d-QQ-PoZ"/>
+                        <constraint firstAttribute="trailing" secondItem="Kj7-rg-wTI" secondAttribute="trailing" constant="10" id="VP9-Zd-ckm"/>
+                        <constraint firstItem="Ax9-eG-Xkd" firstAttribute="width" secondItem="BiF-16-iVa" secondAttribute="width" multiplier="0.46" id="WBc-gM-PsP"/>
                         <constraint firstItem="Ax9-eG-Xkd" firstAttribute="firstBaseline" secondItem="ScJ-nv-W8r" secondAttribute="baseline" id="ZDN-4w-rvj"/>
-                        <constraint firstAttribute="bottom" secondItem="ScJ-nv-W8r" secondAttribute="bottom" constant="2" id="dSL-i9-FMP"/>
-                        <constraint firstAttribute="bottom" secondItem="Ax9-eG-Xkd" secondAttribute="bottom" constant="2" id="oOI-HE-NCF"/>
+                        <constraint firstAttribute="bottom" secondItem="ScJ-nv-W8r" secondAttribute="bottom" constant="8" id="dSL-i9-FMP"/>
+                        <constraint firstAttribute="bottom" secondItem="Ax9-eG-Xkd" secondAttribute="bottom" constant="8" id="oOI-HE-NCF"/>
                         <constraint firstItem="whl-Pe-yLl" firstAttribute="width" secondItem="BiF-16-iVa" secondAttribute="width" multiplier="0.9" id="vZT-xy-JCz"/>
                     </constraints>
                 </view>

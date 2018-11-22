@@ -10,23 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CentraleFitnessTek/Session/ViewSession.swift"
-            timestampString = "563977094.472158"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "beginScanning(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CentraleFitnessTek/Session/ViewSession.swift"
-            timestampString = "563977094.472218"
+            timestampString = "564594672.876381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -42,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CentraleFitnessTek/Session/ViewSession.swift"
-            timestampString = "563977094.472261"
+            timestampString = "564594672.876491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -58,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CentraleFitnessTek/Session/ViewSession.swift"
-            timestampString = "563977094.4723001"
+            timestampString = "564594672.876554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "beginScanning(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +58,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CentraleFitnessTek/Session/ViewSession.swift"
-            timestampString = "563977094.47234"
+            timestampString = "564594672.8766021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "beginScanning(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CentraleFitnessTek/Session/ViewSession.swift"
+            timestampString = "564594672.8766479"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "readerSession(_:didDetectNDEFs:)"
             landmarkType = "7">
             <Locations>
@@ -89,8 +89,8 @@
                   symbolName = "CentraleFitnessTek.ViewSession.readerSession(_: __C.NFCNDEFReaderSession, didDetectNDEFs: Swift.Array&lt;__C.NFCNDEFMessage&gt;) -&gt; ()"
                   moduleName = "CentraleFitnessTek"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fabiensantoni/Desktop/CentraleFitnessTek/CentraleFitnessTek/Session/ViewSession.swift"
-                  timestampString = "563977094.6242419"
+                  urlString = "file:///Users/fabiensantoni/Documents/GitHub/IOS/CentraleFitnessTek/Session/ViewSession.swift"
+                  timestampString = "564575654.9551049"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
@@ -104,8 +104,8 @@
                   symbolName = "closure #1 () -&gt; () in CentraleFitnessTek.ViewSession.readerSession(_: __C.NFCNDEFReaderSession, didDetectNDEFs: Swift.Array&lt;__C.NFCNDEFMessage&gt;) -&gt; ()"
                   moduleName = "CentraleFitnessTek"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fabiensantoni/Desktop/CentraleFitnessTek/CentraleFitnessTek/Session/ViewSession.swift"
-                  timestampString = "563977094.625724"
+                  urlString = "file:///Users/fabiensantoni/Documents/GitHub/IOS/CentraleFitnessTek/Session/ViewSession.swift"
+                  timestampString = "564575654.957036"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
@@ -122,23 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CentraleFitnessTek/Session/ViewSession.swift"
-            timestampString = "563977094.472376"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "readerSession(_:didInvalidateWithError:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CentraleFitnessTek/Session/ViewSession.swift"
-            timestampString = "563977094.472411"
+            timestampString = "564594672.876694"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -154,11 +138,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CentraleFitnessTek/Session/ViewSession.swift"
-            timestampString = "563977094.472445"
+            timestampString = "564594672.876739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "readerSession(_:didInvalidateWithError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CentraleFitnessTek/Session/ViewSession.swift"
+            timestampString = "564594672.876781"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "readerSession(_:didInvalidateWithError:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -62,7 +62,7 @@ class ViewSocial: UIViewController {
             "token": self.token,
             "target id": self.sportcenterid,
             "start": 0,
-            "end": 20
+            "end": 100
         ]
         
         Alamofire.request("\(network.ipAdress.rawValue)/get/posts", method: .post, parameters: parameters, encoding: JSONEncoding.default)

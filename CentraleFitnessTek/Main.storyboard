@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -184,6 +183,20 @@
                                 <connections>
                                     <segue destination="1UX-ox-xCA" kind="show" id="rEs-M5-IG5"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ir-iV-Ixo">
+                                <rect key="frame" x="8" y="288" width="359" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="button_change_password">
+                                    <color key="titleColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsO-kY-JFn">
+                                <rect key="frame" x="16" y="392" width="359" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="button_change_password">
+                                    <color key="titleColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98136104060913709" green="0.98136104060913709" blue="0.98136104060913709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -402,7 +415,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-r6-jqp" userLabel="Content View top">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-r6-jqp" userLabel="Content View top">
                                 <rect key="frame" x="8" y="-442" width="360" height="550"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.98569832369999999" green="1" blue="0.98086424279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -694,7 +707,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="Fabu" placeholder="Nom de compte" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="1v7-Zb-2Pf" customClass="IsaoTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="remy" placeholder="Nom de compte" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="1v7-Zb-2Pf" customClass="IsaoTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="73" y="395" width="229" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="229" id="knp-2G-IRj"/>
@@ -716,11 +729,11 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2n0-dq-bxI">
-                                        <rect key="frame" x="88.5" y="555" width="198" height="30"/>
+                                        <rect key="frame" x="88.5" y="555" width="198" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <rect key="contentStretch" x="1" y="1" width="0.69999999999999996" height="1"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Thq-ta-Udy"/>
+                                            <constraint firstAttribute="height" constant="45" id="Thq-ta-Udy"/>
                                             <constraint firstAttribute="width" constant="198" id="oof-Dt-Dvd"/>
                                         </constraints>
                                         <color key="tintColor" red="1" green="0.25325438890000002" blue="0.1747539853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -733,7 +746,7 @@
                                             <action selector="authentificationWithSender:" destination="Mzl-z0-gh6" eventType="touchUpInside" id="uO2-uP-wyN"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="Epitech123?" placeholder="Mot de passe" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="16W-gY-hnL" customClass="IsaoTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="azerty123" placeholder="Mot de passe" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="16W-gY-hnL" customClass="IsaoTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="73" y="460" width="229" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="229" id="7br-Ip-8s0"/>

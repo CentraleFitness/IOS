@@ -9,9 +9,8 @@
 import UIKit
 import Alamofire
 
-class PopUpCustomProgram: UIViewController, UICollectionViewDataSource{
+class PopUpCustomProgram: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
-
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var labelDescription: UILabel!
     @IBOutlet weak var littleView: DesignableView!
@@ -19,29 +18,32 @@ class PopUpCustomProgram: UIViewController, UICollectionViewDataSource{
     @IBOutlet weak var LaunchButton: UIButton!
     @IBOutlet var labelName: UILabel!
     
+    var programId: String = ""
     var token: String = ""
     var labelText: String
     var cellIdentifier: String = String(describing: SessionCell.self)
-    let steps: [SessionCellMediaModel]
+    var steps: [SessionCellMediaModel]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        pickSteps()
         collectionView.register(UINib(nibName: "SessionCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        self.collectionView.dataSource = self as? UICollectionViewDataSource
         collectionView.delegate = self as? UICollectionViewDelegate
-        //collectionView.datasource = self
         labelName.text = labelText
-        labelDescription.text = ""
+        labelDescription.text = "Voulez vous lancer le programme ?"
         littleView.cornerRadius = 15
         LaunchButton.layer.cornerRadius = 15
         cancelButton.layer.cornerRadius = 15
-     //   pickSteps()
         // Do any additional setup after loading the view.
     }
     
-    init(name: String, token: String, programtId: String){
-        steps = []
-        labelText = name
+    init(name: String, token: String, programId: String){
+        self.programId = programId
+        self.token = token
+        self.steps = []
+        self.labelText = name
      
         super.init(nibName: "PopUpCustomProgram", bundle: nil)
     }
@@ -57,35 +59,55 @@ class PopUpCustomProgram: UIViewController, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! SessionCell
         
+        cell.viewModel = steps[indexPath.item]
         return cell
     }
     
-    func pickSteps(id: Int, event: ProgramEvent, isSuccess: @escaping(_ event: ProgramEvent,_ id: Int)-> Void){
+    func pickSteps(){
             
             print("Start Events")
             
             let parameters: Parameters = [
                 "token": self.token,
-                "custom program id": event.programtId
+                "custom program id": self.programId
             ]
-            
-            Alamofire.request("\(network.ipAdress.rawValue)/customProgram-get-preview", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        print(self.token)
+        print(self.programId)
+            Alamofire.request("\(network.ipAdress.rawValue)/customProgram-get-steps", method: .post, parameters: parameters, encoding: JSONEncoding.default)
                 .responseJSON { response in
                     if let json = response.result.value as? [String: Any] {
-                        print("fafafafa")
-                        isSuccess(ProgramEvent.start_init_2(event: event, Dict: json), id)
+                        print(json["code"] as Any)
+                        let json2 = json["steps"] as? [Dictionary<String, Any>]
+                        print("test")
+                        print(json2?.count)
+                        print("test")
+                        self.createSteps(dict: json2!)
+                        self.collectionView.reloadData()
                     }
             }
     }
     
-    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        return
-//    }
-    
+    func createSteps(dict: [Dictionary<String, Any>]){
+        var i: Int = 0
+        var stepModel: SessionCellMediaModel
+        
+        while(i != dict.count){
+            stepModel =  SessionCellMediaModel(logo: dict[i]["icon"] as! String,
+                                                                         name: dict[i]["name"] as! String,
+                                                                         duration: dict[i]["time"] as! Int,
+                                                                         needauth: false)
+            i = i + 1
+            steps.append(stepModel)
+        }
+    }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
         dismiss(animated: true)
+    }
+    
+    @IBAction func launchButtonPressed(_ sender: Any) {
+        let vc: ViewCustomProgramStart = ViewCustomProgramStart(steps: steps)
+        self.present(vc, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

@@ -51,6 +51,7 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
         viewInstant = ViewInstant()
         
         NotificationCenter.default.addObserver(self, selector: #selector(bar_down), name: NSNotification.Name(rawValue: "barDown"), object: nil)
+       
         
         let active_top = viewInstant
         addChildViewController(active_top!)

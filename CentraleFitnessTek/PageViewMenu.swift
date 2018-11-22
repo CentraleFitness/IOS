@@ -22,7 +22,7 @@ class PageViewMenu: UIPageViewController, UIPageViewControllerDataSource, UIPage
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.delegate = self
         self.dataSource = self
         print("Token PageView: ")
@@ -35,16 +35,22 @@ class PageViewMenu: UIPageViewController, UIPageViewControllerDataSource, UIPage
         exo3.token = self.token
         self.view.backgroundColor = UIColor.white
         setViewControllers([subViewControllers[1]], direction: .reverse, animated: false, completion: nil)
-    }
+        NotificationCenter.default.addObserver(self, selector: #selector(self.enableSwipe), name:NSNotification.Name(rawValue: "enableSwipe"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.disableSwipe), name:NSNotification.Name(rawValue: "disableSwipe"), object: nil)
+        }
     
-    func disableSwipe(notification: NSNotification){
-        self.dataSource = nil
-    }
+    @objc func disableSwipe(notification: NSNotification){
+            self.dataSource = nil
+        }
+        
+    @objc func enableSwipe(notification: NSNotification){
+            self.dataSource = self
+        }
     
-    func enableSwipe(notification: NSNotification){
-        self.dataSource = self
-    }
     
+    @objc func test(){
+        
+    }
     /*func newVc(viewController: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: viewController)
     }*/
