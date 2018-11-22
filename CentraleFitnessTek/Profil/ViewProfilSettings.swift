@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewProfilSettings: UIViewController {
 
@@ -54,16 +55,37 @@ class ViewProfilSettings: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let exo = storyboard.instantiateViewController(withIdentifier: "navigationConnection") as! UINavigationController
         self.present(exo, animated: true, completion: nil)
-        //self.showDetailViewController(exo, sender: nil)
-        //self.show(exo, sender: nil)
-        //self.navigationController!.popToRootViewController(animated: true)
-        //let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewConnection")
-        //UIApplication.shared.keyWindow?.rootViewController = loginViewController
-        //self.navigationController?.showDetailViewController(exo, sender: self)
     }
     
     @IBAction func pressChangeRoom(_ sender: Any) {
-        
+        setEntity(_token: "", _centerId: "")
+        unaffiliate()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let exo = storyboard.instantiateViewController(withIdentifier: "navigationConnection") as! UINavigationController
+        self.present(exo, animated: true, completion: nil)
+    }
+    
+    func unaffiliate()
+    {
+        print("unfiliate")
+        let parameters: Parameters = [
+            "token": self.token
+        ]
+        Alamofire.request("\(network.ipAdress.rawValue)/unaffiliate", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    let error = json["error"] as? String
+                    print(error!)
+                    if (error == "true"){
+                    }
+                    else{
+                        print("tu es desafillier !")
+                    }
+                }
+                else{
+                    print("Bad")
+                }
+        }
     }
     /*
     // MARK: - Navigation
