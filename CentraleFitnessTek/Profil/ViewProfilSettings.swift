@@ -49,6 +49,22 @@ class ViewProfilSettings: UIViewController {
     @IBAction func callFunctionInOtherClass(sender: AnyObject) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showAlert"), object: nil)
     }
+    @IBAction func pressDisconnect(_ sender: Any) {
+        setEntity(_token: "", _centerId: "")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let exo = storyboard.instantiateViewController(withIdentifier: "navigationConnection") as! UINavigationController
+        self.present(exo, animated: true, completion: nil)
+        //self.showDetailViewController(exo, sender: nil)
+        //self.show(exo, sender: nil)
+        //self.navigationController!.popToRootViewController(animated: true)
+        //let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewConnection")
+        //UIApplication.shared.keyWindow?.rootViewController = loginViewController
+        //self.navigationController?.showDetailViewController(exo, sender: self)
+    }
+    
+    @IBAction func pressChangeRoom(_ sender: Any) {
+        
+    }
     /*
     // MARK: - Navigation
 

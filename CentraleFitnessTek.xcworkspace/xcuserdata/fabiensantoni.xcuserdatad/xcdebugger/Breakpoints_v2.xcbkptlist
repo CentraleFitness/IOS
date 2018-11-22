@@ -89,12 +89,12 @@
                   symbolName = "CentraleFitnessTek.ViewSession.readerSession(_: __C.NFCNDEFReaderSession, didDetectNDEFs: Swift.Array&lt;__C.NFCNDEFMessage&gt;) -&gt; ()"
                   moduleName = "CentraleFitnessTek"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fabiensantoni/Documents/GitHub/IOS/CentraleFitnessTek/Session/ViewSession.swift"
-                  timestampString = "564575654.9551049"
+                  urlString = "file:///Users/fabiensantoni/Documents/school/IOS/CentraleFitnessTek/Session/ViewSession.swift"
+                  timestampString = "564601054.971269"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
                   offsetFromSymbolStart = "44">
                </Location>
                <Location
@@ -104,12 +104,12 @@
                   symbolName = "closure #1 () -&gt; () in CentraleFitnessTek.ViewSession.readerSession(_: __C.NFCNDEFReaderSession, didDetectNDEFs: Swift.Array&lt;__C.NFCNDEFMessage&gt;) -&gt; ()"
                   moduleName = "CentraleFitnessTek"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fabiensantoni/Documents/GitHub/IOS/CentraleFitnessTek/Session/ViewSession.swift"
-                  timestampString = "564575654.957036"
+                  urlString = "file:///Users/fabiensantoni/Documents/school/IOS/CentraleFitnessTek/Session/ViewSession.swift"
+                  timestampString = "564601054.973243"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
                   offsetFromSymbolStart = "48">
                </Location>
             </Locations>
@@ -160,6 +160,22 @@
             startingLineNumber = "85"
             endingLineNumber = "85"
             landmarkName = "readerSession(_:didInvalidateWithError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CentraleFitnessTek/Connection/ViewConnection.swift"
+            timestampString = "564603848.8396209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -33,41 +33,16 @@ class ViewConnection: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       /* let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Users", in: context)
-        let newUser = NSManagedObject(entity: entity!, insertInto: context)
+        print("test2")
+        //let newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context)
+        //newUser.setValue("56565656", forKey: "token")
+        //newUser.setValue("jjjjjjjjj", forKey: "centerid")
         
         
-        newUser.setValue("blabla", forKey: "token")
-        
-        do {
-            try context.save()
-        } catch {
-            
-            print("Failed saving")
-        }
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
-        //request.predicate = NSPredicate(format: "age = %@", "12")
-        request.returnsObjectsAsFaults = false
-        
-        do {
-            let result = try context.fetch(request)
-            let result2: [String] = data.value(forKey: "token") as! [String]
-            for data in result as! [NSManagedObject] {
-                print("test")
-                print(data.value(forKey: "token") as! [String])
-            }
-            
-        } catch {
-            
-            print("Failed")
-        }*/
-        
-        
+        initEntity()
+        //setEntity(_token: "", _centerId: "")
+        print(getEntityToken())
+        print(getEntityCenterId())
         blur_effect.isHidden = true
         effect = blur_effect.effect
         blur_effect.effect = nil
@@ -80,6 +55,43 @@ class ViewConnection: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (getEntityToken() != ""){
+            print("Utilisateur inscrit1")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let exo = storyboard.instantiateViewController(withIdentifier: "home") as! PageViewMenu
+            exo.token = getEntityToken()
+            self.navigationController?.showDetailViewController(exo, sender: self)
+        }
+        else{
+            print("Pas encore authentifié")
+        }
+    }
+    
+    func initEntity(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+        
+        request.returnsObjectsAsFaults = false
+        do{
+            let results = try context.fetch(request)
+            
+            if results.count == 0 {
+                print("Je creer des entite !")
+                let newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context)
+                newUser.setValue("", forKey: "token")
+                newUser.setValue("", forKey: "centerid")
+            }
+            else{
+                print("Il existe déjà des entite !!")
+            }
+        }
+        catch{
+            print("fail request")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -220,7 +232,8 @@ class ViewConnection: UIViewController, UITextFieldDelegate {
                         print("Utilisateur inscrit1")
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let exo = storyboard.instantiateViewController(withIdentifier: "home") as! PageViewMenu
-                        exo.token = self.token;
+                        exo.token = self.token
+                        setEntity(_token: exo.token, _centerId: "")
                         self.navigationController?.showDetailViewController(exo, sender: self)
                     }
                 }
@@ -230,5 +243,93 @@ class ViewConnection: UIViewController, UITextFieldDelegate {
                 }
         }
     }
+}
+
+func getEntityToken() -> String{
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    
+    request.returnsObjectsAsFaults = false
+    do{
+        let results = try context.fetch(request)
+        
+        if results.count > 0{
+            for result in results as! [NSManagedObject]{
+                if let token = result.value(forKey: "token") as? String{
+                    return token
+                }
+            }
+        }
+        else{
+            return ""
+        }
+    }
+    catch{
+        print("Error")
+    }
+    return ""
+}
+
+func getEntityCenterId() -> String{
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    
+    request.returnsObjectsAsFaults = false
+    do{
+        let results = try context.fetch(request)
+        
+        if results.count > 0{
+            for result in results as! [NSManagedObject]{
+                if let centerid = result.value(forKey: "centerid") as? String{
+                    return centerid
+                }
+            }
+        }
+        else{
+            return ""
+        }
+    }
+    catch{
+        print("Error")
+    }
+    return ""
+}
+
+func setEntity(_token: String, _centerId: String){
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    
+    request.returnsObjectsAsFaults = false
+    do{
+        let results = try context.fetch(request)
+        
+        if results.count > 0{
+            for result in results as! [NSManagedObject]{
+                if let centerid = (result as AnyObject).value(forKey: "centerid") as? String{
+                    result.value( forKey: "centerid")
+                    result.setValue(_centerId, forKey: "centerid")
+                }
+                if let token = result.value(forKey: "token") as? String{
+                    result.setValue(_token, forKey: "token")
+                }
+                do{
+                    try context.save()
+                }
+                catch{
+                    
+                }
+            }
+        }
+        else{
+            
+        }
+    }
+    catch{
+        print("Error")
+    }
+    
 }
 

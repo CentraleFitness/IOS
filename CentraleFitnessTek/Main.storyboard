@@ -187,16 +187,22 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ir-iV-Ixo">
                                 <rect key="frame" x="8" y="288" width="359" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="button_change_password">
+                                <state key="normal" image="button_disconnect">
                                     <color key="titleColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressDisconnect:" destination="xEP-FV-x4Y" eventType="touchUpInside" id="pqC-m2-BDV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsO-kY-JFn">
-                                <rect key="frame" x="16" y="392" width="359" height="96"/>
+                                <rect key="frame" x="8" y="392" width="359" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="button_change_password">
+                                <state key="normal" image="buton_changeSalle">
                                     <color key="titleColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressChangeRoom:" destination="xEP-FV-x4Y" eventType="touchUpInside" id="Bvk-ZR-st9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98136104060913709" green="0.98136104060913709" blue="0.98136104060913709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -683,7 +689,7 @@
         <!--View Connection-->
         <scene sceneID="fHE-aF-Y2E">
             <objects>
-                <viewController id="Mzl-z0-gh6" customClass="ViewConnection" customModule="CentraleFitnessTek" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewConnection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mzl-z0-gh6" customClass="ViewConnection" customModule="CentraleFitnessTek" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ff6-Kq-QHY"/>
                         <viewControllerLayoutGuide type="bottom" id="sqB-63-bGd"/>
@@ -1119,7 +1125,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Kaa-ti-Nfk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" hidesBarsWhenVerticallyCompact="YES" id="DYr-At-OLb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationConnection" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" hidesBarsWhenVerticallyCompact="YES" id="DYr-At-OLb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -1143,7 +1149,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gwl-d2-O9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="1515"/>
+            <point key="canvasLocation" x="1351" y="1515"/>
         </scene>
         <!--View Ram-->
         <scene sceneID="I3f-ED-H5R">
@@ -1585,11 +1591,13 @@
     </scenes>
     <resources>
         <image name="bolt" width="23" height="23"/>
+        <image name="buton_changeSalle" width="362" height="97"/>
         <image name="button_challenges" width="59.5" height="59.5"/>
         <image name="button_change_image" width="362" height="97"/>
         <image name="button_change_password" width="362" height="97"/>
         <image name="button_connexion" width="71" height="71"/>
         <image name="button_custon_program" width="58" height="58"/>
+        <image name="button_disconnect" width="362" height="97"/>
         <image name="button_events" width="58" height="58"/>
         <image name="button_statistics" width="58" height="58"/>
         <image name="cadenas_close" width="40" height="40"/>

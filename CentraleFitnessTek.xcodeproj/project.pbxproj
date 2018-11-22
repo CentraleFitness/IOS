@@ -949,7 +949,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.NFCTagReaderHPW6QTNDP7";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CentraleFitnes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CentraleFitnessTek/CentraleFitnessTek-Bridging-Header.h";
@@ -975,7 +975,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.NFCTagReaderHPW6QTNDP7";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CentraleFitnes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CentraleFitnessTek/CentraleFitnessTek-Bridging-Header.h";
