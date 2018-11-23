@@ -24,6 +24,10 @@
 		8A1F02EF2163A7800090A925 /* DefiCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F02ED2163A7800090A925 /* DefiCollectionCell.swift */; };
 		8A1F02F02163A7800090A925 /* DefiCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1F02EE2163A7800090A925 /* DefiCollectionCell.xib */; };
 		8A25A523216AA45A00F3624A /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A25A521216A9EDC00F3624A /* CoreData.xcdatamodeld */; };
+		8A34B99C21A854A3002D4C37 /* ViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B99A21A854A3002D4C37 /* ViewComment.swift */; };
+		8A34B99D21A854A3002D4C37 /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A34B99B21A854A3002D4C37 /* ViewComment.xib */; };
+		8A34B9A021A8567B002D4C37 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B99E21A8567B002D4C37 /* CommentCell.swift */; };
+		8A34B9A121A8567B002D4C37 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A34B99F21A8567B002D4C37 /* CommentCell.xib */; };
 		8A503803218CBE21008C7597 /* network.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A503802218CBE21008C7597 /* network.strings */; };
 		8A503805218CBF77008C7597 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A503804218CBF77008C7597 /* File.swift */; };
 		8A79CB6C219D90C900B7286F /* ReferenceLineDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB56219D90C900B7286F /* ReferenceLineDrawingView.swift */; };
@@ -126,6 +130,10 @@
 		8A1F02ED2163A7800090A925 /* DefiCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefiCollectionCell.swift; sourceTree = "<group>"; };
 		8A1F02EE2163A7800090A925 /* DefiCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefiCollectionCell.xib; sourceTree = "<group>"; };
 		8A25A522216A9EDC00F3624A /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
+		8A34B99A21A854A3002D4C37 /* ViewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComment.swift; sourceTree = "<group>"; };
+		8A34B99B21A854A3002D4C37 /* ViewComment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewComment.xib; sourceTree = "<group>"; };
+		8A34B99E21A8567B002D4C37 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		8A34B99F21A8567B002D4C37 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		8A45A60520B5453A00B94C5E /* CentraleFitnessTek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CentraleFitnessTek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A45A61420B5453B00B94C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A503802218CBE21008C7597 /* network.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = network.strings; sourceTree = "<group>"; };
@@ -252,6 +260,17 @@
 				8A8F670C214D5A0B007432B9 /* Statistics */,
 			);
 			path = Page;
+			sourceTree = "<group>";
+		};
+		8A34B99921A851D4002D4C37 /* comment */ = {
+			isa = PBXGroup;
+			children = (
+				8A34B99A21A854A3002D4C37 /* ViewComment.swift */,
+				8A34B99B21A854A3002D4C37 /* ViewComment.xib */,
+				8A34B99E21A8567B002D4C37 /* CommentCell.swift */,
+				8A34B99F21A8567B002D4C37 /* CommentCell.xib */,
+			);
+			path = comment;
 			sourceTree = "<group>";
 		};
 		8A45A5FC20B5453A00B94C5E = {
@@ -441,6 +460,7 @@
 		8A8F671D214FEE6C007432B9 /* Social */ = {
 			isa = PBXGroup;
 			children = (
+				8A34B99921A851D4002D4C37 /* comment */,
 				8AE060C220B54C0D004CE1D1 /* ViewSocial.swift */,
 				8A8F671E214FEEF0007432B9 /* ViewSocial.xib */,
 				8A8F672021504800007432B9 /* SocialCell.swift */,
@@ -639,9 +659,11 @@
 			files = (
 				8AB7C54921691D6D000E6B67 /* PopUpCustomProgram.xib in Resources */,
 				8AE061F320B54C14004CE1D1 /* LaunchScreen.storyboard in Resources */,
+				8A34B99D21A854A3002D4C37 /* ViewComment.xib in Resources */,
 				8AB4E4A12152945C0011B2B4 /* ProgramStartCell.xib in Resources */,
 				8A0AB7FB20D6AEDD000A1FA0 /* ViewChallenges.xib in Resources */,
 				8A0AB7F520D6AEDD000A1FA0 /* ChallengesCell.xib in Resources */,
+				8A34B9A121A8567B002D4C37 /* CommentCell.xib in Resources */,
 				8A503803218CBE21008C7597 /* network.strings in Resources */,
 				8AE061DC20B54C14004CE1D1 /* Assets.xcassets in Resources */,
 				8A8F672321504800007432B9 /* SocialCell.xib in Resources */,
@@ -750,6 +772,7 @@
 				8AE061EE20B54C14004CE1D1 /* ViewProfilSettings.swift in Sources */,
 				8A8F6713214EBB52007432B9 /* Program.swift in Sources */,
 				8A8F672721504D63007432B9 /* Info.swift in Sources */,
+				8A34B9A021A8567B002D4C37 /* CommentCell.swift in Sources */,
 				8AE0629E20B54DB5004CE1D1 /* GradientView.swift in Sources */,
 				8AE0616D20B54C14004CE1D1 /* ViewChallenge.swift in Sources */,
 				8AE061BE20B54C14004CE1D1 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
@@ -773,6 +796,7 @@
 				8AE061C620B54C14004CE1D1 /* ReaderOverlayView.swift in Sources */,
 				8A0AB7F920D6AEDD000A1FA0 /* ViewCustomProgram.swift in Sources */,
 				8AB7C54821691D6D000E6B67 /* PopUpCustomProgram.swift in Sources */,
+				8A34B99C21A854A3002D4C37 /* ViewComment.swift in Sources */,
 				8A79CB79219D90C900B7286F /* GraphPointAnimation.swift in Sources */,
 				8AE0616920B54C14004CE1D1 /* ViewInstant.swift in Sources */,
 				8A79CB7D219D90C900B7286F /* DotPlot.swift in Sources */,
