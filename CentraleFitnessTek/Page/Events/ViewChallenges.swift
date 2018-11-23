@@ -28,10 +28,10 @@ class ViewChallenges: UIViewController {
         super.viewDidLoad()
         
         bgColorView.backgroundColor = UIColor.white
-        list = createArray()
+        createArray()
     }
     
-    func createArray() -> [Challenges] {
+    func createArray() {
         var test: NSArray!
         print("Start Events")
         
@@ -55,9 +55,9 @@ class ViewChallenges: UIViewController {
                         print("Start Events2")
                         test = json["events"] as? NSArray
                         self.list_events.removeAll()
-                        self.list_events += Event.getEventArray(array: test,test: self.userRegister)
+                        self.list_events = Event.getEventArray(array: test,test: self.userRegister)
                         self.fill_event()
-                        print()
+                        self.tableView.reloadData()
                     }
                 }
                 else
@@ -65,7 +65,7 @@ class ViewChallenges: UIViewController {
                     print("Bad")
                 }
         }
-        return list_challenges
+        //return list_challenges
     }
     
     func fill_event()
@@ -80,6 +80,7 @@ class ViewChallenges: UIViewController {
             }
             idx = idx + 1
         }
+        //self.tableView.reloadData()
     }
     
     func getEventPreview(id: Int, event: Event, isSuccess: @escaping(_ event: Event,_ id: Int)-> Void){
@@ -211,7 +212,7 @@ extension  ViewChallenges: UITableViewDataSource, UITableViewDelegate {
     }
     
     @IBAction func anim1(_ sender: Any) {
-        list = createArray()
+        createArray()
         tableView.reloadData(
             with: .simple(duration: 0.75, direction: .rotation3D(type: .ironMan),
                           constantDelay: 0))
@@ -231,7 +232,7 @@ extension  ViewChallenges: UITableViewDataSource, UITableViewDelegate {
         print("go to segment2")
         print(userRegister)
         self.list_events.removeAll()
-        list = createArray()
+        createArray()
         tableView.reloadData(
             with: .simple(duration: 1, direction: .rotation3D(type: .ironMan),
                           constantDelay: 0))

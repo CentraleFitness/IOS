@@ -99,10 +99,10 @@ class ViewSocial: UIViewController {
         {
             getEventPreview(id: idx, event: list_events[idx]) { (event, idx) in
                 self.list_events[idx] = event
-                self.tableView.reloadData()
             }
             idx = idx + 1
         }
+        self.tableView.reloadData()
     }
     
     func getEventPreview(id: Int, event: Info, isSuccess: @escaping(_ event: Info,_ id: Int)-> Void){

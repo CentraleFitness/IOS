@@ -107,9 +107,12 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     }
     
     @IBAction func beginScanning(_ sender: Any) {
-        session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
-        session?.alertMessage = "Hold your iPhone near the item to learn more about it."
-        session?.begin()
+        let vc: ViewNFC = ViewNFC()
+        
+        vc.present(vc, animated: true, completion: nil)
+//        session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
+//        session?.alertMessage = "Hold your iPhone near the item to learn more about it."
+//        session?.begin()
     }
     
     @IBAction func pulseButtonNFC(_ sender: UIButton) {

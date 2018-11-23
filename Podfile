@@ -21,4 +21,5 @@ target 'CentraleFitnessTek' do
   pod 'TableViewReloadAnimation', '~> 0.0'
   pod 'PopupController', '~> 0.2'
   pod 'PopupDialog', '~> 0.7.1'
+  pod 'GaugeKit'
 end

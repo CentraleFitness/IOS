@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "48D4A099663EB08F15570F2C0A762319"
-               BlueprintName = "UAProgressView"
+               BlueprintIdentifier = "4246BE120A2B6559A95DEA31DB934805"
+               BlueprintName = "GaugeView"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "UAProgressView.framework">
+               BuildableName = "GaugeView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

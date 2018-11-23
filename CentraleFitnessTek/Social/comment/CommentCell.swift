@@ -14,26 +14,8 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
-    func setInfo(information: Info)
-    {
-//        if (information.picture == nil){
-//            image_cell.image = UIImage(named: "image_1 2")
-//        }
-//        else{
-//            image_cell.image = self.base64Convert(base64String: information.picture)
-//        }
-//        if (information.infoName == "EVENT")
-//        {
-//            title_cell.text = "Un nouvel évènement !"
-//            image_cell.image = UIImage(named: "SocialEvent")
-//        }
-//        else
-//        {
-//            title_cell.text = "Un message de votre salle !"
-//            image_cell.image = UIImage(named: "SocialMessage")
-//        }
-//        description_cell.text = information.description
-//        
+    func setInfo(information: Info){
+        
     }
     func base64Convert(base64String: String?) -> UIImage{
         if (base64String?.isEmpty)! {

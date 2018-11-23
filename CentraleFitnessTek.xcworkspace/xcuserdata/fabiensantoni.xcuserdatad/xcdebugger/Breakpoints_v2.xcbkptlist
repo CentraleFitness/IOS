@@ -26,38 +26,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CentraleFitnessTek/Session/ViewSession.swift"
-            timestampString = "564594672.876491"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "beginScanning(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CentraleFitnessTek/Session/ViewSession.swift"
-            timestampString = "564594672.876554"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "beginScanning(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CentraleFitnessTek/Session/ViewSession.swift"
             timestampString = "564594672.8766021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -90,7 +58,7 @@
                   moduleName = "CentraleFitnessTek"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fabiensantoni/Documents/school/IOS/CentraleFitnessTek/Session/ViewSession.swift"
-                  timestampString = "564680706.3223979"
+                  timestampString = "564685476.174877"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "78"
@@ -105,7 +73,7 @@
                   moduleName = "CentraleFitnessTek"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fabiensantoni/Documents/school/IOS/CentraleFitnessTek/Session/ViewSession.swift"
-                  timestampString = "564680706.3238339"
+                  timestampString = "564685476.176484"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -169,13 +137,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CentraleFitnessTek/Connection/ViewConnection.swift"
-            timestampString = "564675927.061439"
+            filePath = "CentraleFitnessTek/Page/Events/ViewChallenges.swift"
+            timestampString = "564685475.874741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "createArray()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

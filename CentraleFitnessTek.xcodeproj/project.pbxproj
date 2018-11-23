@@ -28,6 +28,10 @@
 		8A34B99D21A854A3002D4C37 /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A34B99B21A854A3002D4C37 /* ViewComment.xib */; };
 		8A34B9A021A8567B002D4C37 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B99E21A8567B002D4C37 /* CommentCell.swift */; };
 		8A34B9A121A8567B002D4C37 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A34B99F21A8567B002D4C37 /* CommentCell.xib */; };
+		8A34B9A321A8707A002D4C37 /* CommentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B9A221A8707A002D4C37 /* CommentInformation.swift */; };
+		8A34B9A521A87091002D4C37 /* CommentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B9A421A87091002D4C37 /* CommentInfo.swift */; };
+		8A34B9AA21A8746F002D4C37 /* ViewNFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B9A821A8746F002D4C37 /* ViewNFC.swift */; };
+		8A34B9AB21A8746F002D4C37 /* ViewNFC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A34B9A921A8746F002D4C37 /* ViewNFC.xib */; };
 		8A503803218CBE21008C7597 /* network.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A503802218CBE21008C7597 /* network.strings */; };
 		8A503805218CBF77008C7597 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A503804218CBF77008C7597 /* File.swift */; };
 		8A79CB6C219D90C900B7286F /* ReferenceLineDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB56219D90C900B7286F /* ReferenceLineDrawingView.swift */; };
@@ -134,6 +138,10 @@
 		8A34B99B21A854A3002D4C37 /* ViewComment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewComment.xib; sourceTree = "<group>"; };
 		8A34B99E21A8567B002D4C37 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		8A34B99F21A8567B002D4C37 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		8A34B9A221A8707A002D4C37 /* CommentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInformation.swift; sourceTree = "<group>"; };
+		8A34B9A421A87091002D4C37 /* CommentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInfo.swift; sourceTree = "<group>"; };
+		8A34B9A821A8746F002D4C37 /* ViewNFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNFC.swift; sourceTree = "<group>"; };
+		8A34B9A921A8746F002D4C37 /* ViewNFC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewNFC.xib; sourceTree = "<group>"; };
 		8A45A60520B5453A00B94C5E /* CentraleFitnessTek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CentraleFitnessTek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A45A61420B5453B00B94C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A503802218CBE21008C7597 /* network.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = network.strings; sourceTree = "<group>"; };
@@ -269,6 +277,8 @@
 				8A34B99B21A854A3002D4C37 /* ViewComment.xib */,
 				8A34B99E21A8567B002D4C37 /* CommentCell.swift */,
 				8A34B99F21A8567B002D4C37 /* CommentCell.xib */,
+				8A34B9A221A8707A002D4C37 /* CommentInformation.swift */,
+				8A34B9A421A87091002D4C37 /* CommentInfo.swift */,
 			);
 			path = comment;
 			sourceTree = "<group>";
@@ -520,6 +530,8 @@
 			children = (
 				8AE0616120B54C12004CE1D1 /* ViewSession.swift */,
 				8AE0616420B54C13004CE1D1 /* ViewSession.xib */,
+				8A34B9A821A8746F002D4C37 /* ViewNFC.swift */,
+				8A34B9A921A8746F002D4C37 /* ViewNFC.xib */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -669,6 +681,7 @@
 				8A8F672321504800007432B9 /* SocialCell.xib in Resources */,
 				8AB4E49D21528F1F0011B2B4 /* ViewCustomProgramStart.xib in Resources */,
 				8A8F671A214EFB2B007432B9 /* ViewDefi.xib in Resources */,
+				8A34B9AB21A8746F002D4C37 /* ViewNFC.xib in Resources */,
 				8A8F670E214D5D3E007432B9 /* ProgramCell.xib in Resources */,
 				8AE061F120B54C14004CE1D1 /* ViewInstant.xib in Resources */,
 				8A0AB7F320D6AEDD000A1FA0 /* ViewStatistics.xib in Resources */,
@@ -714,6 +727,7 @@
 				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressView/CircleProgressView.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
+				"${BUILT_PRODUCTS_DIR}/GaugeView/GaugeView.framework",
 				"${BUILT_PRODUCTS_DIR}/LinearProgressBar/LinearProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupController/PopupController.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
@@ -733,6 +747,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GaugeView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinearProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
@@ -766,6 +781,7 @@
 				8A8F6710214D677F007432B9 /* ProgramCell.swift in Sources */,
 				8A8F672221504800007432B9 /* SocialCell.swift in Sources */,
 				8AE061D920B54C14004CE1D1 /* VIewCustomShadow.swift in Sources */,
+				8A34B9AA21A8746F002D4C37 /* ViewNFC.swift in Sources */,
 				8A79CB75219D90C900B7286F /* ScrollableGraphViewDataSource.swift in Sources */,
 				8AE061BA20B54C14004CE1D1 /* ViewController.swift in Sources */,
 				8A0AB7F620D6AEDD000A1FA0 /* ViewListChallenges.swift in Sources */,
@@ -780,6 +796,7 @@
 				8AE061C220B54C14004CE1D1 /* QRCodeReaderResult.swift in Sources */,
 				8AB4E49C21528F1F0011B2B4 /* ViewCustomProgramStart.swift in Sources */,
 				8AE061F020B54C14004CE1D1 /* CALayer.swift in Sources */,
+				8A34B9A521A87091002D4C37 /* CommentInfo.swift in Sources */,
 				8AE0616E20B54C14004CE1D1 /* ViewTest.swift in Sources */,
 				8AE061F420B54C14004CE1D1 /* buttonAnimationExtension.swift in Sources */,
 				8AB4E4A02152945C0011B2B4 /* ProgramStartCell.swift in Sources */,
@@ -795,6 +812,7 @@
 				8AE061B820B54C14004CE1D1 /* NavigationViewControllerSession.swift in Sources */,
 				8AE061C620B54C14004CE1D1 /* ReaderOverlayView.swift in Sources */,
 				8A0AB7F920D6AEDD000A1FA0 /* ViewCustomProgram.swift in Sources */,
+				8A34B9A321A8707A002D4C37 /* CommentInformation.swift in Sources */,
 				8AB7C54821691D6D000E6B67 /* PopUpCustomProgram.swift in Sources */,
 				8A34B99C21A854A3002D4C37 /* ViewComment.swift in Sources */,
 				8A79CB79219D90C900B7286F /* GraphPointAnimation.swift in Sources */,

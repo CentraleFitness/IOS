@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A295984D373F6C6776FC242ABF2EBD6A"
+               BlueprintIdentifier = "3127E7C332C671FD40A13DD91D6DAC48"
                BuildableName = "Pods_CentraleFitnessTek.framework"
                BlueprintName = "Pods-CentraleFitnessTek"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A295984D373F6C6776FC242ABF2EBD6A"
+            BlueprintIdentifier = "3127E7C332C671FD40A13DD91D6DAC48"
             BuildableName = "Pods_CentraleFitnessTek.framework"
             BlueprintName = "Pods-CentraleFitnessTek"
             ReferencedContainer = "container:Pods.xcodeproj">

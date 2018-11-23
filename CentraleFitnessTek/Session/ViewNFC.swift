@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import GaugeView
 
 class ViewNFC: ViewController {
+    @IBOutlet private weak var gaugeView: GaugeView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        gaugeView.percentage = 80
+        gaugeView.thickness = 5
+        gaugeView.labelFont = UIFont.systemFontOfSize(40, weight: UIFontWeightThin)
+        gaugeView.labelColor = UIColor.lightGrayColor()
+        gaugeView.gaugeBackgroundColor = UIColor.lightGrayColor()
         // Do any additional setup after loading the view.
     }
 
