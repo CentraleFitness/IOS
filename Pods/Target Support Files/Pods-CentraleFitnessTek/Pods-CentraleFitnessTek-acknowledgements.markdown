@@ -126,9 +126,9 @@ SOFTWARE.
 
 
 
-## GaugeView
+## GaugeKit
 
-Copyright (c) 2015 Luca D'Incà <luca@b3lab.it>
+Copyright (c) 2015 Petr Korolev <sky4winder@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

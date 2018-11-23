@@ -169,7 +169,7 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright (c) 2015 Luca D'Incà &lt;luca@b3lab.it&gt;
+			<string>Copyright (c) 2015 Petr Korolev &lt;sky4winder@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -192,7 +192,7 @@ THE SOFTWARE.
 			<key>License</key>
 			<string>MIT</string>
 			<key>Title</key>
-			<string>GaugeView</string>
+			<string>GaugeKit</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

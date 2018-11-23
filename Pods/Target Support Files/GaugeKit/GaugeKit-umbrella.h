@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "GaugeKit.h"
 
-FOUNDATION_EXPORT double GaugeViewVersionNumber;
-FOUNDATION_EXPORT const unsigned char GaugeViewVersionString[];
+FOUNDATION_EXPORT double GaugeKitVersionNumber;
+FOUNDATION_EXPORT const unsigned char GaugeKitVersionString[];
 
