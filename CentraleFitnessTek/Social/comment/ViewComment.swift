@@ -13,9 +13,13 @@ class ViewComment: UIViewController {
     
     @IBOutlet weak var button_refressh: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var textViewPost: UITextView!
+    @IBOutlet weak var postButton: UIButton!
     var postId: String = ""
     var token: String = ""
     var sportcenterid = ""
+    static let cellIdentifier: String = String(describing: CommentCell2.self)
     
     let cellSpacingHeight: CGFloat = 5
     var list: [CommentInformation] = []
@@ -26,8 +30,9 @@ class ViewComment: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UINib(nibName: "CommentCell2", bundle: nil), forCellReuseIdentifier: ViewComment.cellIdentifier)
         bgColorView.backgroundColor = UIColor.white
-        getAfffiliation()
+        getAffiliation()
     }
     
     
@@ -43,7 +48,7 @@ class ViewComment: UIViewController {
     }
     
     
-    func getAfffiliation()
+    func getAffiliation()
     {
         let parameters: Parameters = [
             "token": self.token,
@@ -53,9 +58,7 @@ class ViewComment: UIViewController {
             .responseJSON { response in
                 if let json = response.result.value as? [String: Any] {
                     self.sportcenterid = json["sport center id"] as! String
-                    print("sport center id")
-                    print(self.sportcenterid)
-                    self.list = self.createArray()
+                    self.createArray()
                 }
                 else
                 {
@@ -64,17 +67,15 @@ class ViewComment: UIViewController {
         }
     }
     
-    func createArray() -> [CommentInformation] {
-        
-        var list_challenges: [CommentInformation] = []
+    func createArray(){
         let parameters: Parameters = [
             "token": self.token,
             "post id": self.postId,
             "start": 0,
-            "range": 150
+            "end": 150
         ]
         
-        Alamofire.request("\(network.ipAdress.rawValue)/get/posts", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request("\(network.ipAdress.rawValue)/post-comment-get-range", method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
                 if let json = response.result.value as? [String: Any] {
                     let error = json["error"] as? String
@@ -83,52 +84,25 @@ class ViewComment: UIViewController {
                     print(code!)
                     if (error == "false")
                     {
-                        var json2 = json["comments"] as? [Dictionary<String, Any>]
+                        let json2 = json["comments"] as? [Dictionary<String, Any>]
+                        print(json2!.count)
                         self.list_events.removeAll()
-                        self.list_events += CommentInfo.getEventArray(dict: json2!)
-                        self.fill_event()
-                        print()
-                        
+                        self.list_events = CommentInfo.getEventArray(dict: json2!)
+                        self.tableView.reloadData()
+                    //    self.fill_event()
                     }
                 }
-                else
-                {
+                else{
                     print("Bad")
                 }
         }
-        return list_challenges
+    }
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func fill_event()
-    {
-        var idx = 0
-        
-        while(idx < list_events.count)
-        {
-            getEventPreview(id: idx, event: list_events[idx]) { (event, idx) in
-                self.list_events[idx] = event
-               // self.tableView.reloadData()
-            }
-            idx = idx + 1
-        }
-        self.tableView.reloadData()
-    }
-    
-    func getEventPreview(id: Int, event: CommentInfo, isSuccess: @escaping(_ event: CommentInfo,_ id: Int)-> Void){
-        
-        print("Start Events")
-        
-        let parameters: Parameters = [
-            "token": self.token,
-            "post id": event.infoId!
-        ]
-        
-        Alamofire.request("\(network.ipAdress.rawValue)/get/postcontent", method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                if let json = response.result.value as? [String: Any] {
-                    isSuccess(CommentInfo.start_init_2(info: event, Dict: json), id)
-                }
-        }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func postComment(_ sender: Any) {
@@ -137,7 +111,7 @@ class ViewComment: UIViewController {
         let parameters: Parameters = [
             "token": self.token,
             "post id": self.postId,
-            "comment content": ""
+            "comment content": textViewPost.text
         ]
         
         Alamofire.request("\(network.ipAdress.rawValue)/post-comment-create", method: .post, parameters: parameters, encoding: JSONEncoding.default)
@@ -148,6 +122,9 @@ class ViewComment: UIViewController {
                     print(error!)
                     print(code!)
                     if (error == "false"){
+                        self.textViewPost.text = ""
+                        self.view.endEditing(true)
+                        self.createArray()
                         self.tableView.reloadData()
                     }
                 }
@@ -157,7 +134,7 @@ class ViewComment: UIViewController {
         }
     }
     @IBAction func anim1(_ sender: Any) {
-        list = createArray()
+        createArray()
         tableView.reloadData(
             with: .simple(duration: 0.75, direction: .rotation3D(type: .ironMan),
                           constantDelay: 0))
@@ -175,11 +152,6 @@ extension  ViewComment: UITableViewDataSource, UITableViewDelegate {
         return list_events.count
     }
     
-    // Set the spacing between sections
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return cellSpacingHeight
-    }
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         last_choice = indexPath.row
@@ -194,18 +166,16 @@ extension  ViewComment: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //     let challenges = list[indexPath.row]
-        let event = list_events[indexPath.item]
-        let cell = Bundle.main.loadNibNamed("SocialCell", owner: self, options: nil)?.first as! SocialCell //tableView.dequeueReusableCell(withIdentifier: "challengesCell") as! ChallengesCell
-        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return cellSpacingHeight
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell2", for: indexPath) as! CommentCell2
         cell.backgroundColor = UIColor.white
         cell.selectedBackgroundView = bgColorView
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
-        //cell.setInfo(information: event)
+        let commentInfo: CommentInfo = list_events[indexPath.item]
+        cell.name = commentInfo.name!
+        cell.comment = commentInfo.comment!
+        cell.date = commentInfo.date!
         return cell
     }
 }

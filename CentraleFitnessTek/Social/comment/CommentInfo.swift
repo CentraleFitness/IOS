@@ -10,19 +10,19 @@ import Foundation
 import UIKit
 
 class CommentInfo{
-    var infoName:String? = nil
-    var infoId:String? = nil
-    var description:String? = nil
-    var picture:String? = nil
+    var name:String? = nil
+    var date:Int? = nil
+    var comment:String? = nil
     
 static func start_init(Dict: Dictionary<String, Any>) -> CommentInfo
 {
     let info = CommentInfo()
     
-    info.infoName = Dict["post type"] as? String
-    info.infoId = Dict["post id"] as? String
+    info.name = Dict["name"] as? String
+    info.comment = Dict["comment content"] as? String
+    info.date = Dict["date"] as? Int
     print("test id")
-    print(info.infoId)
+    print(info.name)
     return info
 }
 
@@ -42,8 +42,8 @@ static func getEventArray(dict: [Dictionary<String, Any>]) -> Array<CommentInfo>
     return arrayInfo
 }
 
-static func start_init_2(info: CommentInfo, Dict: Dictionary<String, Any>) -> CommentInfo{
-    info.description = Dict["post content"] as? String
-    return info
-}
+//static func start_init_2(info: CommentInfo, Dict: Dictionary<String, Any>) -> CommentInfo{
+//    info.description = Dict["post content"] as? String
+//    return info
+//}
 }

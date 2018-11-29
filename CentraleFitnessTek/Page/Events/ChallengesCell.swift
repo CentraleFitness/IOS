@@ -65,7 +65,7 @@ class ChallengesCell: UITableViewCell {
         }
     }
     
-    public func base64Convert(base64String: String?) -> UIImage{
+    public func base64Convert(base64String: String?) -> UIImage?{
         if (base64String?.isEmpty)! {
             print("Problème !!!!!!")
             let test: UIImage = UIImage(named: "image_1 2")!
@@ -76,7 +76,12 @@ class ChallengesCell: UITableViewCell {
             let temp = base64String?.components(separatedBy: ",")
             let dataDecoded : Data = Data(base64Encoded: temp![1], options: .ignoreUnknownCharacters)!
             let decodedimage = UIImage(data: dataDecoded)
-            return decodedimage!
+            if (decodedimage != nil){
+                return decodedimage!
+            }
+            else{
+                return nil
+            }
         }
     }
 }

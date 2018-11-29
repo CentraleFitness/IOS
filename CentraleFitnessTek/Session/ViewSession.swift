@@ -32,7 +32,7 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     var session: NFCNDEFReaderSession?
 
     var viewChallenges: ViewChallenges?
-    var viewDefi: ViewDefi?
+    var viewDefi: ViewDefiOld?
     var viewStatistics: ViewStatistics?
     var viewCustomProgram: ViewCustomProgram?
     var viewInstant: ViewInstant?
@@ -42,7 +42,7 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
         
         viewChallenges = ViewChallenges()
         viewChallenges?.token = self.token
-        viewDefi = ViewDefi()
+        viewDefi = ViewDefiOld()
         viewDefi?.token = self.token
         viewStatistics = ViewStatistics()
         viewStatistics?.token = self.token
@@ -107,7 +107,7 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     }
     
     @IBAction func beginScanning(_ sender: Any) {
-        let vc: ViewNFC = ViewNFC()
+        let vc: UIViewController = UIViewController()
         
         vc.present(vc, animated: true, completion: nil)
 //        session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)

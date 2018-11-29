@@ -21,6 +21,11 @@
 		8A0AB80020D6AEDD000A1FA0 /* ChallengesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AB7F220D6AEDD000A1FA0 /* ChallengesCell.swift */; };
 		8A110396218B5E6B00AAD784 /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A110394218B5E6B00AAD784 /* SessionCell.swift */; };
 		8A110397218B5E6B00AAD784 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A110395218B5E6B00AAD784 /* SessionCell.xib */; };
+		8A1908A221AFF72E00AB4FBB /* CommentCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1908A021AFF72E00AB4FBB /* CommentCell2.swift */; };
+		8A1908A321AFF72E00AB4FBB /* CommentCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1908A121AFF72E00AB4FBB /* CommentCell2.xib */; };
+		8A1908A821B0270200AB4FBB /* ViewDefi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1908A621B0270200AB4FBB /* ViewDefi.swift */; };
+		8A1908A921B0270200AB4FBB /* ViewDefi.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1908A721B0270200AB4FBB /* ViewDefi.xib */; };
+		8A1908AB21B02F7500AB4FBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1908AA21B02F7200AB4FBB /* Assets.xcassets */; };
 		8A1F02EF2163A7800090A925 /* DefiCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F02ED2163A7800090A925 /* DefiCollectionCell.swift */; };
 		8A1F02F02163A7800090A925 /* DefiCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1F02EE2163A7800090A925 /* DefiCollectionCell.xib */; };
 		8A25A523216AA45A00F3624A /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A25A521216A9EDC00F3624A /* CoreData.xcdatamodeld */; };
@@ -30,8 +35,6 @@
 		8A34B9A121A8567B002D4C37 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A34B99F21A8567B002D4C37 /* CommentCell.xib */; };
 		8A34B9A321A8707A002D4C37 /* CommentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B9A221A8707A002D4C37 /* CommentInformation.swift */; };
 		8A34B9A521A87091002D4C37 /* CommentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B9A421A87091002D4C37 /* CommentInfo.swift */; };
-		8A34B9AA21A8746F002D4C37 /* ViewNFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B9A821A8746F002D4C37 /* ViewNFC.swift */; };
-		8A34B9AB21A8746F002D4C37 /* ViewNFC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A34B9A921A8746F002D4C37 /* ViewNFC.xib */; };
 		8A503803218CBE21008C7597 /* network.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A503802218CBE21008C7597 /* network.strings */; };
 		8A503805218CBF77008C7597 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A503804218CBF77008C7597 /* File.swift */; };
 		8A79CB6C219D90C900B7286F /* ReferenceLineDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB56219D90C900B7286F /* ReferenceLineDrawingView.swift */; };
@@ -56,8 +59,8 @@
 		8A8F6710214D677F007432B9 /* ProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F670F214D677F007432B9 /* ProgramCell.swift */; };
 		8A8F6713214EBB52007432B9 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F6712214EBB52007432B9 /* Program.swift */; };
 		8A8F6715214ECA24007432B9 /* ProgramEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F6714214ECA24007432B9 /* ProgramEvent.swift */; };
-		8A8F6719214EFB2B007432B9 /* ViewDefi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F6717214EFB2B007432B9 /* ViewDefi.swift */; };
-		8A8F671A214EFB2B007432B9 /* ViewDefi.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8F6718214EFB2B007432B9 /* ViewDefi.xib */; };
+		8A8F6719214EFB2B007432B9 /* ViewDefiOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F6717214EFB2B007432B9 /* ViewDefiOld.swift */; };
+		8A8F671A214EFB2B007432B9 /* ViewDefiOld.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8F6718214EFB2B007432B9 /* ViewDefiOld.xib */; };
 		8A8F671C214FC995007432B9 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F671B214FC995007432B9 /* PieChart.swift */; };
 		8A8F671F214FEEF0007432B9 /* ViewSocial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8F671E214FEEF0007432B9 /* ViewSocial.xib */; };
 		8A8F672221504800007432B9 /* SocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F672021504800007432B9 /* SocialCell.swift */; };
@@ -96,7 +99,6 @@
 		8AE061D920B54C14004CE1D1 /* VIewCustomShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0614A20B54C10004CE1D1 /* VIewCustomShadow.swift */; };
 		8AE061DA20B54C14004CE1D1 /* PageViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0614B20B54C10004CE1D1 /* PageViewMenu.swift */; };
 		8AE061DB20B54C14004CE1D1 /* ViewRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0614C20B54C11004CE1D1 /* ViewRegistration.swift */; };
-		8AE061DC20B54C14004CE1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AE0614D20B54C11004CE1D1 /* Assets.xcassets */; };
 		8AE061DD20B54C14004CE1D1 /* ViewConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0614E20B54C11004CE1D1 /* ViewConnection.swift */; };
 		8AE061DE20B54C14004CE1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AE0614F20B54C12004CE1D1 /* Main.storyboard */; };
 		8AE061DF20B54C14004CE1D1 /* @IBDesignable class MySegmentedControl: UISegmentedControl {  @IBInspectable var height: CGFloat = 29 {     didSet {         let centerSave = center         frame = CGRect(x: frame.minX, y: frame.minY, width: frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0615020B54C12004CE1D1 /* @IBDesignable class MySegmentedControl: UISegmentedControl {  @IBInspectable var height: CGFloat = 29 {     didSet {         let centerSave = center         frame = CGRect(x: frame.minX, y: frame.minY, width: frame.swift */; };
@@ -131,6 +133,11 @@
 		8A0AB7F220D6AEDD000A1FA0 /* ChallengesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesCell.swift; sourceTree = "<group>"; };
 		8A110394218B5E6B00AAD784 /* SessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
 		8A110395218B5E6B00AAD784 /* SessionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
+		8A1908A021AFF72E00AB4FBB /* CommentCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell2.swift; sourceTree = "<group>"; };
+		8A1908A121AFF72E00AB4FBB /* CommentCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell2.xib; sourceTree = "<group>"; };
+		8A1908A621B0270200AB4FBB /* ViewDefi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDefi.swift; sourceTree = "<group>"; };
+		8A1908A721B0270200AB4FBB /* ViewDefi.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewDefi.xib; sourceTree = "<group>"; };
+		8A1908AA21B02F7200AB4FBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A1F02ED2163A7800090A925 /* DefiCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefiCollectionCell.swift; sourceTree = "<group>"; };
 		8A1F02EE2163A7800090A925 /* DefiCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefiCollectionCell.xib; sourceTree = "<group>"; };
 		8A25A522216A9EDC00F3624A /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
@@ -140,8 +147,6 @@
 		8A34B99F21A8567B002D4C37 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		8A34B9A221A8707A002D4C37 /* CommentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInformation.swift; sourceTree = "<group>"; };
 		8A34B9A421A87091002D4C37 /* CommentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInfo.swift; sourceTree = "<group>"; };
-		8A34B9A821A8746F002D4C37 /* ViewNFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNFC.swift; sourceTree = "<group>"; };
-		8A34B9A921A8746F002D4C37 /* ViewNFC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewNFC.xib; sourceTree = "<group>"; };
 		8A45A60520B5453A00B94C5E /* CentraleFitnessTek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CentraleFitnessTek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A45A61420B5453B00B94C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A503802218CBE21008C7597 /* network.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = network.strings; sourceTree = "<group>"; };
@@ -169,8 +174,8 @@
 		8A8F670F214D677F007432B9 /* ProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCell.swift; sourceTree = "<group>"; };
 		8A8F6712214EBB52007432B9 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		8A8F6714214ECA24007432B9 /* ProgramEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramEvent.swift; sourceTree = "<group>"; };
-		8A8F6717214EFB2B007432B9 /* ViewDefi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDefi.swift; sourceTree = "<group>"; };
-		8A8F6718214EFB2B007432B9 /* ViewDefi.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewDefi.xib; sourceTree = "<group>"; };
+		8A8F6717214EFB2B007432B9 /* ViewDefiOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDefiOld.swift; sourceTree = "<group>"; };
+		8A8F6718214EFB2B007432B9 /* ViewDefiOld.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewDefiOld.xib; sourceTree = "<group>"; };
 		8A8F671B214FC995007432B9 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		8A8F671E214FEEF0007432B9 /* ViewSocial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewSocial.xib; sourceTree = "<group>"; };
 		8A8F672021504800007432B9 /* SocialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCell.swift; sourceTree = "<group>"; };
@@ -211,7 +216,6 @@
 		8AE0614A20B54C10004CE1D1 /* VIewCustomShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIewCustomShadow.swift; sourceTree = "<group>"; };
 		8AE0614B20B54C10004CE1D1 /* PageViewMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewMenu.swift; sourceTree = "<group>"; };
 		8AE0614C20B54C11004CE1D1 /* ViewRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRegistration.swift; sourceTree = "<group>"; };
-		8AE0614D20B54C11004CE1D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AE0614E20B54C11004CE1D1 /* ViewConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConnection.swift; sourceTree = "<group>"; };
 		8AE0614F20B54C12004CE1D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8AE0615020B54C12004CE1D1 /* @IBDesignable class MySegmentedControl: UISegmentedControl {  @IBInspectable var height: CGFloat = 29 {     didSet {         let centerSave = center         frame = CGRect(x: frame.minX, y: frame.minY, width: frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "@IBDesignable class MySegmentedControl: UISegmentedControl {  @IBInspectable var height: CGFloat = 29 {     didSet {         let centerSave = center         frame = CGRect(x: frame.minX, y: frame.minY, width: frame.swift"; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				8A34B99B21A854A3002D4C37 /* ViewComment.xib */,
 				8A34B99E21A8567B002D4C37 /* CommentCell.swift */,
 				8A34B99F21A8567B002D4C37 /* CommentCell.xib */,
+				8A1908A021AFF72E00AB4FBB /* CommentCell2.swift */,
+				8A1908A121AFF72E00AB4FBB /* CommentCell2.xib */,
 				8A34B9A221A8707A002D4C37 /* CommentInformation.swift */,
 				8A34B9A421A87091002D4C37 /* CommentInfo.swift */,
 			);
@@ -313,8 +319,8 @@
 				8A79CB54219D90C900B7286F /* Classes */,
 				8AE0612720B54C0F004CE1D1 /* Sources */,
 				8AE062A320B58FC9004CE1D1 /* QR_file */,
-				8AE0614D20B54C11004CE1D1 /* Assets.xcassets */,
 				8A45A61420B5453B00B94C5E /* Info.plist */,
+				8A1908AA21B02F7200AB4FBB /* Assets.xcassets */,
 				8AE0614F20B54C12004CE1D1 /* Main.storyboard */,
 				8AE0616520B54C13004CE1D1 /* LaunchScreen.storyboard */,
 				8AE0612320B54C0E004CE1D1 /* AppDelegate.swift */,
@@ -452,6 +458,8 @@
 		8A8F6711214EAEC5007432B9 /* Track */ = {
 			isa = PBXGroup;
 			children = (
+				8A8F6718214EFB2B007432B9 /* ViewDefiOld.xib */,
+				8A8F6717214EFB2B007432B9 /* ViewDefiOld.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -459,10 +467,10 @@
 		8A8F6716214EF9F5007432B9 /* Defi */ = {
 			isa = PBXGroup;
 			children = (
-				8A8F6718214EFB2B007432B9 /* ViewDefi.xib */,
-				8A8F6717214EFB2B007432B9 /* ViewDefi.swift */,
 				8A1F02ED2163A7800090A925 /* DefiCollectionCell.swift */,
 				8A1F02EE2163A7800090A925 /* DefiCollectionCell.xib */,
+				8A1908A621B0270200AB4FBB /* ViewDefi.swift */,
+				8A1908A721B0270200AB4FBB /* ViewDefi.xib */,
 			);
 			path = Defi;
 			sourceTree = "<group>";
@@ -530,8 +538,6 @@
 			children = (
 				8AE0616120B54C12004CE1D1 /* ViewSession.swift */,
 				8AE0616420B54C13004CE1D1 /* ViewSession.xib */,
-				8A34B9A821A8746F002D4C37 /* ViewNFC.swift */,
-				8A34B9A921A8746F002D4C37 /* ViewNFC.xib */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -677,20 +683,21 @@
 				8A0AB7F520D6AEDD000A1FA0 /* ChallengesCell.xib in Resources */,
 				8A34B9A121A8567B002D4C37 /* CommentCell.xib in Resources */,
 				8A503803218CBE21008C7597 /* network.strings in Resources */,
-				8AE061DC20B54C14004CE1D1 /* Assets.xcassets in Resources */,
 				8A8F672321504800007432B9 /* SocialCell.xib in Resources */,
 				8AB4E49D21528F1F0011B2B4 /* ViewCustomProgramStart.xib in Resources */,
-				8A8F671A214EFB2B007432B9 /* ViewDefi.xib in Resources */,
-				8A34B9AB21A8746F002D4C37 /* ViewNFC.xib in Resources */,
+				8A8F671A214EFB2B007432B9 /* ViewDefiOld.xib in Resources */,
 				8A8F670E214D5D3E007432B9 /* ProgramCell.xib in Resources */,
 				8AE061F120B54C14004CE1D1 /* ViewInstant.xib in Resources */,
+				8A1908A921B0270200AB4FBB /* ViewDefi.xib in Resources */,
 				8A0AB7F320D6AEDD000A1FA0 /* ViewStatistics.xib in Resources */,
 				8A1F02F02163A7800090A925 /* DefiCollectionCell.xib in Resources */,
 				8A0AB7F720D6AEDD000A1FA0 /* ViewCustomProgram.xib in Resources */,
 				8A8F671F214FEEF0007432B9 /* ViewSocial.xib in Resources */,
+				8A1908A321AFF72E00AB4FBB /* CommentCell2.xib in Resources */,
 				8AE061F220B54C14004CE1D1 /* ViewSession.xib in Resources */,
 				8A110397218B5E6B00AAD784 /* SessionCell.xib in Resources */,
 				8AE061DE20B54C14004CE1D1 /* Main.storyboard in Resources */,
+				8A1908AB21B02F7500AB4FBB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,7 +734,6 @@
 				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressView/CircleProgressView.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
-				"${BUILT_PRODUCTS_DIR}/GaugeKit/GaugeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/LinearProgressBar/LinearProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupController/PopupController.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
@@ -747,7 +753,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GaugeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinearProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
@@ -781,13 +786,13 @@
 				8A8F6710214D677F007432B9 /* ProgramCell.swift in Sources */,
 				8A8F672221504800007432B9 /* SocialCell.swift in Sources */,
 				8AE061D920B54C14004CE1D1 /* VIewCustomShadow.swift in Sources */,
-				8A34B9AA21A8746F002D4C37 /* ViewNFC.swift in Sources */,
 				8A79CB75219D90C900B7286F /* ScrollableGraphViewDataSource.swift in Sources */,
 				8AE061BA20B54C14004CE1D1 /* ViewController.swift in Sources */,
 				8A0AB7F620D6AEDD000A1FA0 /* ViewListChallenges.swift in Sources */,
 				8AE061EE20B54C14004CE1D1 /* ViewProfilSettings.swift in Sources */,
 				8A8F6713214EBB52007432B9 /* Program.swift in Sources */,
 				8A8F672721504D63007432B9 /* Info.swift in Sources */,
+				8A1908A221AFF72E00AB4FBB /* CommentCell2.swift in Sources */,
 				8A34B9A021A8567B002D4C37 /* CommentCell.swift in Sources */,
 				8AE0629E20B54DB5004CE1D1 /* GradientView.swift in Sources */,
 				8AE0616D20B54C14004CE1D1 /* ViewChallenge.swift in Sources */,
@@ -800,11 +805,12 @@
 				8AE0616E20B54C14004CE1D1 /* ViewTest.swift in Sources */,
 				8AE061F420B54C14004CE1D1 /* buttonAnimationExtension.swift in Sources */,
 				8AB4E4A02152945C0011B2B4 /* ProgramStartCell.swift in Sources */,
+				8A1908A821B0270200AB4FBB /* ViewDefi.swift in Sources */,
 				8AE0616C20B54C14004CE1D1 /* ViewSocial.swift in Sources */,
 				8A79CB71219D90C900B7286F /* LineDrawingLayer.swift in Sources */,
 				8A79CB73219D90C900B7286F /* ScrollableGraphView.swift in Sources */,
 				8A79CB6E219D90C900B7286F /* GradientDrawingLayer.swift in Sources */,
-				8A8F6719214EFB2B007432B9 /* ViewDefi.swift in Sources */,
+				8A8F6719214EFB2B007432B9 /* ViewDefiOld.swift in Sources */,
 				8AE061BB20B54C14004CE1D1 /* ViewProfil.swift in Sources */,
 				8AE062AB20B5A460004CE1D1 /* NavigationControllerProfil.swift in Sources */,
 				8AE061C320B54C14004CE1D1 /* SwitchCameraButton.swift in Sources */,
@@ -987,7 +993,10 @@
 				DEVELOPMENT_TEAM = HPW6QTNDP7;
 				INFOPLIST_FILE = CentraleFitnessTek/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CentraleFitnes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1010,7 +1019,10 @@
 				DEVELOPMENT_TEAM = HPW6QTNDP7;
 				INFOPLIST_FILE = CentraleFitnessTek/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CentraleFitnes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

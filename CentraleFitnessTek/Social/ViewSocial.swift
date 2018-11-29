@@ -149,6 +149,9 @@ extension  ViewSocial: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         last_choice = indexPath.row
+        let vc: ViewComment = ViewComment(token: token, postId: list_events[indexPath.item].infoId!)
+        
+        self.present(vc, animated: true, completion: nil)
         print(indexPath.row)
     }
     
