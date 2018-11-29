@@ -145,49 +145,49 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     
     @IBAction func press_button_challenge(_ sender: UIButton) {
         sender.pulsate()
-        print("press_button_challenge")
-        if (page_stat == 0)
-        {            
-            print("stat = 0")
-            page_stat = 1
-            UIView.animate(withDuration: 0.5) {
-
-                self.contentView.layer.position.y = 380.00
-            }
-        }
-        else
-        {
-            print("stat = 1")
-        }
-        UIView.animate(withDuration: 0.3) {
-        self.button_challenges.layer.position.y = 635
-        self.button_events.layer.position.y = 644
-        self.button_statistics.layer.position.y = 644
-        self.button_custom.layer.position.y = 644
-        }
+//        print("press_button_challenge")
+//        if (page_stat == 0)
+//        {
+//            print("stat = 0")
+//            page_stat = 1
+//            UIView.animate(withDuration: 0.5) {
+//
+//                self.contentView.layer.position.y = 380.00
+//            }
+//        }
+//        else
+//        {
+//            print("stat = 1")
+//        }
+//        UIView.animate(withDuration: 0.3) {
+//        self.button_challenges.layer.position.y = 635
+//        self.button_events.layer.position.y = 644
+//        self.button_statistics.layer.position.y = 644
+//        self.button_custom.layer.position.y = 644
+//        }
         activeViewController = viewChallenges
         
     }
     
     @IBAction func press_button_events(_ sender: UIButton) {
         sender.pulsate()
-        print("press_events")
-        if (page_stat == 0)
-        {
-            page_stat = 1
-            UIView.animate(withDuration: 0.5) {
-                self.contentView.layer.position.y = 380.00
-            }
-        }
-        else
-        {
-        }
-        UIView.animate(withDuration: 0.3) {
-        self.button_challenges.layer.position.y = 644
-        self.button_events.layer.position.y = 635
-        self.button_statistics.layer.position.y = 644
-        self.button_custom.layer.position.y = 644
-        }
+//        print("press_events")
+//        if (page_stat == 0)
+//        {
+//            page_stat = 1
+//            UIView.animate(withDuration: 0.5) {
+//                self.contentView.layer.position.y = 380.00
+//            }
+//        }
+//        else
+//        {
+//        }
+//        UIView.animate(withDuration: 0.3) {
+//        self.button_challenges.layer.position.y = 644
+//        self.button_events.layer.position.y = 635
+//        self.button_statistics.layer.position.y = 644
+//        self.button_custom.layer.position.y = 644
+//        }
         activeViewController = viewDefi
     }
     
@@ -207,46 +207,46 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     
     @IBAction func press_button_statistics(_ sender: UIButton) {
         sender.pulsate()
-        print("press_statistics")
-        if (page_stat == 0)
-        {
-            page_stat = 1
-            UIView.animate(withDuration: 0.5) {
-                self.contentView.layer.position.y = 380.00
-            }
-        }
-        else
-        {
-        }
-        UIView.animate(withDuration: 0.3) {
-        self.button_challenges.layer.position.y = 644
-        self.button_events.layer.position.y = 644
-        self.button_statistics.layer.position.y = 635
-        self.button_custom.layer.position.y = 644
-        }
+//        print("press_statistics")
+//        if (page_stat == 0)
+//        {
+//            page_stat = 1
+//            UIView.animate(withDuration: 0.5) {
+//                self.contentView.layer.position.y = 380.00
+//            }
+//        }
+//        else
+//        {
+//        }
+//        UIView.animate(withDuration: 0.3) {
+//        self.button_challenges.layer.position.y = 644
+//        self.button_events.layer.position.y = 644
+//        self.button_statistics.layer.position.y = 635
+//        self.button_custom.layer.position.y = 644
+//        }
         activeViewController = viewStatistics
         
     }
     
     @IBAction func press_button_custom_program(_ sender: UIButton) {
         sender.pulsate()
-        print("press_custom_program")
-        if (page_stat == 0)
-        {
-            page_stat = 1
-            UIView.animate(withDuration: 0.5) {
-                self.contentView.layer.position.y = 380.00
-            }
-        }
-        else
-        {
-        }
-        UIView.animate(withDuration: 0.3) {
-        self.button_challenges.layer.position.y = 644
-        self.button_events.layer.position.y = 644
-        self.button_statistics.layer.position.y = 644
-        self.button_custom.layer.position.y = 635
-        }
+//        print("press_custom_program")
+//        if (page_stat == 0)
+//        {
+//            page_stat = 1
+//            UIView.animate(withDuration: 0.5) {
+//                self.contentView.layer.position.y = 380.00
+//            }
+//        }
+//        else
+//        {
+//        }
+//        UIView.animate(withDuration: 0.3) {
+//        self.button_challenges.layer.position.y = 644
+//        self.button_events.layer.position.y = 644
+//        self.button_statistics.layer.position.y = 644
+//        self.button_custom.layer.position.y = 635
+//        }
         activeViewController = viewCustomProgram
     }
     
