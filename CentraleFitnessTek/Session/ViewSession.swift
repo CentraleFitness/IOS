@@ -12,7 +12,7 @@ import CoreNFC
 
 class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     
-    @IBOutlet weak var top_contentView: UIView!
+    //@IBOutlet weak var top_contentView: UIView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var label_connection: UILabel!
     @IBOutlet weak var button_challenges: UIButton!
@@ -32,7 +32,7 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     var session: NFCNDEFReaderSession?
 
     var viewChallenges: ViewChallenges?
-    var viewDefi: ViewDefiOld?
+    var viewDefi: ViewDefi?
     var viewStatistics: ViewStatistics?
     var viewCustomProgram: ViewCustomProgram?
     var viewInstant: ViewInstant?
@@ -42,7 +42,7 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
         
         viewChallenges = ViewChallenges()
         viewChallenges?.token = self.token
-        viewDefi = ViewDefiOld()
+        viewDefi = ViewDefi()
         viewDefi?.token = self.token
         viewStatistics = ViewStatistics()
         viewStatistics?.token = self.token
@@ -53,13 +53,13 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
         NotificationCenter.default.addObserver(self, selector: #selector(bar_down), name: NSNotification.Name(rawValue: "barDown"), object: nil)
        
         
-        let active_top = viewInstant
-        addChildViewController(active_top!)
-        active_top?.view.frame = top_contentView.bounds
-        top_contentView.addSubview((active_top?.view)!)
+        //let active_top = viewInstant
+        //addChildViewController(active_top!)
+       // active_top?.view.frame = top_contentView.bounds
+       // top_contentView.addSubview((active_top?.view)!)
         
         // call before adding child view controller's view as subview
-        active_top?.didMove(toParentViewController: self)
+        //active_top?.didMove(toParentViewController: self)
         button_stat = 0
         //self.contentView.layer.cornerRadius = 25
         self.contentView.layer.position.y = 980
@@ -107,9 +107,10 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     }
     
     @IBAction func beginScanning(_ sender: Any) {
-        let vc: UIViewController = UIViewController()
+        let vcNFC: ViewNFC = ViewNFC()
         
-        vc.present(vc, animated: true, completion: nil)
+        vcNFC.token = token
+        self.present(vcNFC, animated: true, completion: nil)
 //        session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
 //        session?.alertMessage = "Hold your iPhone near the item to learn more about it."
 //        session?.begin()
@@ -192,17 +193,16 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     
     @objc func bar_down()
     {
-        print(self.top_contentView.layer.position.y)
-        if (self.top_contentView.layer.position.y == 300.00){
-            UIView.animate(withDuration: 0.5) {
-                self.top_contentView.layer.position.y = -167.0
-            }
-        }
-        else{
-        UIView.animate(withDuration: 0.5) {
-        self.top_contentView.layer.position.y = 300.00
-        }
-        }
+     //   if (self.top_contentView.layer.position.y == 300.00){
+    //        UIView.animate(withDuration: 0.5) {
+  //              self.top_contentView.layer.position.y = -167.0
+//            }
+        //}
+       // else{
+      //  UIView.animate(withDuration: 0.5) {
+//        self.top_contentView.layer.position.y = 300.00
+  //      }
+  //      }
     }
     
     @IBAction func press_button_statistics(_ sender: UIButton) {

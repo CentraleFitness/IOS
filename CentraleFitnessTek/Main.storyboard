@@ -396,9 +396,8 @@
                                 <color key="textColor" red="1" green="0.14901960780000001" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOa-al-7bk" customClass="DesignableView" customModule="CentraleFitnessTek" customModuleProvider="target">
-                                <rect key="frame" x="8" y="69" width="360" height="598"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOa-al-7bk" customClass="DesignableView" customModule="CentraleFitnessTek" customModuleProvider="target">
+                                <rect key="frame" x="7.5" y="66.5" width="360" height="600.5"/>
                                 <color key="backgroundColor" red="0.98569832369999999" green="1" blue="0.98086424279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -421,39 +420,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </containerView>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-r6-jqp" userLabel="Content View top">
-                                <rect key="frame" x="8" y="-442" width="360" height="550"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="0.98569832369999999" green="1" blue="0.98086424279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.80000000000000004"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.69241703600000004" green="0.68228410380000004" blue="0.70254996830000005" alpha="0.21422838180000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </containerView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lwl-pa-COO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top_bar" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdV-Of-Chb" userLabel="top_bar">
-                                <rect key="frame" x="-8" y="8" width="393" height="98"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_bar" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdV-Of-Chb" userLabel="top_bar">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_social" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-JI-WJX">
@@ -514,6 +487,15 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="pdV-Of-Chb" firstAttribute="leading" secondItem="jL9-Nq-ZAz" secondAttribute="leading" id="12Y-0I-omn"/>
+                            <constraint firstItem="EOa-al-7bk" firstAttribute="bottom" secondItem="9vJ-bT-tMm" secondAttribute="bottom" id="Ev1-gl-YV2"/>
+                            <constraint firstItem="EOa-al-7bk" firstAttribute="height" secondItem="jL9-Nq-ZAz" secondAttribute="height" multiplier="0.9" id="L92-ZO-ian"/>
+                            <constraint firstItem="pdV-Of-Chb" firstAttribute="width" secondItem="jL9-Nq-ZAz" secondAttribute="width" id="bvA-k6-pTa"/>
+                            <constraint firstItem="pdV-Of-Chb" firstAttribute="top" secondItem="jL9-Nq-ZAz" secondAttribute="top" id="cz0-nN-4GR"/>
+                            <constraint firstItem="EOa-al-7bk" firstAttribute="width" secondItem="jL9-Nq-ZAz" secondAttribute="width" multiplier="0.96" id="hu8-iU-k7y"/>
+                            <constraint firstItem="EOa-al-7bk" firstAttribute="centerX" secondItem="jL9-Nq-ZAz" secondAttribute="centerX" id="ptC-wI-bwu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9vJ-bT-tMm"/>
                     </view>
                     <connections>
@@ -526,7 +508,6 @@
                         <outlet property="contentView" destination="EOa-al-7bk" id="8AP-uE-HWM"/>
                         <outlet property="label_connection" destination="NIi-Z6-X6G" id="1eH-H3-vXB"/>
                         <outlet property="top_bar_view" destination="pdV-Of-Chb" id="M2V-eg-TJt"/>
-                        <outlet property="top_contentView" destination="1JD-r6-jqp" id="NCz-Pu-RyG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cX-g0-Pm4" sceneMemberID="firstResponder"/>

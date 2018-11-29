@@ -107,7 +107,6 @@ class ViewComment: UIViewController {
     
     @IBAction func postComment(_ sender: Any) {
         
-        var list_challenges: [CommentInformation] = []
         let parameters: Parameters = [
             "token": self.token,
             "post id": self.postId,

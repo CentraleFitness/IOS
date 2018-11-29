@@ -29,6 +29,12 @@
 		8A1F02EF2163A7800090A925 /* DefiCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F02ED2163A7800090A925 /* DefiCollectionCell.swift */; };
 		8A1F02F02163A7800090A925 /* DefiCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1F02EE2163A7800090A925 /* DefiCollectionCell.xib */; };
 		8A25A523216AA45A00F3624A /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A25A521216A9EDC00F3624A /* CoreData.xcdatamodeld */; };
+		8A329D0521B04D7100766F55 /* ViewNFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A329D0321B04D7100766F55 /* ViewNFC.swift */; };
+		8A329D0621B04D7100766F55 /* ViewNFC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A329D0421B04D7100766F55 /* ViewNFC.xib */; };
+		8A329D0C21B053B800766F55 /* BLGaugeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A329D0821B053B800766F55 /* BLGaugeColors.swift */; };
+		8A329D0D21B053B800766F55 /* BLGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A329D0921B053B800766F55 /* BLGaugeView.swift */; };
+		8A329D0E21B053B800766F55 /* CGPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A329D0A21B053B800766F55 /* CGPointExtension.swift */; };
+		8A329D0F21B053B800766F55 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A329D0B21B053B800766F55 /* UIColorExtension.swift */; };
 		8A34B99C21A854A3002D4C37 /* ViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B99A21A854A3002D4C37 /* ViewComment.swift */; };
 		8A34B99D21A854A3002D4C37 /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A34B99B21A854A3002D4C37 /* ViewComment.xib */; };
 		8A34B9A021A8567B002D4C37 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A34B99E21A8567B002D4C37 /* CommentCell.swift */; };
@@ -141,6 +147,12 @@
 		8A1F02ED2163A7800090A925 /* DefiCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefiCollectionCell.swift; sourceTree = "<group>"; };
 		8A1F02EE2163A7800090A925 /* DefiCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefiCollectionCell.xib; sourceTree = "<group>"; };
 		8A25A522216A9EDC00F3624A /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
+		8A329D0321B04D7100766F55 /* ViewNFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNFC.swift; sourceTree = "<group>"; };
+		8A329D0421B04D7100766F55 /* ViewNFC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewNFC.xib; sourceTree = "<group>"; };
+		8A329D0821B053B800766F55 /* BLGaugeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLGaugeColors.swift; sourceTree = "<group>"; };
+		8A329D0921B053B800766F55 /* BLGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLGaugeView.swift; sourceTree = "<group>"; };
+		8A329D0A21B053B800766F55 /* CGPointExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtension.swift; sourceTree = "<group>"; };
+		8A329D0B21B053B800766F55 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8A34B99A21A854A3002D4C37 /* ViewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComment.swift; sourceTree = "<group>"; };
 		8A34B99B21A854A3002D4C37 /* ViewComment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewComment.xib; sourceTree = "<group>"; };
 		8A34B99E21A8567B002D4C37 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
@@ -274,6 +286,17 @@
 			path = Page;
 			sourceTree = "<group>";
 		};
+		8A329D0721B053A800766F55 /* gauge */ = {
+			isa = PBXGroup;
+			children = (
+				8A329D0821B053B800766F55 /* BLGaugeColors.swift */,
+				8A329D0921B053B800766F55 /* BLGaugeView.swift */,
+				8A329D0A21B053B800766F55 /* CGPointExtension.swift */,
+				8A329D0B21B053B800766F55 /* UIColorExtension.swift */,
+			);
+			path = gauge;
+			sourceTree = "<group>";
+		};
 		8A34B99921A851D4002D4C37 /* comment */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +355,7 @@
 				8AB4E4962151662A0011B2B4 /* Instant */,
 				8AB4E4952151660B0011B2B4 /* Other */,
 				8A503802218CBE21008C7597 /* network.strings */,
+				8A329D0721B053A800766F55 /* gauge */,
 			);
 			path = CentraleFitnessTek;
 			sourceTree = "<group>";
@@ -538,6 +562,8 @@
 			children = (
 				8AE0616120B54C12004CE1D1 /* ViewSession.swift */,
 				8AE0616420B54C13004CE1D1 /* ViewSession.xib */,
+				8A329D0321B04D7100766F55 /* ViewNFC.swift */,
+				8A329D0421B04D7100766F55 /* ViewNFC.xib */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -681,6 +707,7 @@
 				8AB4E4A12152945C0011B2B4 /* ProgramStartCell.xib in Resources */,
 				8A0AB7FB20D6AEDD000A1FA0 /* ViewChallenges.xib in Resources */,
 				8A0AB7F520D6AEDD000A1FA0 /* ChallengesCell.xib in Resources */,
+				8A329D0621B04D7100766F55 /* ViewNFC.xib in Resources */,
 				8A34B9A121A8567B002D4C37 /* CommentCell.xib in Resources */,
 				8A503803218CBE21008C7597 /* network.strings in Resources */,
 				8A8F672321504800007432B9 /* SocialCell.xib in Resources */,
@@ -787,7 +814,9 @@
 				8A8F672221504800007432B9 /* SocialCell.swift in Sources */,
 				8AE061D920B54C14004CE1D1 /* VIewCustomShadow.swift in Sources */,
 				8A79CB75219D90C900B7286F /* ScrollableGraphViewDataSource.swift in Sources */,
+				8A329D0E21B053B800766F55 /* CGPointExtension.swift in Sources */,
 				8AE061BA20B54C14004CE1D1 /* ViewController.swift in Sources */,
+				8A329D0C21B053B800766F55 /* BLGaugeColors.swift in Sources */,
 				8A0AB7F620D6AEDD000A1FA0 /* ViewListChallenges.swift in Sources */,
 				8AE061EE20B54C14004CE1D1 /* ViewProfilSettings.swift in Sources */,
 				8A8F6713214EBB52007432B9 /* Program.swift in Sources */,
@@ -796,8 +825,10 @@
 				8A34B9A021A8567B002D4C37 /* CommentCell.swift in Sources */,
 				8AE0629E20B54DB5004CE1D1 /* GradientView.swift in Sources */,
 				8AE0616D20B54C14004CE1D1 /* ViewChallenge.swift in Sources */,
+				8A329D0D21B053B800766F55 /* BLGaugeView.swift in Sources */,
 				8AE061BE20B54C14004CE1D1 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
 				8AE061ED20B54C14004CE1D1 /* ViewNewPassword.swift in Sources */,
+				8A329D0521B04D7100766F55 /* ViewNFC.swift in Sources */,
 				8AE061C220B54C14004CE1D1 /* QRCodeReaderResult.swift in Sources */,
 				8AB4E49C21528F1F0011B2B4 /* ViewCustomProgramStart.swift in Sources */,
 				8AE061F020B54C14004CE1D1 /* CALayer.swift in Sources */,
@@ -822,6 +853,7 @@
 				8AB7C54821691D6D000E6B67 /* PopUpCustomProgram.swift in Sources */,
 				8A34B99C21A854A3002D4C37 /* ViewComment.swift in Sources */,
 				8A79CB79219D90C900B7286F /* GraphPointAnimation.swift in Sources */,
+				8A329D0F21B053B800766F55 /* UIColorExtension.swift in Sources */,
 				8AE0616920B54C14004CE1D1 /* ViewInstant.swift in Sources */,
 				8A79CB7D219D90C900B7286F /* DotPlot.swift in Sources */,
 				8A0AB7F420D6AEDD000A1FA0 /* Challenges.swift in Sources */,
@@ -993,11 +1025,8 @@
 				DEVELOPMENT_TEAM = HPW6QTNDP7;
 				INFOPLIST_FILE = CentraleFitnessTek/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.CentraleFitnes;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CentraleFitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CentraleFitnessTek/CentraleFitnessTek-Bridging-Header.h";
@@ -1019,11 +1048,8 @@
 				DEVELOPMENT_TEAM = HPW6QTNDP7;
 				INFOPLIST_FILE = CentraleFitnessTek/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.CentraleFitnes;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CentraleFitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CentraleFitnessTek/CentraleFitnessTek-Bridging-Header.h";
