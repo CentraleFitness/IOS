@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,9 +22,54 @@
             <rect key="frame" x="0.0" y="0.0" width="350" height="598"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="102" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JOU-q0-24M">
-                    <rect key="frame" x="0.0" y="77" width="350" height="521"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXV-H3-TMH">
+                    <rect key="frame" x="0.0" y="25" width="350" height="60"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WAk-tZ-axb" customClass="MySegmentedControl" customModule="CentraleFitnessTek" customModuleProvider="target">
+                            <rect key="frame" x="10" y="16" width="280" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="Qif-ok-Jdb"/>
+                            </constraints>
+                            <segments>
+                                <segment title="Tous les évènements"/>
+                                <segment title="Evènements inscrits"/>
+                            </segments>
+                            <color key="tintColor" red="1" green="0.34509804840000002" blue="0.53725492949999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="height">
+                                    <real key="value" value="40"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="indexChanged:" destination="-1" eventType="valueChanged" id="MQ4-I9-AQG"/>
+                            </connections>
+                        </segmentedControl>
+                        <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSM-7f-Otb">
+                            <rect key="frame" x="312" y="16" width="28" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="WAg-ly-myn"/>
+                                <constraint firstAttribute="width" constant="28" id="uAb-dI-0A2"/>
+                            </constraints>
+                            <state key="normal" title="refresh" image="refresh-button"/>
+                            <connections>
+                                <action selector="anim1:" destination="-1" eventType="touchUpInside" id="rXe-V9-dy9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="WAk-tZ-axb" firstAttribute="width" secondItem="JXV-H3-TMH" secondAttribute="width" multiplier="0.8" id="B2n-8F-iVh"/>
+                        <constraint firstItem="WAk-tZ-axb" firstAttribute="leading" secondItem="JXV-H3-TMH" secondAttribute="leading" constant="10" id="KP2-mC-uRO"/>
+                        <constraint firstAttribute="trailing" secondItem="NSM-7f-Otb" secondAttribute="trailing" constant="10" id="elT-3N-BEb"/>
+                        <constraint firstItem="WAk-tZ-axb" firstAttribute="centerY" secondItem="JXV-H3-TMH" secondAttribute="centerY" id="we5-t9-UY5"/>
+                        <constraint firstItem="NSM-7f-Otb" firstAttribute="centerY" secondItem="JXV-H3-TMH" secondAttribute="centerY" id="yuG-PB-Y3x"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="102" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JOU-q0-24M">
+                    <rect key="frame" x="0.0" y="90" width="350" height="508"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
@@ -35,36 +79,18 @@
                         <outlet property="delegate" destination="-1" id="qnj-t5-Mm8"/>
                     </connections>
                 </tableView>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WAk-tZ-axb" customClass="MySegmentedControl" customModule="CentraleFitnessTek" customModuleProvider="target">
-                    <rect key="frame" x="44" y="43" width="263" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <segments>
-                        <segment title="Tous les évènements"/>
-                        <segment title="Evènements inscrits"/>
-                    </segments>
-                    <color key="tintColor" red="1" green="0.34509804840000002" blue="0.53725492949999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="height">
-                            <real key="value" value="40"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="20"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="indexChanged:" destination="-1" eventType="valueChanged" id="MQ4-I9-AQG"/>
-                    </connections>
-                </segmentedControl>
-                <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSM-7f-Otb">
-                    <rect key="frame" x="315" y="45" width="25" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="refresh" image="refresh-button"/>
-                    <connections>
-                        <action selector="anim1:" destination="-1" eventType="touchUpInside" id="rXe-V9-dy9"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="JXV-H3-TMH" firstAttribute="leading" secondItem="85Q-AT-FxV" secondAttribute="leading" id="604-Vx-RHd"/>
+                <constraint firstItem="JXV-H3-TMH" firstAttribute="height" secondItem="chR-IX-cWf" secondAttribute="height" multiplier="0.1" id="GRS-Yl-3EQ"/>
+                <constraint firstItem="JOU-q0-24M" firstAttribute="bottom" secondItem="85Q-AT-FxV" secondAttribute="bottom" id="KC5-Wo-F5o"/>
+                <constraint firstItem="JOU-q0-24M" firstAttribute="leading" secondItem="85Q-AT-FxV" secondAttribute="leading" id="Tba-oG-7Yw"/>
+                <constraint firstItem="JOU-q0-24M" firstAttribute="trailing" secondItem="85Q-AT-FxV" secondAttribute="trailing" id="Umn-wI-LwI"/>
+                <constraint firstItem="JOU-q0-24M" firstAttribute="top" secondItem="JXV-H3-TMH" secondAttribute="bottom" constant="5" id="a6V-Qy-dzU"/>
+                <constraint firstItem="85Q-AT-FxV" firstAttribute="trailing" secondItem="JXV-H3-TMH" secondAttribute="trailing" id="nba-d6-lXy"/>
+                <constraint firstItem="JXV-H3-TMH" firstAttribute="top" secondItem="85Q-AT-FxV" secondAttribute="top" constant="5" id="yMs-cm-u5G"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="85Q-AT-FxV"/>
             <userDefinedRuntimeAttributes>
@@ -72,10 +98,10 @@
                     <real key="value" value="20"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
-            <point key="canvasLocation" x="72" y="53"/>
+            <point key="canvasLocation" x="72" y="52.173913043478265"/>
         </view>
     </objects>
     <resources>
-        <image name="refresh-button" width="256" height="256"/>
+        <image name="refresh-button" width="204.80000305175781" height="204.80000305175781"/>
     </resources>
 </document>

@@ -23,16 +23,16 @@ class ProgramStartCell: UITableViewCell {
     
     var stat: String = ""  {
         didSet{
+                labelStat.text = stat
                 if (stat == "Fini"){
-                labelStat.textColor = UIColor(ciColor: .green)
+                labelStat.textColor = .green
                 }
                 else if (stat == "Plus tard") {
-                labelStat.textColor = UIColor(ciColor: .red)
+                labelStat.textColor = .red
                 }
                 else{
-                labelStat.textColor = UIColor(ciColor: .gray)
+                labelStat.textColor = .gray
             }
-        labelStat.text = stat
         }
     }
     override func awakeFromNib() {

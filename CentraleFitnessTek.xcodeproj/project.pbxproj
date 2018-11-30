@@ -21,6 +21,12 @@
 		8A0AB80020D6AEDD000A1FA0 /* ChallengesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0AB7F220D6AEDD000A1FA0 /* ChallengesCell.swift */; };
 		8A110396218B5E6B00AAD784 /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A110394218B5E6B00AAD784 /* SessionCell.swift */; };
 		8A110397218B5E6B00AAD784 /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A110395218B5E6B00AAD784 /* SessionCell.xib */; };
+		8A11444E21B16A280025A504 /* ViewConnectionNFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11444C21B16A280025A504 /* ViewConnectionNFC.swift */; };
+		8A11444F21B16A280025A504 /* ViewConnectionNFC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A11444D21B16A280025A504 /* ViewConnectionNFC.xib */; };
+		8A11445221B18BC50025A504 /* ViewStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11445021B18BC50025A504 /* ViewStat.swift */; };
+		8A11445321B18BC50025A504 /* ViewStat.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A11445121B18BC50025A504 /* ViewStat.xib */; };
+		8A11445621B18FDC0025A504 /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11445421B18FDC0025A504 /* StatCell.swift */; };
+		8A11445721B18FDC0025A504 /* StatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A11445521B18FDC0025A504 /* StatCell.xib */; };
 		8A1908A221AFF72E00AB4FBB /* CommentCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1908A021AFF72E00AB4FBB /* CommentCell2.swift */; };
 		8A1908A321AFF72E00AB4FBB /* CommentCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1908A121AFF72E00AB4FBB /* CommentCell2.xib */; };
 		8A1908A821B0270200AB4FBB /* ViewDefi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1908A621B0270200AB4FBB /* ViewDefi.swift */; };
@@ -139,6 +145,12 @@
 		8A0AB7F220D6AEDD000A1FA0 /* ChallengesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesCell.swift; sourceTree = "<group>"; };
 		8A110394218B5E6B00AAD784 /* SessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
 		8A110395218B5E6B00AAD784 /* SessionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
+		8A11444C21B16A280025A504 /* ViewConnectionNFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConnectionNFC.swift; sourceTree = "<group>"; };
+		8A11444D21B16A280025A504 /* ViewConnectionNFC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewConnectionNFC.xib; sourceTree = "<group>"; };
+		8A11445021B18BC50025A504 /* ViewStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStat.swift; sourceTree = "<group>"; };
+		8A11445121B18BC50025A504 /* ViewStat.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewStat.xib; sourceTree = "<group>"; };
+		8A11445421B18FDC0025A504 /* StatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCell.swift; sourceTree = "<group>"; };
+		8A11445521B18FDC0025A504 /* StatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatCell.xib; sourceTree = "<group>"; };
 		8A1908A021AFF72E00AB4FBB /* CommentCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell2.swift; sourceTree = "<group>"; };
 		8A1908A121AFF72E00AB4FBB /* CommentCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell2.xib; sourceTree = "<group>"; };
 		8A1908A621B0270200AB4FBB /* ViewDefi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDefi.swift; sourceTree = "<group>"; };
@@ -277,6 +289,7 @@
 		8A0AB7E320D6AE08000A1FA0 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				8A11444B21B14F410025A504 /* NFC */,
 				8A8F6716214EF9F5007432B9 /* Defi */,
 				8A8F6711214EAEC5007432B9 /* Track */,
 				8A8F670B214D59AA007432B9 /* Events */,
@@ -284,6 +297,15 @@
 				8A8F670C214D5A0B007432B9 /* Statistics */,
 			);
 			path = Page;
+			sourceTree = "<group>";
+		};
+		8A11444B21B14F410025A504 /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				8A11444C21B16A280025A504 /* ViewConnectionNFC.swift */,
+				8A11444D21B16A280025A504 /* ViewConnectionNFC.xib */,
+			);
+			path = NFC;
 			sourceTree = "<group>";
 		};
 		8A329D0721B053A800766F55 /* gauge */ = {
@@ -475,6 +497,10 @@
 			children = (
 				8A0AB7F020D6AEDD000A1FA0 /* ViewStatistics.swift */,
 				8A0AB7E520D6AEDB000A1FA0 /* ViewStatistics.xib */,
+				8A11445421B18FDC0025A504 /* StatCell.swift */,
+				8A11445521B18FDC0025A504 /* StatCell.xib */,
+				8A11445021B18BC50025A504 /* ViewStat.swift */,
+				8A11445121B18BC50025A504 /* ViewStat.xib */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -705,9 +731,11 @@
 				8AE061F320B54C14004CE1D1 /* LaunchScreen.storyboard in Resources */,
 				8A34B99D21A854A3002D4C37 /* ViewComment.xib in Resources */,
 				8AB4E4A12152945C0011B2B4 /* ProgramStartCell.xib in Resources */,
+				8A11445321B18BC50025A504 /* ViewStat.xib in Resources */,
 				8A0AB7FB20D6AEDD000A1FA0 /* ViewChallenges.xib in Resources */,
 				8A0AB7F520D6AEDD000A1FA0 /* ChallengesCell.xib in Resources */,
 				8A329D0621B04D7100766F55 /* ViewNFC.xib in Resources */,
+				8A11444F21B16A280025A504 /* ViewConnectionNFC.xib in Resources */,
 				8A34B9A121A8567B002D4C37 /* CommentCell.xib in Resources */,
 				8A503803218CBE21008C7597 /* network.strings in Resources */,
 				8A8F672321504800007432B9 /* SocialCell.xib in Resources */,
@@ -724,6 +752,7 @@
 				8AE061F220B54C14004CE1D1 /* ViewSession.xib in Resources */,
 				8A110397218B5E6B00AAD784 /* SessionCell.xib in Resources */,
 				8AE061DE20B54C14004CE1D1 /* Main.storyboard in Resources */,
+				8A11445721B18FDC0025A504 /* StatCell.xib in Resources */,
 				8A1908AB21B02F7500AB4FBB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -832,6 +861,7 @@
 				8AE061C220B54C14004CE1D1 /* QRCodeReaderResult.swift in Sources */,
 				8AB4E49C21528F1F0011B2B4 /* ViewCustomProgramStart.swift in Sources */,
 				8AE061F020B54C14004CE1D1 /* CALayer.swift in Sources */,
+				8A11445221B18BC50025A504 /* ViewStat.swift in Sources */,
 				8A34B9A521A87091002D4C37 /* CommentInfo.swift in Sources */,
 				8AE0616E20B54C14004CE1D1 /* ViewTest.swift in Sources */,
 				8AE061F420B54C14004CE1D1 /* buttonAnimationExtension.swift in Sources */,
@@ -860,6 +890,7 @@
 				8AE062A120B57EC2004CE1D1 /* network_call.swift in Sources */,
 				8A79CB7A219D90C900B7286F /* GraphPoint.swift in Sources */,
 				8A79CB72219D90C900B7286F /* FillDrawingLayer.swift in Sources */,
+				8A11445621B18FDC0025A504 /* StatCell.swift in Sources */,
 				8A0AB7F820D6AEDD000A1FA0 /* ViewChallenges.swift in Sources */,
 				8AE061BD20B54C14004CE1D1 /* QRCodeReader.swift in Sources */,
 				8A79CB6D219D90C900B7286F /* BarDrawingLayer.swift in Sources */,
@@ -882,6 +913,7 @@
 				8AD435C62172A11300FA8760 /* convertToTime.swift in Sources */,
 				8AE061C420B54C14004CE1D1 /* QRCodeReaderViewController.swift in Sources */,
 				8A8F672521504C51007432B9 /* Information.swift in Sources */,
+				8A11444E21B16A280025A504 /* ViewConnectionNFC.swift in Sources */,
 				8A79CB7C219D90C900B7286F /* LinePlot.swift in Sources */,
 				8A79CB70219D90C900B7286F /* ScrollableGraphViewDrawingLayer.swift in Sources */,
 				8AE061EF20B54C14004CE1D1 /* ViewSession.swift in Sources */,

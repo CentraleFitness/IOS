@@ -42,8 +42,6 @@ class ViewSocial: UIViewController {
             .responseJSON { response in
                 if let json = response.result.value as? [String: Any] {
                     self.sportcenterid = json["sport center id"] as! String
-                        print("sport center id")
-                    print(self.sportcenterid)
                     self.list = self.createArray()
                 }
                 else
@@ -70,8 +68,6 @@ class ViewSocial: UIViewController {
                 if let json = response.result.value as? [String: Any] {
                     let error = json["error"] as? String
                     let code = json["code"] as? String
-                    print(error!)
-                    print(code!)
                     if (error == "false")
                     {
                         
@@ -79,8 +75,6 @@ class ViewSocial: UIViewController {
                         self.list_events.removeAll()
                         self.list_events += Info.getEventArray(dict: json2!)
                         self.fill_event()
-                        print()
-
                     }
                 }
                 else
@@ -98,7 +92,8 @@ class ViewSocial: UIViewController {
         while(idx < list_events.count)
         {
             getEventPreview(id: idx, event: list_events[idx]) { (event, idx) in
-                self.list_events[idx] = event
+                self.list_events[idx].description = event.description
+                self.tableView.reloadData()
             }
             idx = idx + 1
         }
@@ -152,7 +147,6 @@ extension  ViewSocial: UITableViewDataSource, UITableViewDelegate {
         let vc: ViewComment = ViewComment(token: token, postId: list_events[indexPath.item].infoId!)
         
         self.present(vc, animated: true, completion: nil)
-        print(indexPath.row)
     }
     
     // Make the background color show through

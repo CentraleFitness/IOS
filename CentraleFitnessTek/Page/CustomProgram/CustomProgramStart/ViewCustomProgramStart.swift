@@ -18,14 +18,14 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
     
     var indexSteps: Int = 0
     var seconds = 0
-    var timer = Timer()
+    var timer: Timer
     var isTimerRunning = false
     var resumeTapped = false
     
     var steps: [SessionCellMediaModel]
     
     init(steps: [SessionCellMediaModel]){
-        
+        self.timer = Timer()
         self.steps = steps
         super.init(nibName: "ViewCustomProgramStart", bundle: nil)
     }
@@ -38,9 +38,10 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        pauseButton.isHidden = true
         pickStepsTime()
-        tableview.dataSource = self
-        tableview.dataSource = self
+        //tableview.dataSource = self
+//        /tableview.delegate = self
         tableview.register(UINib(nibName: "ProgramStartCell", bundle: nil), forCellReuseIdentifier: "ProgramStartCell")
         
         // Do any additional setup after loading the view.
@@ -102,6 +103,8 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
     */
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
+        startButton.isHidden = true
+        pauseButton.isHidden = false
         if (indexSteps == 0){
             steps[0].stat = "En cours"
         }
@@ -122,7 +125,7 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
             timer.invalidate()
             isTimerRunning = false
             self.resumeTapped = true
-            self.pauseButton.setTitle("Resume",for: .normal)
+           self.pauseButton.setTitle("Resume",for: .normal)
         } else {
             runTimer()
             self.resumeTapped = false
@@ -133,18 +136,17 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
-//        timer.invalidate()
-//        seconds = 60
-//        labelTime.text = timeString(time: TimeInterval(seconds))
-//        isTimerRunning = false
-//        pauseButton.isEnabled = false
-//        startButton.isEnabled = true
     }
     
     
     @objc func updateTimer() {
+        let alertPopUp = UIAlertController(title: "Felicitation !", message:
+            "Vous avez finit votre session", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertPopUp.addAction(UIAlertAction(title: "Terminer", style: UIAlertActionStyle.default,handler: nil))
         if seconds < 1 {
             timer.invalidate()
+            self.present(alertPopUp, animated: true, completion: nil)
             //Send alert to indicate time's up.
         } else {
             changeTableCell()
@@ -160,7 +162,7 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
         steps[indexSteps].duration = steps[indexSteps].duration - 1
         }
         else{
-            steps[indexSteps].stat = "Finish"
+            steps[indexSteps].stat = "Fini"
             if (indexSteps != steps.count){
                 indexSteps = indexSteps + 1
             }

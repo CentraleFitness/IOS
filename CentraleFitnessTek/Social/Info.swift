@@ -43,6 +43,7 @@ class Info{
     
     static func start_init_2(info: Info, Dict: Dictionary<String, Any>) -> Info{
         info.description = Dict["post content"] as? String
+        print(info.description)
         //info.picture = Dict["] as? String
         return info
     }

@@ -21,15 +21,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXz-ep-RWJ" customClass="BLGaugeView" customModule="CentraleFitnessTek" customModuleProvider="target">
-                    <rect key="frame" x="67" y="134" width="240" height="240"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXz-ep-RWJ" customClass="BLGaugeView" customModule="CentraleFitnessTek" customModuleProvider="target">
+                    <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="3Lx-99-Gah"/>
+                        <constraint firstAttribute="height" constant="240" id="xiy-GQ-bkf"/>
+                    </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVF-qY-JQK">
-                    <rect key="frame" x="110" y="448" width="155" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVF-qY-JQK">
+                    <rect key="frame" x="110" y="517" width="155" height="50"/>
                     <color key="backgroundColor" red="1" green="0.34509804840000002" blue="0.53725492949999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="155" id="Aty-zI-5LW"/>
+                        <constraint firstAttribute="height" constant="50" id="SlE-JX-bhr"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="31"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Fini"/>
@@ -44,6 +50,12 @@
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eVF-qY-JQK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0ZZ-hV-sCd"/>
+                <constraint firstItem="zXz-ep-RWJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IDh-58-Zbt"/>
+                <constraint firstItem="zXz-ep-RWJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="k6b-kg-a0W"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eVF-qY-JQK" secondAttribute="bottom" constant="100" id="zfv-Pt-6YF"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="154.27286356821591"/>
         </view>

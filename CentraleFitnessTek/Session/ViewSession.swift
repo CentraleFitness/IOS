@@ -24,6 +24,12 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     @IBOutlet weak var top_bar_2: UIButton!
     @IBOutlet weak var button_NFC: UIButton!
     
+    var test:Int = 0
+    var posY1: CGFloat = 0.0
+    var posY2: CGFloat = 0.0
+    var posY3: CGFloat = 0.0
+    var posY4: CGFloat = 0.0
+    var contentHeightStart: CGFloat = 0.0
     var page_stat: boolean_t!
     var button_stat: Int!
     var token: String = ""
@@ -31,21 +37,24 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     var detectedMessages = [NFCNDEFMessage]()
     var session: NFCNDEFReaderSession?
 
+    var viewConnectionNFC: ViewConnectionNFC?
     var viewChallenges: ViewChallenges?
     var viewDefi: ViewDefi?
-    var viewStatistics: ViewStatistics?
+    var viewStat: ViewStat?
     var viewCustomProgram: ViewCustomProgram?
     var viewInstant: ViewInstant?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        print(contentHeightStart)
         viewChallenges = ViewChallenges()
         viewChallenges?.token = self.token
+        viewConnectionNFC = ViewConnectionNFC()
+        viewConnectionNFC?.token = self.token
         viewDefi = ViewDefi()
         viewDefi?.token = self.token
-        viewStatistics = ViewStatistics()
-        viewStatistics?.token = self.token
+        viewStat = ViewStat()
+        viewStat?.token = self.token
         viewCustomProgram = ViewCustomProgram()
         viewCustomProgram?.token = self.token
         viewInstant = ViewInstant()
@@ -53,6 +62,8 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
         NotificationCenter.default.addObserver(self, selector: #selector(bar_down), name: NSNotification.Name(rawValue: "barDown"), object: nil)
        
         
+        activeViewController = viewConnectionNFC
+        //self.contentView.layer.position.y = self.contentView.layer.position.y + self.contentView.bounds.height
         //let active_top = viewInstant
         //addChildViewController(active_top!)
        // active_top?.view.frame = top_contentView.bounds
@@ -62,10 +73,26 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
         //active_top?.didMove(toParentViewController: self)
         button_stat = 0
         //self.contentView.layer.cornerRadius = 25
-        self.contentView.layer.position.y = 980
+        //self.contentView.layer.position.y = 980
         page_stat = 0
         //self.ActionOnSideMenuButtons(btn)
         // Do any additional setup after loading the view, typically from a nib.
+//        UIView.animate(withDuration: 1) {
+//            self.contentView.layer.position.y = self.contentView.layer.position.y + self.contentHeightStart
+//        }
+    }
+    
+    override func viewWillLayoutSubviews() {
+
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if (posY1 == 0.0){
+        posY1 = button_events.layer.position.y
+        posY2 = button_challenges.layer.position.y
+        posY3 = button_statistics.layer.position.y
+        posY4 = button_custom.layer.position.y
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -106,15 +133,15 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
         self.session = nil
     }
     
-    @IBAction func beginScanning(_ sender: Any) {
-        let vcNFC: ViewNFC = ViewNFC()
-        
-        vcNFC.token = token
-        self.present(vcNFC, animated: true, completion: nil)
-//        session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
-//        session?.alertMessage = "Hold your iPhone near the item to learn more about it."
-//        session?.begin()
-    }
+//    @IBAction func beginScanning(_ sender: Any) {
+//        let vcNFC: ViewNFC = ViewNFC()
+//
+//        vcNFC.token = token
+//        self.present(vcNFC, animated: true, completion: nil)
+////        session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
+////        session?.alertMessage = "Hold your iPhone near the item to learn more about it."
+////        session?.begin()
+//    }
     
     @IBAction func pulseButtonNFC(_ sender: UIButton) {
       //  sender.pulsate2()
@@ -126,69 +153,38 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     
     @IBAction func press_button_center(_ sender: UIButton) {
         sender.pulsate()
-        print("press_button_center")
-        if (page_stat == 1)
-        {
-            page_stat = 0
-            UIView.animate(withDuration: 1) {
-                self.contentView.layer.position.y = 980.00
-            }
-        }
-        else if (page_stat == 0)
-        {
-            page_stat = 1
-            UIView.animate(withDuration: 1) {
-                self.contentView.layer.position.y = 380.00
-            }
+        activeViewController = viewConnectionNFC
+        UIView.animate(withDuration: 0.2) {
+            self.button_challenges.layer.position.y = self.posY1
+            self.button_events.layer.position.y = self.posY2
+            self.button_statistics.layer.position.y = self.posY3
+            self.button_custom.layer.position.y = self.posY4
         }
     }
     
     @IBAction func press_button_challenge(_ sender: UIButton) {
         sender.pulsate()
-//        print("press_button_challenge")
-//        if (page_stat == 0)
-//        {
-//            print("stat = 0")
-//            page_stat = 1
-//            UIView.animate(withDuration: 0.5) {
-//
-//                self.contentView.layer.position.y = 380.00
-//            }
-//        }
-//        else
-//        {
-//            print("stat = 1")
-//        }
-//        UIView.animate(withDuration: 0.3) {
-//        self.button_challenges.layer.position.y = 635
-//        self.button_events.layer.position.y = 644
-//        self.button_statistics.layer.position.y = 644
-//        self.button_custom.layer.position.y = 644
-//        }
+        print("press_button_challenge")
         activeViewController = viewChallenges
-        
+        UIView.animate(withDuration: 0.2) {
+            self.button_challenges.layer.position.y = self.posY1 - 10
+            self.button_events.layer.position.y = self.posY2
+            self.button_statistics.layer.position.y = self.posY3
+            self.button_custom.layer.position.y = self.posY4
+        }
     }
     
     @IBAction func press_button_events(_ sender: UIButton) {
         sender.pulsate()
-//        print("press_events")
-//        if (page_stat == 0)
-//        {
-//            page_stat = 1
-//            UIView.animate(withDuration: 0.5) {
-//                self.contentView.layer.position.y = 380.00
-//            }
-//        }
-//        else
-//        {
-//        }
-//        UIView.animate(withDuration: 0.3) {
-//        self.button_challenges.layer.position.y = 644
-//        self.button_events.layer.position.y = 635
-//        self.button_statistics.layer.position.y = 644
-//        self.button_custom.layer.position.y = 644
-//        }
+        print("press_events")
         activeViewController = viewDefi
+        UIView.animate(withDuration: 0.2) {
+            self.button_challenges.layer.position.y = self.posY1
+            self.button_events.layer.position.y = self.posY2 - 10
+            self.button_statistics.layer.position.y = self.posY3
+            self.button_custom.layer.position.y = self.posY4
+        }
+
     }
     
     @objc func bar_down()
@@ -207,47 +203,26 @@ class ViewSession: UIViewController, NFCNDEFReaderSessionDelegate{
     
     @IBAction func press_button_statistics(_ sender: UIButton) {
         sender.pulsate()
-//        print("press_statistics")
-//        if (page_stat == 0)
-//        {
-//            page_stat = 1
-//            UIView.animate(withDuration: 0.5) {
-//                self.contentView.layer.position.y = 380.00
-//            }
-//        }
-//        else
-//        {
-//        }
-//        UIView.animate(withDuration: 0.3) {
-//        self.button_challenges.layer.position.y = 644
-//        self.button_events.layer.position.y = 644
-//        self.button_statistics.layer.position.y = 635
-//        self.button_custom.layer.position.y = 644
-//        }
-        activeViewController = viewStatistics
-        
+        print("press_statistics")
+        activeViewController = viewStat
+        UIView.animate(withDuration: 0.2) {
+            self.button_challenges.layer.position.y = self.posY1
+            self.button_events.layer.position.y = self.posY2
+            self.button_statistics.layer.position.y = self.posY3 - 10
+            self.button_custom.layer.position.y = self.posY4
+        }
     }
     
     @IBAction func press_button_custom_program(_ sender: UIButton) {
         sender.pulsate()
-//        print("press_custom_program")
-//        if (page_stat == 0)
-//        {
-//            page_stat = 1
-//            UIView.animate(withDuration: 0.5) {
-//                self.contentView.layer.position.y = 380.00
-//            }
-//        }
-//        else
-//        {
-//        }
-//        UIView.animate(withDuration: 0.3) {
-//        self.button_challenges.layer.position.y = 644
-//        self.button_events.layer.position.y = 644
-//        self.button_statistics.layer.position.y = 644
-//        self.button_custom.layer.position.y = 635
-//        }
+        print("press_custom_program")
         activeViewController = viewCustomProgram
+        UIView.animate(withDuration: 0.2) {
+            self.button_challenges.layer.position.y = self.posY1
+            self.button_events.layer.position.y = self.posY2
+            self.button_statistics.layer.position.y = self.posY3
+            self.button_custom.layer.position.y = self.posY4 - 10
+        }
     }
     
     private var activeViewController: UIViewController? {

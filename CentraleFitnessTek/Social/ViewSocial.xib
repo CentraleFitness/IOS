@@ -52,22 +52,34 @@
                     <rect key="frame" x="0.0" y="-5" width="375" height="115"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_bar" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V0r-ia-OBf">
-                            <rect key="frame" x="0.0" y="20" width="375" height="95"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_social" translatesAutoresizingMaskIntoConstraints="NO" id="Urx-78-1TE">
-                            <rect key="frame" x="158.5" y="44" width="58" height="47"/>
+                            <rect key="frame" x="158.5" y="29" width="58" height="47"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="47" id="LY2-yb-gc5"/>
+                                <constraint firstAttribute="width" constant="58" id="r2F-gJ-AYd"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_session" translatesAutoresizingMaskIntoConstraints="NO" id="Xw2-fE-jig">
+                            <rect key="frame" x="20" y="26" width="15" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="27" id="2ef-gk-gle"/>
+                                <constraint firstAttribute="width" constant="15" id="Pd1-vR-102"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="Urx-78-1TE" firstAttribute="centerY" secondItem="x9g-ON-dDE" secondAttribute="centerY" id="3uZ-KJ-sei"/>
-                        <constraint firstItem="Urx-78-1TE" firstAttribute="centerX" secondItem="x9g-ON-dDE" secondAttribute="centerX" id="D74-km-Rr2"/>
+                        <constraint firstItem="Xw2-fE-jig" firstAttribute="top" secondItem="x9g-ON-dDE" secondAttribute="top" constant="6" id="GHx-1Q-Wew"/>
+                        <constraint firstItem="Urx-78-1TE" firstAttribute="centerX" secondItem="V0r-ia-OBf" secondAttribute="centerX" id="LMG-kt-xtI"/>
                         <constraint firstItem="V0r-ia-OBf" firstAttribute="leading" secondItem="z2K-bu-3C3" secondAttribute="leading" id="Ofn-sR-kge"/>
                         <constraint firstAttribute="width" constant="375" id="W84-t3-Qgh"/>
                         <constraint firstAttribute="trailing" secondItem="V0r-ia-OBf" secondAttribute="trailing" id="bq6-BH-Osg"/>
+                        <constraint firstItem="Urx-78-1TE" firstAttribute="centerY" secondItem="V0r-ia-OBf" secondAttribute="centerY" id="ftw-Pl-eHa"/>
+                        <constraint firstItem="V0r-ia-OBf" firstAttribute="top" secondItem="z2K-bu-3C3" secondAttribute="top" id="l0Y-EG-KJP"/>
+                        <constraint firstItem="Xw2-fE-jig" firstAttribute="leading" secondItem="x9g-ON-dDE" secondAttribute="leading" constant="20" id="lE0-hW-kLE"/>
                         <constraint firstAttribute="height" constant="115" id="nhT-pv-2bH"/>
-                        <constraint firstItem="V0r-ia-OBf" firstAttribute="top" secondItem="x9g-ON-dDE" secondAttribute="top" id="st1-va-3QB"/>
-                        <constraint firstAttribute="bottom" secondItem="V0r-ia-OBf" secondAttribute="bottom" id="tjL-fZ-yQD"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="x9g-ON-dDE"/>
                 </view>
@@ -98,6 +110,7 @@
     <resources>
         <image name="SocialPage" width="376" height="646"/>
         <image name="SocialRefresh" width="76" height="76"/>
+        <image name="icon_session" width="16" height="28"/>
         <image name="logo_social" width="58" height="47"/>
         <image name="top_bar" width="388" height="105"/>
     </resources>
