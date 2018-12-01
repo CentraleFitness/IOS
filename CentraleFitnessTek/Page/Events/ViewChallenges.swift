@@ -80,7 +80,7 @@ class ViewChallenges: UIViewController {
             }
             idx = idx + 1
         }
-        //self.tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     func getEventPreview(id: Int, event: Event, isSuccess: @escaping(_ event: Event,_ id: Int)-> Void){

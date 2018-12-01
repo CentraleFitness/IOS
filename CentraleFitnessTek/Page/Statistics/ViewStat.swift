@@ -34,7 +34,7 @@ struct sportAllData {
 //    }
 //}
 
-class ViewStat: UIViewController {
+class ViewStat: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -46,9 +46,57 @@ class ViewStat: UIViewController {
         super.viewDidLoad()
 
         getSportSessionId()
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "StatCell", bundle: nil), forCellReuseIdentifier: "StatCell")
         // Do any additional setup after loading the view.
+    }
+    
+    func fill_event()
+    {
+        var idx = 0
+
+        while(idx < statCellModels.count)
+        {
+            getEventPreview(id: idx, event: statCellModels[idx]) { (event, idx) in
+                self.statCellModels[idx] = event
+                self.tableView.reloadData()
+            }
+            idx = idx + 1
+        }
+    }
+    
+    func initModel(event: StatCellModel, json:[String: Any]) -> StatCellModel{
+        event.date = json["date"] as? Int
+        event.duration = json["duration"] as? Int
+        event.type = json["type"] as? String
+        
+        return event
+    }
+
+    func getEventPreview(id: Int, event: StatCellModel, isSuccess: @escaping(_ event: StatCellModel,_ id: Int)-> Void){
+
+        let parameters: Parameters = [
+            "token": self.token,
+            "session id": self.sportSessionId[id]
+        ]
+
+        Alamofire.request("\(network.ipAdress.rawValue)/get/sportsession", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    
+                    isSuccess(self.initModel(event: event, json: json), id)
+                    let error = json["error"] as? String
+                    if error == "false"{
+                       event.date = json["date"] as? Int
+                        event.duration = json["duration"] as? Int
+                        event.type = json["type"] as? String
+                    }
+                    else{
+                        print(json["code"] as? String)
+                    }
+                }
+        }
     }
     
     func getSportSessionId(){
@@ -73,8 +121,10 @@ class ViewStat: UIViewController {
                         self.sportSessionId.append(test[0])
                         self.statCellModels.append(StatCellModel())
                     }
-                    self.PickAllData()
-                    self.askMoreData()
+                    print(self.sportSessionId)
+                    self.fill_event()
+                   // self.PickAllData()
+                   // self.askMoreData()
                 }
                 else{
                     print("Bad")
@@ -124,6 +174,20 @@ class ViewStat: UIViewController {
             }
             index = index + 1
         }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sportSessionId.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StatCell", for: indexPath) as! StatCell
+        
+        cell.date = statCellModels[indexPath.item].date
+        cell.type = statCellModels[indexPath.item].type
+        cell.duration = statCellModels[indexPath.item].duration
+        
+        return cell
     }
     /*
     // MARK: - Navigation

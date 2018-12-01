@@ -198,9 +198,15 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             print("On est là !!!!!!!!!")
             // !!! Separation part is optional, depends on your Base64String !!!
             let temp = base64String?.components(separatedBy: ",")
-            let dataDecoded : Data = Data(base64Encoded: temp![1], options: .ignoreUnknownCharacters)!
-            let decodedimage = UIImage(data: dataDecoded)
-            return decodedimage!
+            let dataDecoded : Data? = Data(base64Encoded: temp![1], options: .ignoreUnknownCharacters)
+            if (dataDecoded != nil){
+                let decodedimage = UIImage(data: dataDecoded!)
+                return decodedimage!
+            }
+            else{
+                let decodedimage = UIImage(named: "icone_user_profil")
+                return decodedimage!
+            }
         }
     }
 }
