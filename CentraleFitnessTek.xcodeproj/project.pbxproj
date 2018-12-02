@@ -31,7 +31,6 @@
 		8A1908A321AFF72E00AB4FBB /* CommentCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1908A121AFF72E00AB4FBB /* CommentCell2.xib */; };
 		8A1908A821B0270200AB4FBB /* ViewDefi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1908A621B0270200AB4FBB /* ViewDefi.swift */; };
 		8A1908A921B0270200AB4FBB /* ViewDefi.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1908A721B0270200AB4FBB /* ViewDefi.xib */; };
-		8A1908AB21B02F7500AB4FBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1908AA21B02F7200AB4FBB /* Assets.xcassets */; };
 		8A1F02EF2163A7800090A925 /* DefiCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F02ED2163A7800090A925 /* DefiCollectionCell.swift */; };
 		8A1F02F02163A7800090A925 /* DefiCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1F02EE2163A7800090A925 /* DefiCollectionCell.xib */; };
 		8A25A523216AA45A00F3624A /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A25A521216A9EDC00F3624A /* CoreData.xcdatamodeld */; };
@@ -53,6 +52,7 @@
 		8A545A2F21B344EB00BEA195 /* PopUpStat.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A545A2D21B344EB00BEA195 /* PopUpStat.xib */; };
 		8A545A3221B4318E00BEA195 /* LittleSocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A545A3021B4318E00BEA195 /* LittleSocialCell.swift */; };
 		8A545A3321B4318E00BEA195 /* LittleSocialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A545A3121B4318E00BEA195 /* LittleSocialCell.xib */; };
+		8A545A3521B4955100BEA195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A545A3421B4954D00BEA195 /* Assets.xcassets */; };
 		8A79CB6C219D90C900B7286F /* ReferenceLineDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB56219D90C900B7286F /* ReferenceLineDrawingView.swift */; };
 		8A79CB6D219D90C900B7286F /* BarDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB57219D90C900B7286F /* BarDrawingLayer.swift */; };
 		8A79CB6E219D90C900B7286F /* GradientDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB58219D90C900B7286F /* GradientDrawingLayer.swift */; };
@@ -159,7 +159,6 @@
 		8A1908A121AFF72E00AB4FBB /* CommentCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell2.xib; sourceTree = "<group>"; };
 		8A1908A621B0270200AB4FBB /* ViewDefi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDefi.swift; sourceTree = "<group>"; };
 		8A1908A721B0270200AB4FBB /* ViewDefi.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewDefi.xib; sourceTree = "<group>"; };
-		8A1908AA21B02F7200AB4FBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A1F02ED2163A7800090A925 /* DefiCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefiCollectionCell.swift; sourceTree = "<group>"; };
 		8A1F02EE2163A7800090A925 /* DefiCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefiCollectionCell.xib; sourceTree = "<group>"; };
 		8A25A522216A9EDC00F3624A /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
@@ -183,6 +182,7 @@
 		8A545A2D21B344EB00BEA195 /* PopUpStat.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpStat.xib; sourceTree = "<group>"; };
 		8A545A3021B4318E00BEA195 /* LittleSocialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleSocialCell.swift; sourceTree = "<group>"; };
 		8A545A3121B4318E00BEA195 /* LittleSocialCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LittleSocialCell.xib; sourceTree = "<group>"; };
+		8A545A3421B4954D00BEA195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A6E3E81218B15FD009C7A2F /* CentraleFitnessTek.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CentraleFitnessTek.entitlements; sourceTree = "<group>"; };
 		8A79CB56219D90C900B7286F /* ReferenceLineDrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceLineDrawingView.swift; sourceTree = "<group>"; };
 		8A79CB57219D90C900B7286F /* BarDrawingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarDrawingLayer.swift; sourceTree = "<group>"; };
@@ -373,7 +373,7 @@
 				8AE0612720B54C0F004CE1D1 /* Sources */,
 				8AE062A320B58FC9004CE1D1 /* QR_file */,
 				8A45A61420B5453B00B94C5E /* Info.plist */,
-				8A1908AA21B02F7200AB4FBB /* Assets.xcassets */,
+				8A545A3421B4954D00BEA195 /* Assets.xcassets */,
 				8AE0614F20B54C12004CE1D1 /* Main.storyboard */,
 				8AE0616520B54C13004CE1D1 /* LaunchScreen.storyboard */,
 				8AE0612320B54C0E004CE1D1 /* AppDelegate.swift */,
@@ -747,6 +747,7 @@
 				8A11445321B18BC50025A504 /* ViewStat.xib in Resources */,
 				8A0AB7FB20D6AEDD000A1FA0 /* ViewChallenges.xib in Resources */,
 				8A0AB7F520D6AEDD000A1FA0 /* ChallengesCell.xib in Resources */,
+				8A545A3521B4955100BEA195 /* Assets.xcassets in Resources */,
 				8A329D0621B04D7100766F55 /* ViewNFC.xib in Resources */,
 				8A11444F21B16A280025A504 /* ViewConnectionNFC.xib in Resources */,
 				8A34B9A121A8567B002D4C37 /* CommentCell.xib in Resources */,
@@ -767,7 +768,6 @@
 				8A110397218B5E6B00AAD784 /* SessionCell.xib in Resources */,
 				8AE061DE20B54C14004CE1D1 /* Main.storyboard in Resources */,
 				8A11445721B18FDC0025A504 /* StatCell.xib in Resources */,
-				8A1908AB21B02F7500AB4FBB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
