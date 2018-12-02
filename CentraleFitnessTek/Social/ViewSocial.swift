@@ -10,12 +10,21 @@ import Alamofire
 import Foundation
 import UIKit
 
-class ViewSocial: UIViewController {
+protocol ViewSocialDelegate: NSObjectProtocol {
+    func sendLike(postId: String)
+}
+
+class ViewSocial: UIViewController, ViewSocialDelegate{
+    func sendLike(postId: String) {
+        pushLike(postId: postId)
+    }
+    
     
     @IBOutlet weak var button_refressh: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var token: String = ""
     var sportcenterid = ""
+    
     
     let cellSpacingHeight: CGFloat = 5
     var list: [Information] = []
@@ -46,6 +55,23 @@ class ViewSocial: UIViewController {
                 }
                 else
                 {
+                    print("Bad")
+                }
+        }
+    }
+    
+    func pushLike(postId: String){
+        let parameters: Parameters = [
+            "token": self.token,
+            "post id": postId
+            ]
+        
+        Alamofire.request("\(network.ipAdress.rawValue)/post-like", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    //self.list = self.createArray()
+                }
+                else{
                     print("Bad")
                 }
         }
@@ -95,6 +121,10 @@ class ViewSocial: UIViewController {
                 self.list_events[idx].description = event.description
                 self.tableView.reloadData()
             }
+            getEventIsLike(id: idx, event: list_events[idx]) { (event, idx) in
+                self.list_events[idx].description = event.description
+                self.tableView.reloadData()
+            }
             idx = idx + 1
         }
         self.tableView.reloadData()
@@ -113,6 +143,24 @@ class ViewSocial: UIViewController {
             .responseJSON { response in
                 if let json = response.result.value as? [String: Any] {
                     isSuccess(Info.start_init_2(info: event, Dict: json), id)
+                }
+        }
+    }
+    
+    func getEventIsLike(id: Int, event: Info, isSuccess: @escaping(_ event: Info,_ id: Int)-> Void){
+        
+        print("Start Events")
+
+        let parameters: Parameters = [
+            "token": self.token,
+            "post id": event.infoId!
+        ]
+
+        Alamofire.request("\(network.ipAdress.rawValue)/post-get-likes", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    print("ai-je liker ? \(json["liked"] as? String)")
+                    isSuccess(Info.like(info: event, Dict: json), id)
                 }
         }
     }
@@ -163,6 +211,8 @@ extension  ViewSocial: UITableViewDataSource, UITableViewDelegate {
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             return cellSpacingHeight
         }
+        cell.postId = self.list_events[indexPath.item].infoId!
+        cell.delegate = self
         cell.backgroundColor = UIColor.white
         cell.selectedBackgroundView = bgColorView
         cell.layer.borderColor = UIColor.black.cgColor

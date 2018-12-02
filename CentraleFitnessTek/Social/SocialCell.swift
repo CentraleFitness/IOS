@@ -16,8 +16,20 @@ class SocialCell: UITableViewCell {
     @IBOutlet weak var button_like: UIButton!
     @IBOutlet weak var labeLikes: UILabel!
     
+    weak var delegate: ViewSocialDelegate? = nil
+    
+    var isLike: Bool = false
+    var postId: String = ""
+    
     func setInfo(information: Info)
     {
+        self.isLike = information.infoIsLike!
+        if (information.infoIsLike == false){
+            button_like.imageView?.image = UIImage(named: "like_heart_off")
+        }
+        else{
+            button_like.imageView?.image = UIImage(named: "like_heart")
+        }
         labeLikes.text = "\(information.infoLikes!) likes"
         if (information.picture == nil){
             image_cell.image = UIImage(named: "image_1 2")
@@ -55,5 +67,14 @@ class SocialCell: UITableViewCell {
     }
     @IBAction func pulseButtonLike(_ sender: UIButton) {
         sender.pulsate()
+        delegate?.sendLike(postId: postId)
+        if (self.isLike == true){
+            self.isLike = false
+            button_like.setImage(UIImage(named: "like_heart_off"), for: .normal)
+        }
+        else{
+            self.isLike = true
+            button_like.setImage(UIImage(named: "like_heart"), for: .normal)
+        }
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 class Info{
+    var infoIsLike: Bool? = false
     var infoLikes: Int? = 0
     var infoName:String? = nil
     var infoId:String? = nil
@@ -67,6 +68,12 @@ class Info{
             info.infoLikes = 0
         }
         print(info.description)
+        //info.picture = Dict["] as? String
+        return info
+    }
+    
+    static func like(info: Info, Dict: Dictionary<String, Any>) -> Info{
+        info.infoIsLike = Dict["liked"] as! Bool
         //info.picture = Dict["] as? String
         return info
     }

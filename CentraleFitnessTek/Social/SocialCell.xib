@@ -40,9 +40,12 @@
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEY-gB-ZKS">
-                        <rect key="frame" x="278" y="47" width="62" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEY-gB-ZKS">
+                        <rect key="frame" x="281" y="49" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="L7v-Jy-I6i"/>
+                            <constraint firstAttribute="height" constant="60" id="yMD-4q-SP6"/>
+                        </constraints>
                         <state key="normal" image="like_heart"/>
                         <connections>
                             <action selector="pulseButtonLike:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eh0-jp-BR4"/>
@@ -60,6 +63,8 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="AEY-gB-ZKS" firstAttribute="top" secondItem="ovu-jO-a6G" secondAttribute="bottom" constant="17" id="7XH-o3-5Ai"/>
+                    <constraint firstAttribute="trailing" secondItem="AEY-gB-ZKS" secondAttribute="trailing" constant="5" id="Kss-rc-VbN"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ovu-jO-a6G" secondAttribute="trailing" constant="5" id="epT-dQ-rUA"/>
                     <constraint firstItem="ovu-jO-a6G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="mPD-rR-eqP"/>
                 </constraints>
