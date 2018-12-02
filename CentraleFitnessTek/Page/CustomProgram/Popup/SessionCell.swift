@@ -38,6 +38,34 @@ class SessionCell: UICollectionViewCell {
         }
     }
     
+//    func addHeaderImageIfNeed(str: String) -> UIImage{
+//        let image: UIImage
+//        var test2: String = "data:image/png;base64," + str
+//        var chars = Array(str.characters)
+//        if (chars[0] == "d" && chars[1] == "a" && chars[2] == "t" && chars[3] == "a")
+//        {
+//            return (self.base64Convert(base64String: str))
+//        }
+//        else
+//        {
+//            return (self.base64Convert(base64String: test2))
+//        }
+//    }
+//
+//    func base64Convert(base64String: String?) -> UIImage{
+//        if (base64String?.isEmpty)! {
+//            let test: UIImage = UIImage(named: "image_1 2")!
+//            return (test)
+//        }
+//        else {
+//            // !!! Separation part is optional, depends on your Base64String !!!
+//            let temp = base64String?.components(separatedBy: ",")
+//            let dataDecoded : Data = Data(base64Encoded: temp![1], options: .ignoreUnknownCharacters)!
+//            let decodedimage = UIImage(data: dataDecoded)
+//            return decodedimage!
+//        }
+//    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization codes

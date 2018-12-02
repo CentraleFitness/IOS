@@ -21,12 +21,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SocialPage" translatesAutoresizingMaskIntoConstraints="NO" id="8Kr-Vz-SoN">
-                    <rect key="frame" x="0.0" y="44" width="375" height="628"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SocialPage" translatesAutoresizingMaskIntoConstraints="NO" id="8Kr-Vz-SoN">
+                    <rect key="frame" x="19" y="90" width="337.5" height="577"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bV3-Ow-8Y3">
-                    <rect key="frame" x="7.5" y="110" width="360" height="557"/>
+                    <rect key="frame" x="19" y="90" width="337.5" height="577"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
@@ -93,15 +92,19 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="8Kr-Vz-SoN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0hZ-1W-cma"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uRt-2T-L66" secondAttribute="trailing" constant="10" id="1cU-OQ-541"/>
                 <constraint firstItem="bV3-Ow-8Y3" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="38q-Bk-ico"/>
                 <constraint firstItem="z2K-bu-3C3" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="96z-am-M09"/>
                 <constraint firstItem="z2K-bu-3C3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="F8l-dk-CM1"/>
+                <constraint firstAttribute="bottom" secondItem="8Kr-Vz-SoN" secondAttribute="bottom" id="GWD-Cs-QEK"/>
                 <constraint firstItem="uRt-2T-L66" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-10" id="GcV-uH-foZ"/>
+                <constraint firstItem="8Kr-Vz-SoN" firstAttribute="top" secondItem="z2K-bu-3C3" secondAttribute="bottom" constant="-20" id="LTn-1v-2xy"/>
                 <constraint firstItem="z2K-bu-3C3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-25" id="beM-xM-kFG"/>
                 <constraint firstItem="bV3-Ow-8Y3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pFG-YT-KCG"/>
-                <constraint firstItem="bV3-Ow-8Y3" firstAttribute="top" secondItem="z2K-bu-3C3" secondAttribute="bottom" id="siy-nw-COo"/>
-                <constraint firstItem="bV3-Ow-8Y3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.96" id="u9N-zF-rA6"/>
+                <constraint firstItem="bV3-Ow-8Y3" firstAttribute="top" secondItem="z2K-bu-3C3" secondAttribute="bottom" constant="-20" id="siy-nw-COo"/>
+                <constraint firstItem="bV3-Ow-8Y3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.9" id="u9N-zF-rA6"/>
+                <constraint firstItem="8Kr-Vz-SoN" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.9" id="uSF-jU-WZC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="24.800000000000001" y="50.824587706146929"/>

@@ -39,6 +39,10 @@ class PageViewMenu: UIPageViewController, UIPageViewControllerDataSource, UIPage
         NotificationCenter.default.addObserver(self, selector: #selector(self.disableSwipe), name:NSNotification.Name(rawValue: "disableSwipe"), object: nil)
         }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        print("a")
+    }
+    
     @objc func disableSwipe(notification: NSNotification){
             self.dataSource = nil
         }

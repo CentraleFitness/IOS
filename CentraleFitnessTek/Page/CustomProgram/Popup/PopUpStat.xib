@@ -66,7 +66,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="Msj-Ud-fwD" firstAttribute="width" secondItem="v1P-7v-EMp" secondAttribute="width" id="EYg-N9-rfs"/>
                                 <constraint firstItem="Msj-Ud-fwD" firstAttribute="centerX" secondItem="v1P-7v-EMp" secondAttribute="centerX" id="Q4y-9N-SwG"/>
@@ -80,7 +80,7 @@
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCa-cq-pj9">
                             <rect key="frame" x="31" y="126" width="249" height="59"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="59" id="dYh-Ql-xKp"/>
                             </constraints>
@@ -100,7 +100,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="7Ef-yX-JA7" firstAttribute="width" secondItem="mWq-c7-2FD" secondAttribute="width" id="7r8-N1-Hde"/>
                                 <constraint firstItem="7Ef-yX-JA7" firstAttribute="centerX" secondItem="mWq-c7-2FD" secondAttribute="centerX" id="CC7-r6-4ql"/>
@@ -119,7 +119,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.85824854783120852" blue="0.96789832042737356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="CCa-cq-pj9" firstAttribute="width" secondItem="0ax-oR-4Zp" secondAttribute="width" multiplier="0.8" id="2PW-vz-c0O"/>
                         <constraint firstItem="fYl-1C-YOQ" firstAttribute="leading" secondItem="0ax-oR-4Zp" secondAttribute="leading" constant="8" id="9nE-aq-pBq"/>

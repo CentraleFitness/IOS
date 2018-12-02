@@ -77,6 +77,20 @@ class ProgramCell: UITableViewCell {
         }*/
     }
     
+    func addHeaderImageIfNeed(str: String) -> UIImage{
+        let image: UIImage
+        var test2: String = "data:image/png;base64," + str
+        var chars = Array(str.characters)
+        if (chars[0] == "d" && chars[1] == "a" && chars[2] == "t" && chars[3] == "a")
+        {
+            return (self.base64Convert(base64String: str))
+        }
+        else
+        {
+            return (self.base64Convert(base64String: test2))
+        }
+    }
+    
     func base64Convert(base64String: String?) -> UIImage{
         if (base64String?.isEmpty)! {
             let test: UIImage = UIImage(named: "image_1 2")!

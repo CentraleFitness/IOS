@@ -195,6 +195,30 @@ class ViewStat: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func putTime(_ time: Int) -> String{
+        var str: String = ""
+        var days: Int = 0
+        var hours: Int = 0
+        var minutes: Int = time
+        
+        while (minutes > 60){
+            minutes = minutes - 60
+            hours = hours + 1
+            if (hours == 24){
+                days = days + 1
+                hours = hours - 24
+            }
+        }
+        if (days > 0){
+            str = "\(days) jours "
+        }
+        if (hours > 0){
+            str = str + "\(hours) heures "
+        }
+        str = str + "\(minutes) minutes"
+        return str
+    }
     /*
     // MARK: - Navigation
 

@@ -87,7 +87,12 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
             let temp = base64String?.components(separatedBy: ",")
             let dataDecoded : Data = Data(base64Encoded: temp![1], options: .ignoreUnknownCharacters)!
             let decodedimage = UIImage(data: dataDecoded)
-            return decodedimage!
+            if (decodedimage != nil){
+                return decodedimage!
+            }
+            else{
+                return UIImage(named: "logo facebook")!
+            }
         }
     }
     
@@ -140,6 +145,7 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
     
     
     @objc func updateTimer() {
+        print(seconds)
         let alertPopUp = UIAlertController(title: "Felicitation !", message:
             "Vous avez finit votre session", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -158,10 +164,11 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
     }
     
     func changeTableCell(){
-        if (steps[indexSteps].duration > 0){
+        if (steps[indexSteps].duration > 1){
         steps[indexSteps].duration = steps[indexSteps].duration - 1
         }
         else{
+            steps[indexSteps].duration = steps[indexSteps].duration - 1
             steps[indexSteps].stat = "Fini"
             if (indexSteps != steps.count){
                 indexSteps = indexSteps + 1

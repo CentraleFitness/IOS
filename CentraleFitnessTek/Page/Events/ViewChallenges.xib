@@ -23,12 +23,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXV-H3-TMH">
-                    <rect key="frame" x="0.0" y="25" width="350" height="60"/>
+                    <rect key="frame" x="0.0" y="30" width="350" height="60"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WAk-tZ-axb" customClass="MySegmentedControl" customModule="CentraleFitnessTek" customModuleProvider="target">
-                            <rect key="frame" x="10" y="16" width="280" height="29"/>
+                            <rect key="frame" x="10" y="5" width="280" height="51"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="28" id="Qif-ok-Jdb"/>
+                                <constraint firstAttribute="height" constant="50" id="Qif-ok-Jdb"/>
                             </constraints>
                             <segments>
                                 <segment title="Tous les évènements"/>
@@ -45,6 +45,7 @@
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="indexChanged:" destination="-1" eventType="valueChanged" id="MQ4-I9-AQG"/>
+                                <action selector="testPress:" destination="-1" eventType="touchDragOutside" id="Ih3-f8-gcz"/>
                             </connections>
                         </segmentedControl>
                         <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSM-7f-Otb">
@@ -69,7 +70,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="102" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JOU-q0-24M">
-                    <rect key="frame" x="0.0" y="90" width="350" height="508"/>
+                    <rect key="frame" x="0.0" y="95" width="350" height="503"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
@@ -89,7 +90,7 @@
                 <constraint firstItem="JOU-q0-24M" firstAttribute="trailing" secondItem="85Q-AT-FxV" secondAttribute="trailing" id="Umn-wI-LwI"/>
                 <constraint firstItem="JOU-q0-24M" firstAttribute="top" secondItem="JXV-H3-TMH" secondAttribute="bottom" constant="5" id="a6V-Qy-dzU"/>
                 <constraint firstItem="85Q-AT-FxV" firstAttribute="trailing" secondItem="JXV-H3-TMH" secondAttribute="trailing" id="nba-d6-lXy"/>
-                <constraint firstItem="JXV-H3-TMH" firstAttribute="top" secondItem="85Q-AT-FxV" secondAttribute="top" constant="5" id="yMs-cm-u5G"/>
+                <constraint firstItem="JXV-H3-TMH" firstAttribute="top" secondItem="85Q-AT-FxV" secondAttribute="top" constant="10" id="yMs-cm-u5G"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="85Q-AT-FxV"/>

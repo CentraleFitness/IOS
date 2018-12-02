@@ -34,6 +34,18 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
     }
     
+    override func viewDidLayoutSubviews() {
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        
+    }
+    
+    override func loadViewIfNeeded() {
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "enableSwipe"), object: nil)
     }
@@ -58,8 +70,6 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         myImageView?.layer.cornerRadius = myImageView.frame.size.width / 2
         myImageView?.clipsToBounds = true
         self.present(image, animated:true)
-        {
-        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any])
@@ -141,7 +151,7 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                                 var chars = Array(test.characters)
                                 if (chars[0] == "d" && chars[1] == "a" && chars[2] == "t" && chars[3] == "a")
                                 {
-                                    self.myImageView.image = self.base64Convert(base64String: test2)
+                                    self.myImageView.image = self.base64Convert(base64String: test)
                                 }
                                 else
                                 {
@@ -159,6 +169,7 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 {
                     print("Bad")
                 }
+                
                 
         }
     }
