@@ -180,6 +180,12 @@ class ViewStat: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return sportSessionId.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vcPopUp: PopUpStat = PopUpStat(token: self.token, sessionId: self.sportSessionId[indexPath.item], time: self.statCellModels[indexPath.item].duration!)
+        vcPopUp.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        self.present(vcPopUp, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StatCell", for: indexPath) as! StatCell
         

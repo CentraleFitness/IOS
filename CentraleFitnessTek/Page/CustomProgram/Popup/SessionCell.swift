@@ -53,7 +53,12 @@ class SessionCell: UICollectionViewCell {
             let temp = base64String?.components(separatedBy: ",")
             let dataDecoded : Data = Data(base64Encoded: temp![1], options: .ignoreUnknownCharacters)!
             let decodedimage = UIImage(data: dataDecoded)
-            return decodedimage!
+            if (decodedimage != nil){
+                return decodedimage!
+            }
+            else{
+                return UIImage(named: "logo facebook")!
+            }
         }
     }
 }

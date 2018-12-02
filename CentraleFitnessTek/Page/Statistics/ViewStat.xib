@@ -20,8 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0MK-9m-wIM">
-                    <rect key="frame" x="0.0" y="66.5" width="375" height="600.5"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0MK-9m-wIM">
+                    <rect key="frame" x="0.0" y="-50" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
@@ -29,8 +29,8 @@
             <constraints>
                 <constraint firstItem="0MK-9m-wIM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="64f-ai-MhK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0MK-9m-wIM" secondAttribute="trailing" id="LJ9-tv-hgy"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0MK-9m-wIM" secondAttribute="bottom" id="Up8-e4-5Zg"/>
-                <constraint firstItem="0MK-9m-wIM" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.9" id="ish-6z-5wc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0MK-9m-wIM" secondAttribute="bottom" constant="50" id="Up8-e4-5Zg"/>
+                <constraint firstItem="0MK-9m-wIM" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="ish-6z-5wc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
