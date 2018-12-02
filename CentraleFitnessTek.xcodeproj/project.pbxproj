@@ -51,6 +51,8 @@
 		8A503805218CBF77008C7597 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A503804218CBF77008C7597 /* File.swift */; };
 		8A545A2E21B344EB00BEA195 /* PopUpStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A545A2C21B344EB00BEA195 /* PopUpStat.swift */; };
 		8A545A2F21B344EB00BEA195 /* PopUpStat.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A545A2D21B344EB00BEA195 /* PopUpStat.xib */; };
+		8A545A3221B4318E00BEA195 /* LittleSocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A545A3021B4318E00BEA195 /* LittleSocialCell.swift */; };
+		8A545A3321B4318E00BEA195 /* LittleSocialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A545A3121B4318E00BEA195 /* LittleSocialCell.xib */; };
 		8A79CB6C219D90C900B7286F /* ReferenceLineDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB56219D90C900B7286F /* ReferenceLineDrawingView.swift */; };
 		8A79CB6D219D90C900B7286F /* BarDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB57219D90C900B7286F /* BarDrawingLayer.swift */; };
 		8A79CB6E219D90C900B7286F /* GradientDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB58219D90C900B7286F /* GradientDrawingLayer.swift */; };
@@ -179,6 +181,8 @@
 		8A503804218CBF77008C7597 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		8A545A2C21B344EB00BEA195 /* PopUpStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpStat.swift; sourceTree = "<group>"; };
 		8A545A2D21B344EB00BEA195 /* PopUpStat.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpStat.xib; sourceTree = "<group>"; };
+		8A545A3021B4318E00BEA195 /* LittleSocialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleSocialCell.swift; sourceTree = "<group>"; };
+		8A545A3121B4318E00BEA195 /* LittleSocialCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LittleSocialCell.xib; sourceTree = "<group>"; };
 		8A6E3E81218B15FD009C7A2F /* CentraleFitnessTek.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CentraleFitnessTek.entitlements; sourceTree = "<group>"; };
 		8A79CB56219D90C900B7286F /* ReferenceLineDrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceLineDrawingView.swift; sourceTree = "<group>"; };
 		8A79CB57219D90C900B7286F /* BarDrawingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarDrawingLayer.swift; sourceTree = "<group>"; };
@@ -537,6 +541,8 @@
 				8A8F671E214FEEF0007432B9 /* ViewSocial.xib */,
 				8A8F672021504800007432B9 /* SocialCell.swift */,
 				8A8F672121504800007432B9 /* SocialCell.xib */,
+				8A545A3021B4318E00BEA195 /* LittleSocialCell.swift */,
+				8A545A3121B4318E00BEA195 /* LittleSocialCell.xib */,
 				8A8F672421504C51007432B9 /* Information.swift */,
 				8A8F672621504D63007432B9 /* Info.swift */,
 			);
@@ -733,6 +739,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A545A3321B4318E00BEA195 /* LittleSocialCell.xib in Resources */,
 				8AB7C54921691D6D000E6B67 /* PopUpCustomProgram.xib in Resources */,
 				8AE061F320B54C14004CE1D1 /* LaunchScreen.storyboard in Resources */,
 				8A34B99D21A854A3002D4C37 /* ViewComment.xib in Resources */,
@@ -872,6 +879,7 @@
 				8A34B9A521A87091002D4C37 /* CommentInfo.swift in Sources */,
 				8AE0616E20B54C14004CE1D1 /* ViewTest.swift in Sources */,
 				8AE061F420B54C14004CE1D1 /* buttonAnimationExtension.swift in Sources */,
+				8A545A3221B4318E00BEA195 /* LittleSocialCell.swift in Sources */,
 				8AB4E4A02152945C0011B2B4 /* ProgramStartCell.swift in Sources */,
 				8A1908A821B0270200AB4FBB /* ViewDefi.swift in Sources */,
 				8AE0616C20B54C14004CE1D1 /* ViewSocial.swift in Sources */,

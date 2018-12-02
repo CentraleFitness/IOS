@@ -1,14 +1,14 @@
 //
-//  SocialCell.swift
+//  LittleSocialCell.swift
 //  CentraleFitnessTek
 //
-//  Created by Fabien Santoni on 17/09/2018.
+//  Created by Fabien Santoni on 02/12/2018.
 //  Copyright © 2018 Fabien Santoni. All rights reserved.
 //
 
 import UIKit
 
-class SocialCell: UITableViewCell {
+class LittleSocialCell: UITableViewCell {
     
     @IBOutlet weak var image_cell: UIImageView!
     @IBOutlet weak var description_cell: UILabel!

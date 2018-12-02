@@ -25,6 +25,24 @@ class Info{
         return info
     }
     
+    static func getEventArrayLittle(dict: [Dictionary<String, Any>]) -> Array<Info>
+    {
+        var arrayInfo = Array<Info>()
+        
+        var idx = 0
+        
+        while (idx < dict.count)
+        {
+            print("test dic")
+            let tmp = start_init(Dict: dict[idx])
+            if (tmp.infoName != "EVENT"){
+                arrayInfo.append(tmp)
+            }
+            idx = idx + 1
+        }
+        return arrayInfo
+    }
+    
     static func getEventArray(dict: [Dictionary<String, Any>]) -> Array<Info>
     {
         var arrayInfo = Array<Info>()

@@ -11,13 +11,25 @@ import Foundation
 import UIKit
 
 class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
     var profil_image = UIImage(named: "Chat")
+    
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    var token: String = ""
+    var sportcenterid = ""
+    
+    let cellSpacingHeight: CGFloat = 5
+    var list: [Information] = []
+    var list_events: Array<Info> = []
+    let bgColorView = UIView()
+    var last_choice : Int = 0
+    
+    
     @IBOutlet var top_bar_view: UIImageView!
     @IBOutlet var page: UIImageView!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var button_settings: UIButton!
-    var token: String = ""
     var picture: String = ""//"data:image/png;base64,"
     @IBOutlet weak var _login: UILabel!
     
@@ -30,21 +42,10 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         print("token profil")
-        get_profil()
-        
+       // get_profil()
+        getAfffiliation()
     }
-    
-    override func viewDidLayoutSubviews() {
-        
-    }
-    
-    override func viewWillLayoutSubviews() {
-        
-    }
-    
-    override func loadViewIfNeeded() {
-        
-    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "enableSwipe"), object: nil)
@@ -220,4 +221,140 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             }
         }
     }
+}
+
+extension ViewProfil: UITableViewDelegate, UITableViewDataSource{
+    
+    func getAfffiliation()
+    {
+        let parameters: Parameters = [
+            "token": self.token,
+            ]
+        
+        Alamofire.request("\(network.ipAdress.rawValue)/get/affiliation", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    self.sportcenterid = json["sport center id"] as! String
+                    self.list = self.createArray()
+                }
+                else
+                {
+                    print("Bad")
+                }
+        }
+    }
+    
+    func createArray() -> [Information] {
+        var test: NSArray!
+        print("Start Informations")
+        
+        var list_challenges: [Information] = []
+        let parameters: Parameters = [
+            "token": self.token,
+            "target id": self.sportcenterid,
+            "start": 0,
+            "end": 100
+        ]
+        
+        Alamofire.request("\(network.ipAdress.rawValue)/get/posts", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    let error = json["error"] as? String
+                    let code = json["code"] as? String
+                    if (error == "false")
+                    {
+                        
+                        var json2 = json["posts"] as? [Dictionary<String, Any>]
+                        self.list_events.removeAll()
+                        self.list_events += Info.getEventArrayLittle(dict: json2!)
+                        self.fill_event()
+                    }
+                }
+                else
+                {
+                    print("Bad")
+                }
+        }
+        return list_challenges
+    }
+    
+    func fill_event()
+    {
+        var idx = 0
+        
+        while(idx < list_events.count)
+        {
+            getEventPreview(id: idx, event: list_events[idx]) { (event, idx) in
+                self.list_events[idx].description = event.description
+                self.tableView.reloadData()
+            }
+            idx = idx + 1
+        }
+        self.tableView.reloadData()
+    }
+    
+    func getEventPreview(id: Int, event: Info, isSuccess: @escaping(_ event: Info,_ id: Int)-> Void){
+        
+        print("Start Events")
+        
+        let parameters: Parameters = [
+            "token": self.token,
+            "post id": event.infoId!
+        ]
+        
+        Alamofire.request("\(network.ipAdress.rawValue)/get/postcontent", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    isSuccess(Info.start_init_2(info: event, Dict: json), id)
+                }
+        }
+    }
+    
+    @IBAction func anim1(_ sender: Any) {
+        list = createArray()
+        tableView.reloadData(
+            with: .simple(duration: 0.75, direction: .rotation3D(type: .ironMan),
+                          constantDelay: 0))
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list_events.count
+    }
+    
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        last_choice = indexPath.row
+//        let vc: ViewComment = ViewComment(token: token, postId: list_events[indexPath.item].infoId!)
+//
+//        self.present(vc, animated: true, completion: nil)
+//    }
+    
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //     let challenges = list[indexPath.row]
+        let event = list_events[indexPath.item]
+        let cell = Bundle.main.loadNibNamed("LittleSocialCell", owner: self, options: nil)?.first as! LittleSocialCell //tableView.dequeueReusableCell(withIdentifier: "challengesCell") as! ChallengesCell
+        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return cellSpacingHeight
+        }
+        cell.backgroundColor = UIColor.white
+        cell.selectedBackgroundView = bgColorView
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.cornerRadius = 20
+        cell.clipsToBounds = true
+        cell.setInfo(information: event)
+        return cell
+    }
+    
 }
