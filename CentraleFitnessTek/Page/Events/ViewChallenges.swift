@@ -108,7 +108,7 @@ class ViewChallenges: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func showStandardDialog(animated: Bool = true) {
+    func showStandardDialog(animated: Bool = true, isRegister: Bool) {
         
         // Prepare the popup
         let title = "Voulez-vous vous inscrire à cet évènement"
@@ -130,8 +130,23 @@ class ViewChallenges: UIViewController {
         }
         
         // Create second button
-        let buttonTwo = DefaultButton(title: "Je m'inscris !") {
-            self.subscribe_event()
+        var text: String = ""
+        if (isRegister == false){
+            text = "Je m'inscris !"
+        }
+        else{
+            text = "Je me desinscris !"
+        }
+        let buttonTwo: PopupDialogButton
+        if (isRegister == false){
+            buttonTwo = DefaultButton(title: "Je m'inscris !") {
+                self.subscribe_event()
+            }
+        }
+        else{
+            buttonTwo = DefaultButton(title: "Je me desinscris !") {
+                self.subscribe_event()
+            }
         }
         
         // Add buttons to dialog
@@ -168,6 +183,34 @@ class ViewChallenges: UIViewController {
                 
         }
     }
+    
+    func desubscribe_event(){
+        
+        print("Start Subscribe")
+        
+        let parameters: Parameters = [
+            "token": self.token,
+            "eventid": list_events[last_choice].eventId!
+        ]
+        
+        
+        Alamofire.request("\(network.ipAdress.rawValue)/event/registration", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    let error = json["error"] as? String
+                    print(error!)
+                    if (error == "true"){
+                    }
+                    else{
+                        print("good desinscription")
+                    }
+                }
+                else{
+                    print("Bad")
+                }
+                
+        }
+    }
 }
 
 extension  ViewChallenges: UITableViewDataSource, UITableViewDelegate {
@@ -184,7 +227,7 @@ extension  ViewChallenges: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         last_choice = indexPath.row
-        showStandardDialog()
+        showStandardDialog(animated: true, isRegister: false)
         print(indexPath.row)
     }
     

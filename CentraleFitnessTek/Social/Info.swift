@@ -9,6 +9,7 @@
 import Foundation
 
 class Info{
+    var infoLikes: Int? = 0
     var infoName:String? = nil
     var infoId:String? = nil
     var description:String? = nil
@@ -61,6 +62,10 @@ class Info{
     
     static func start_init_2(info: Info, Dict: Dictionary<String, Any>) -> Info{
         info.description = Dict["post content"] as? String
+        info.infoLikes = Dict["likes"] as? Int
+        if (info.infoLikes == nil){
+            info.infoLikes = 0
+        }
         print(info.description)
         //info.picture = Dict["] as? String
         return info

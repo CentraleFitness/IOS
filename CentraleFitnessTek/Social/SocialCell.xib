@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,20 +34,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qep-38-TT2">
-                        <rect key="frame" x="79" y="13" width="212" height="16"/>
+                        <rect key="frame" x="79" y="13" width="157" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgr-1x-OmY">
-                        <rect key="frame" x="279" y="2" width="60" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" image="like_string"/>
-                        <connections>
-                            <action selector="pulseButtonStrong:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qtI-Ub-wv7"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEY-gB-ZKS">
                         <rect key="frame" x="278" y="47" width="62" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -57,22 +48,35 @@
                             <action selector="pulseButtonLike:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eh0-jp-BR4"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="like" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovu-jO-a6G">
+                        <rect key="frame" x="229" y="11" width="96" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="TAZ-8V-3S7"/>
+                            <constraint firstAttribute="width" constant="96" id="XKB-uZ-ePd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="ovu-jO-a6G" secondAttribute="trailing" constant="5" id="epT-dQ-rUA"/>
+                    <constraint firstItem="ovu-jO-a6G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="mPD-rR-eqP"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="button_like" destination="AEY-gB-ZKS" id="70M-4V-OOl"/>
-                <outlet property="button_strong" destination="Tgr-1x-OmY" id="oVy-pl-Usu"/>
                 <outlet property="description_cell" destination="TGu-se-Y9e" id="0RO-hM-4gd"/>
                 <outlet property="image_cell" destination="rlE-gL-9d6" id="m1M-xF-OZD"/>
+                <outlet property="labeLikes" destination="ovu-jO-a6G" id="Do6-lt-cJG"/>
                 <outlet property="title_cell" destination="qep-38-TT2" id="EZK-qW-RDE"/>
             </connections>
-            <point key="canvasLocation" x="20" y="63.5"/>
+            <point key="canvasLocation" x="19.199999999999999" y="62.968515742128943"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="SocialCell" width="364" height="84"/>
         <image name="like_heart" width="60" height="60"/>
-        <image name="like_string" width="60" height="60"/>
     </resources>
 </document>

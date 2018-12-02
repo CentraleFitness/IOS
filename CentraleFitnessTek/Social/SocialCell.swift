@@ -13,11 +13,12 @@ class SocialCell: UITableViewCell {
     @IBOutlet weak var image_cell: UIImageView!
     @IBOutlet weak var description_cell: UILabel!
     @IBOutlet weak var title_cell: UILabel!
-    @IBOutlet weak var button_strong: UIButton!
     @IBOutlet weak var button_like: UIButton!
+    @IBOutlet weak var labeLikes: UILabel!
     
     func setInfo(information: Info)
     {
+        labeLikes.text = "\(information.infoLikes!) likes"
         if (information.picture == nil){
             image_cell.image = UIImage(named: "image_1 2")
         }

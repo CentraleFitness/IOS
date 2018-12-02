@@ -42,7 +42,7 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         print("token profil")
-       // get_profil()
+        get_profil()
         getAfffiliation()
     }
 
