@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreNFC
+import Alamofire
 
-class ViewConnectionNFC: UIViewController {
+class ViewConnectionNFC: UIViewController, NFCNDEFReaderSessionDelegate{
     
     @IBOutlet weak var buttonNFC: UIButton!
     var detectedMessages = [NFCNDEFMessage]()
@@ -26,8 +27,34 @@ class ViewConnectionNFC: UIViewController {
     /// - Tag: processingTagData
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         DispatchQueue.main.async {
+            self.pairNfc(sessionId: "5c06dafa10dc3235ad08ece4")
             // Process detected NFCNDEFMessage objects.
-            self.detectedMessages.append(contentsOf: messages)
+        }
+    }
+    
+    func pairNfc(sessionId: String){
+        
+        let parameters: Parameters = [ "token": token, "session id": sessionId ]
+        
+        Alamofire.request("\(network.ipAdress.rawValue)/user/pair/start", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    let error = json["error"] as? String
+                    let status = json["status"] as? String
+                    print(error!)
+                    if (error == "true"){
+                    }
+                    else{
+                            print("good !")
+                            let vcNFC: ViewNFC = ViewNFC()
+                            
+                            vcNFC.token = self.token
+                            self.present(vcNFC, animated: true, completion: nil)
+                    }
+                }
+                else{
+                    print("Bad")
+                }
         }
     }
     
@@ -57,13 +84,9 @@ class ViewConnectionNFC: UIViewController {
     }
     
     @IBAction func beginScanning(_ sender: Any) {
-        let vcNFC: ViewNFC = ViewNFC()
-        
-        vcNFC.token = token
-        self.present(vcNFC, animated: true, completion: nil)
-        //        session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
-        //        session?.alertMessage = "Hold your iPhone near the item to learn more about it."
-        //        session?.begin()
+            session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
+            session?.alertMessage = "Hold your iPhone near the item to learn more about it."
+            session?.begin()
     }
     
     @IBAction func pulseButtonNFC(_ sender: UIButton) {
