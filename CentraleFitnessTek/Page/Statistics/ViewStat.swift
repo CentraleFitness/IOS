@@ -99,11 +99,17 @@ class ViewStat: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    @IBAction func refreshButton(_ sender: Any) {
+        self.sportSessionId = []
+        self.statCellModels = []
+         getSportSessionId()
+    }
+    
     func getSportSessionId(){
         let parameters: Parameters = [
             "token": self.token,
             "start": 0,
-            "end": 0
+            "end": 100
             ]
         
         Alamofire.request("\(network.ipAdress.rawValue)/get/sportsessions", method: .post, parameters: parameters, encoding: JSONEncoding.default)
@@ -122,6 +128,7 @@ class ViewStat: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         self.statCellModels.append(StatCellModel())
                     }
                     print(self.sportSessionId)
+                    self.sportSessionId.reverse()
                     self.fill_event()
                    // self.PickAllData()
                    // self.askMoreData()

@@ -95,7 +95,7 @@ class PopUpCustomProgram: UIViewController, UICollectionViewDataSource, UICollec
             stepModel =  SessionCellMediaModel(logo: dict[i]["icon"] as! String,
                                                                          name: dict[i]["name"] as! String,
                                                                          duration: dict[i]["time"] as! Int,
-                                                                         needauth: false)
+                                                                         needauth: dict[i]["is_module"] as! Bool)
             i = i + 1
             steps.append(stepModel)
         }
@@ -106,7 +106,8 @@ class PopUpCustomProgram: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func launchButtonPressed(_ sender: Any) {
-        let vc: ViewCustomProgramStart = ViewCustomProgramStart(steps: steps)
+        let vc: ViewCustomProgramStart = ViewCustomProgramStart(steps: steps, token: self.token)
+        vc.token = self.token
         self.present(vc, animated: true, completion: nil)
     }
     /*

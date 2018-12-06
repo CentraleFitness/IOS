@@ -40,7 +40,7 @@ class ViewChallenges: UIViewController {
             "token": self.token,
             "isreg": true,
             "start": 0,
-            "end": 10
+            "end": 100
         ]
         
         Alamofire.request("\(network.ipAdress.rawValue)/get/events", method: .post, parameters: parameters, encoding: JSONEncoding.default)
@@ -96,7 +96,6 @@ class ViewChallenges: UIViewController {
             .responseJSON { response in
                 if let json = response.result.value as? [String: Any] {
                     _ = json["user_registered"] as? Bool
-                    print("gezegzegz")
                     isSuccess(Event.start_init_2(event: event, Dict: json), id)
                 }
         }
@@ -227,7 +226,16 @@ extension  ViewChallenges: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         last_choice = indexPath.row
-        showStandardDialog(animated: true, isRegister: false)
+        if (list_events[indexPath.item].user_registered!) {
+            let alertPopUp = UIAlertController(title: "Vous êtes déjà inscrit !", message:
+                "", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertPopUp.addAction(UIAlertAction(title: "Terminer", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertPopUp, animated: true)
+        }
+        else{
+            showStandardDialog(animated: true, isRegister: false)
+        }
         print(indexPath.row)
     }
     

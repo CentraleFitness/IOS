@@ -100,6 +100,7 @@ class ViewSocial: UIViewController, ViewSocialDelegate{
                        var json2 = json["posts"] as? [Dictionary<String, Any>]
                         self.list_events.removeAll()
                         self.list_events += Info.getEventArray(dict: json2!)
+                        self.list_events.reverse()
                         self.fill_event()
                     }
                 }

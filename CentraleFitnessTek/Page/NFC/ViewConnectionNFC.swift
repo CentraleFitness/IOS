@@ -26,14 +26,29 @@ class ViewConnectionNFC: UIViewController, NFCNDEFReaderSessionDelegate{
 
     /// - Tag: processingTagData
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+        var backToString: String = ""
         DispatchQueue.main.async {
-            self.pairNfc(sessionId: "5c06dafa10dc3235ad08ece4")
+            for message in messages {
+                for payloadRecord in message.records {
+                    print("test")
+                    backToString = String(data: payloadRecord.payload, encoding: String.Encoding.utf8) as String!
+                    backToString.remove(at: backToString.startIndex)
+                    backToString.remove(at: backToString.startIndex)
+                    backToString.remove(at: backToString.startIndex)
+                    print(backToString)
+                    print("test")
+                    // Handle payloadRecord here
+                }
+//            for (i, message) in messages.enumerated(){
+//                print(message)
+             self.pairStartNfc(sessionId: backToString)
+            }
             // Process detected NFCNDEFMessage objects.
         }
     }
     
-    func pairNfc(sessionId: String){
-        
+    func pairStartNfc(sessionId: String){
+        print("Appairage start")
         let parameters: Parameters = [ "token": token, "session id": sessionId ]
         
         Alamofire.request("\(network.ipAdress.rawValue)/user/pair/start", method: .post, parameters: parameters, encoding: JSONEncoding.default)

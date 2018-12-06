@@ -24,8 +24,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SocialPage" translatesAutoresizingMaskIntoConstraints="NO" id="8Kr-Vz-SoN">
                     <rect key="frame" x="19" y="90" width="337.5" height="577"/>
                 </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bV3-Ow-8Y3">
-                    <rect key="frame" x="19" y="90" width="337.5" height="577"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bV3-Ow-8Y3">
+                    <rect key="frame" x="19" y="90" width="337.5" height="517"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
@@ -83,7 +83,7 @@
                     <viewLayoutGuide key="safeArea" id="x9g-ON-dDE"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRt-2T-L66">
-                    <rect key="frame" x="289" y="581" width="76" height="76"/>
+                    <rect key="frame" x="299" y="591" width="76" height="76"/>
                     <state key="normal" image="SocialRefresh"/>
                     <connections>
                         <action selector="anim1:" destination="-1" eventType="touchUpInside" id="KlU-Ul-d0Q"/>
@@ -93,12 +93,12 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="8Kr-Vz-SoN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0hZ-1W-cma"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uRt-2T-L66" secondAttribute="trailing" constant="10" id="1cU-OQ-541"/>
-                <constraint firstItem="bV3-Ow-8Y3" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="38q-Bk-ico"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uRt-2T-L66" secondAttribute="trailing" id="1cU-OQ-541"/>
+                <constraint firstItem="bV3-Ow-8Y3" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-60" id="38q-Bk-ico"/>
                 <constraint firstItem="z2K-bu-3C3" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="96z-am-M09"/>
                 <constraint firstItem="z2K-bu-3C3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="F8l-dk-CM1"/>
                 <constraint firstAttribute="bottom" secondItem="8Kr-Vz-SoN" secondAttribute="bottom" id="GWD-Cs-QEK"/>
-                <constraint firstItem="uRt-2T-L66" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-10" id="GcV-uH-foZ"/>
+                <constraint firstItem="uRt-2T-L66" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="GcV-uH-foZ"/>
                 <constraint firstItem="8Kr-Vz-SoN" firstAttribute="top" secondItem="z2K-bu-3C3" secondAttribute="bottom" constant="-20" id="LTn-1v-2xy"/>
                 <constraint firstItem="z2K-bu-3C3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-25" id="beM-xM-kFG"/>
                 <constraint firstItem="bV3-Ow-8Y3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pFG-YT-KCG"/>

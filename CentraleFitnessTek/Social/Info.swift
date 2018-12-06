@@ -12,6 +12,9 @@ class Info{
     var infoIsLike: Bool? = false
     var infoLikes: Int? = 0
     var infoName:String? = nil
+    var infoName2:String? = nil
+    var infoPostPicture: String? = nil
+    var infoPostIcon: String? = nil
     var infoId:String? = nil
     var description:String? = nil
     var picture:String? = nil
@@ -37,7 +40,7 @@ class Info{
         {
             print("test dic")
             let tmp = start_init(Dict: dict[idx])
-            if (tmp.infoName != "EVENT"){
+            if (tmp.infoName == "PUBLICATION"){
                 arrayInfo.append(tmp)
             }
             idx = idx + 1
@@ -62,6 +65,9 @@ class Info{
     }
     
     static func start_init_2(info: Info, Dict: Dictionary<String, Any>) -> Info{
+        info.infoName2 = Dict["name"] as? String
+        info.infoPostIcon = Dict["post icon"] as? String
+        info.infoPostPicture = Dict["post picture"] as? String
         info.description = Dict["post content"] as? String
         info.infoLikes = Dict["likes"] as? Int
         if (info.infoLikes == nil){

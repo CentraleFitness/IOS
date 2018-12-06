@@ -20,14 +20,27 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0MK-9m-wIM">
-                    <rect key="frame" x="0.0" y="16.5" width="375" height="600.5"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0MK-9m-wIM">
+                    <rect key="frame" x="0.0" y="20" width="375" height="600.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEo-4h-Lmw">
+                    <rect key="frame" x="299" y="551" width="76" height="76"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="76" id="SXm-f5-0YR"/>
+                        <constraint firstAttribute="width" constant="76" id="frp-V9-iyf"/>
+                    </constraints>
+                    <state key="normal" image="SocialRefresh"/>
+                    <connections>
+                        <action selector="refreshButton:" destination="-1" eventType="touchUpInside" id="Mch-2W-QXX"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="0MK-9m-wIM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="64f-ai-MhK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kEo-4h-Lmw" secondAttribute="bottom" constant="40" id="9pE-kc-htx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kEo-4h-Lmw" secondAttribute="trailing" id="FyV-yw-lan"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0MK-9m-wIM" secondAttribute="trailing" id="LJ9-tv-hgy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0MK-9m-wIM" secondAttribute="bottom" constant="50" id="Up8-e4-5Zg"/>
                 <constraint firstItem="0MK-9m-wIM" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.9" id="ish-6z-5wc"/>
@@ -35,4 +48,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="SocialRefresh" width="76" height="76"/>
+    </resources>
 </document>

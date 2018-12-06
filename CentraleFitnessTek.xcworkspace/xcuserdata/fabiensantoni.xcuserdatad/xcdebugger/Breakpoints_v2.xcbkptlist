@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CentraleFitnessTek/Page/Events/ViewChallenges.swift"
-            timestampString = "565482928.803115"
+            timestampString = "565760663.9748631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "subscribe_event()"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CentraleFitnessTek/Session/ViewNFC.swift"
-            timestampString = "565648371.01355"
+            filePath = "CentraleFitnessTek/Session/ViewSession.swift"
+            timestampString = "565747466.085132"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "fetchProduction()"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "readerSession(_:didDetectNDEFs:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CentraleFitnessTek/Social/Info.swift"
+            timestampString = "565760663.9749759"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "start_init_2(info:Dict:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

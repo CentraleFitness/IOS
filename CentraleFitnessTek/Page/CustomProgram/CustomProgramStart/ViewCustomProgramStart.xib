@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewCustomProgramStart" customModule="CentraleFitnessTek" customModuleProvider="target">
             <connections>
+                <outlet property="apperageButton" destination="cIb-f2-QXz" id="Kfd-Ck-WD3"/>
                 <outlet property="endButton" destination="Wed-ZW-dHs" id="HVm-u0-DCv"/>
                 <outlet property="labelTime" destination="lJt-az-5d7" id="W1a-jw-muT"/>
                 <outlet property="pauseButton" destination="P51-fV-ZWy" id="2Li-Or-PaL"/>
@@ -44,7 +45,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wed-ZW-dHs">
-                    <rect key="frame" x="303" y="610" width="68" height="47"/>
+                    <rect key="frame" x="311" y="610" width="68" height="47"/>
                     <state key="normal" image="ProgramButtonEnd"/>
                     <connections>
                         <action selector="resetButtonTapped:" destination="-1" eventType="touchUpInside" id="Nh0-ed-r6h"/>
@@ -68,13 +69,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P51-fV-ZWy">
-                    <rect key="frame" x="241" y="617" width="62" height="28"/>
+                    <rect key="frame" x="237" y="617" width="78" height="28"/>
                     <color key="backgroundColor" red="0.99937933683395386" green="0.86009997129440308" blue="0.68017673492431641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="6H3-Cf-fcN"/>
-                        <constraint firstAttribute="width" constant="62" id="6ZQ-kA-Yby"/>
+                        <constraint firstAttribute="width" constant="78" id="6ZQ-kA-Yby"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                     <state key="normal" title="Pause"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -97,16 +98,49 @@
                         <action selector="pauseButtonTapped:" destination="-1" eventType="touchUpInside" id="qU1-Kk-mle"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIb-f2-QXz" userLabel="Appaire moi !">
+                    <rect key="frame" x="20" y="577" width="100" height="28"/>
+                    <color key="backgroundColor" red="0.99937933680000002" green="0.86009997130000004" blue="0.68017673489999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="U1C-hq-zzs"/>
+                        <constraint firstAttribute="height" constant="28" id="h53-e4-2IV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                    <state key="normal" title="Appaire moi !"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="11"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="1" height="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="11"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="AppaireMe:" destination="-1" eventType="touchUpInside" id="6yW-3H-v9o"/>
+                        <action selector="pauseButtonTapped:" destination="-1" eventType="touchUpInside" id="4fP-ZX-CMs"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Wed-ZW-dHs" firstAttribute="leading" secondItem="P51-fV-ZWy" secondAttribute="trailing" id="36U-Hw-8db"/>
+                <constraint firstItem="cIb-f2-QXz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2gj-HL-EPl"/>
+                <constraint firstItem="Wed-ZW-dHs" firstAttribute="leading" secondItem="P51-fV-ZWy" secondAttribute="trailing" constant="-4" id="36U-Hw-8db"/>
                 <constraint firstItem="wKF-RH-N2f" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AH1-Jc-ujO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="P51-fV-ZWy" secondAttribute="bottom" constant="22" id="GUT-6L-IWx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ABu-i6-hAl" secondAttribute="bottom" constant="10" id="NUU-Vq-TyV"/>
+                <constraint firstItem="ABu-i6-hAl" firstAttribute="top" secondItem="cIb-f2-QXz" secondAttribute="bottom" constant="5" id="Njq-6k-Kjq"/>
                 <constraint firstItem="wKF-RH-N2f" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.96" id="O22-q6-nmU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wKF-RH-N2f" secondAttribute="bottom" constant="40" id="OnM-po-AoA"/>
-                <constraint firstItem="Wed-ZW-dHs" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-4" id="OsW-Kl-AVj"/>
+                <constraint firstItem="Wed-ZW-dHs" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="4" id="OsW-Kl-AVj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Wyl-6e-8KV" secondAttribute="bottom" id="QJh-RY-8zV"/>
                 <constraint firstItem="ABu-i6-hAl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="RqL-Vu-jjG"/>
                 <constraint firstItem="Wyl-6e-8KV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Tmn-00-gmn"/>

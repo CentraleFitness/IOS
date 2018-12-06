@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import PopupDialog
 
 class ViewProfilSettings: UIViewController {
 
@@ -50,19 +51,98 @@ class ViewProfilSettings: UIViewController {
     @IBAction func callFunctionInOtherClass(sender: AnyObject) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showAlert"), object: nil)
     }
+    
+    func showStandardDialogChangeSalle(animated: Bool = true) {
+        
+        // Prepare the popup
+        let title = "Etes vous sûre de vouloir changer de salle ?"
+        let message = ""
+        
+        // Create the dialog
+        let popup = PopupDialog(title: title,
+                                message: message,
+                                buttonAlignment: .horizontal,
+                                transitionStyle: .zoomIn,
+                                gestureDismissal: true,
+                                hideStatusBar: true) {
+                                    print("Completed")
+        }
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "Annuler") {
+            // self.label.text = "You canceled the default dialog"
+        }
+        
+        // Create second button
+        var text: String = ""
+        
+        text = "Oui !"
+        
+        let buttonTwo: PopupDialogButton =
+        DefaultButton(title: "Oui !") {
+            setEntity(_token: "", _centerId: "")
+            self.unaffiliate()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let exo = storyboard.instantiateViewController(withIdentifier: "navigationConnection") as! UINavigationController
+            self.present(exo, animated: true, completion: nil)
+        }
+        
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        self.present(popup, animated: animated, completion: nil)
+    }
+    
+    func showStandardDialogDisco(animated: Bool = true) {
+        
+        // Prepare the popup
+        let title = "Etes vous sûre de vouloir vous déconnecter ?"
+        let message = ""
+        
+        // Create the dialog
+        let popup = PopupDialog(title: title,
+                                message: message,
+                                buttonAlignment: .horizontal,
+                                transitionStyle: .zoomIn,
+                                gestureDismissal: true,
+                                hideStatusBar: true) {
+                                    print("Completed")
+        }
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "Annuler") {
+            // self.label.text = "You canceled the default dialog"
+        }
+        
+        // Create second button
+        var text: String = ""
+        
+        text = "Oui !"
+        
+        let buttonTwo: PopupDialogButton =
+        DefaultButton(title: "Oui !") {
+            setEntity(_token: "", _centerId: "")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let exo = storyboard.instantiateViewController(withIdentifier: "navigationConnection") as! UINavigationController
+            self.present(exo, animated: true, completion: nil)
+        }
+
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        self.present(popup, animated: animated, completion: nil)
+    }
+    
     @IBAction func pressDisconnect(_ sender: Any) {
-        setEntity(_token: "", _centerId: "")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let exo = storyboard.instantiateViewController(withIdentifier: "navigationConnection") as! UINavigationController
-        self.present(exo, animated: true, completion: nil)
+        showStandardDialogDisco(animated: true)
     }
     
     @IBAction func pressChangeRoom(_ sender: Any) {
-        setEntity(_token: "", _centerId: "")
-        unaffiliate()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let exo = storyboard.instantiateViewController(withIdentifier: "navigationConnection") as! UINavigationController
-        self.present(exo, animated: true, completion: nil)
+        showStandardDialogChangeSalle()
     }
     
     func unaffiliate()

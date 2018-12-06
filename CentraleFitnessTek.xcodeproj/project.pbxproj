@@ -53,6 +53,8 @@
 		8A545A3221B4318E00BEA195 /* LittleSocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A545A3021B4318E00BEA195 /* LittleSocialCell.swift */; };
 		8A545A3321B4318E00BEA195 /* LittleSocialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A545A3121B4318E00BEA195 /* LittleSocialCell.xib */; };
 		8A545A3521B4955100BEA195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A545A3421B4954D00BEA195 /* Assets.xcassets */; };
+		8A58C81821B83D8600A81700 /* ViewNFCTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58C81621B83D8600A81700 /* ViewNFCTime.swift */; };
+		8A58C81921B83D8600A81700 /* ViewNFCTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A58C81721B83D8600A81700 /* ViewNFCTime.xib */; };
 		8A79CB6C219D90C900B7286F /* ReferenceLineDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB56219D90C900B7286F /* ReferenceLineDrawingView.swift */; };
 		8A79CB6D219D90C900B7286F /* BarDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB57219D90C900B7286F /* BarDrawingLayer.swift */; };
 		8A79CB6E219D90C900B7286F /* GradientDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79CB58219D90C900B7286F /* GradientDrawingLayer.swift */; };
@@ -183,6 +185,8 @@
 		8A545A3021B4318E00BEA195 /* LittleSocialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleSocialCell.swift; sourceTree = "<group>"; };
 		8A545A3121B4318E00BEA195 /* LittleSocialCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LittleSocialCell.xib; sourceTree = "<group>"; };
 		8A545A3421B4954D00BEA195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A58C81621B83D8600A81700 /* ViewNFCTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNFCTime.swift; sourceTree = "<group>"; };
+		8A58C81721B83D8600A81700 /* ViewNFCTime.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewNFCTime.xib; sourceTree = "<group>"; };
 		8A6E3E81218B15FD009C7A2F /* CentraleFitnessTek.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CentraleFitnessTek.entitlements; sourceTree = "<group>"; };
 		8A79CB56219D90C900B7286F /* ReferenceLineDrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceLineDrawingView.swift; sourceTree = "<group>"; };
 		8A79CB57219D90C900B7286F /* BarDrawingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarDrawingLayer.swift; sourceTree = "<group>"; };
@@ -371,10 +375,10 @@
 				8A0AB7E320D6AE08000A1FA0 /* Page */,
 				8A79CB54219D90C900B7286F /* Classes */,
 				8AE0612720B54C0F004CE1D1 /* Sources */,
-				8AE062A320B58FC9004CE1D1 /* QR_file */,
 				8A45A61420B5453B00B94C5E /* Info.plist */,
 				8A545A3421B4954D00BEA195 /* Assets.xcassets */,
 				8AE0614F20B54C12004CE1D1 /* Main.storyboard */,
+				8AE062A320B58FC9004CE1D1 /* QR_file */,
 				8AE0616520B54C13004CE1D1 /* LaunchScreen.storyboard */,
 				8AE0612320B54C0E004CE1D1 /* AppDelegate.swift */,
 				8AE0614B20B54C10004CE1D1 /* PageViewMenu.swift */,
@@ -611,6 +615,8 @@
 				8AB4E49B21528F1F0011B2B4 /* ViewCustomProgramStart.xib */,
 				8AB4E49E2152945C0011B2B4 /* ProgramStartCell.swift */,
 				8AB4E49F2152945C0011B2B4 /* ProgramStartCell.xib */,
+				8A58C81621B83D8600A81700 /* ViewNFCTime.swift */,
+				8A58C81721B83D8600A81700 /* ViewNFCTime.xib */,
 			);
 			path = CustomProgramStart;
 			sourceTree = "<group>";
@@ -754,6 +760,7 @@
 				8A503803218CBE21008C7597 /* network.strings in Resources */,
 				8A8F672321504800007432B9 /* SocialCell.xib in Resources */,
 				8AB4E49D21528F1F0011B2B4 /* ViewCustomProgramStart.xib in Resources */,
+				8A58C81921B83D8600A81700 /* ViewNFCTime.xib in Resources */,
 				8A8F671A214EFB2B007432B9 /* ViewDefiOld.xib in Resources */,
 				8A8F670E214D5D3E007432B9 /* ProgramCell.xib in Resources */,
 				8AE061F120B54C14004CE1D1 /* ViewInstant.xib in Resources */,
@@ -868,6 +875,7 @@
 				8A34B9A021A8567B002D4C37 /* CommentCell.swift in Sources */,
 				8AE0629E20B54DB5004CE1D1 /* GradientView.swift in Sources */,
 				8AE0616D20B54C14004CE1D1 /* ViewChallenge.swift in Sources */,
+				8A58C81821B83D8600A81700 /* ViewNFCTime.swift in Sources */,
 				8A329D0D21B053B800766F55 /* BLGaugeView.swift in Sources */,
 				8AE061BE20B54C14004CE1D1 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
 				8AE061ED20B54C14004CE1D1 /* ViewNewPassword.swift in Sources */,

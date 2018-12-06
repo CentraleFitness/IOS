@@ -24,15 +24,19 @@ class LittleSocialCell: UITableViewCell {
         else{
             image_cell.image = self.base64Convert(base64String: information.picture)
         }
-        if (information.infoName == "EVENT")
+        if (information.infoName == "PUBLICATION")
         {
-            title_cell.text = "Un nouvel évènement !"
-            image_cell.image = UIImage(named: "SocialEvent")
+            if (information.infoPostIcon != nil){
+                image_cell.image = base64Convert(base64String: information.infoPostIcon)
+                self.image_cell.layer.cornerRadius = self.image_cell.frame.size.width / 2
+                
+                self.image_cell.clipsToBounds = true
+            }
+            title_cell.text = information.infoName2
         }
         else
         {
-            title_cell.text = "Un message de votre salle !"
-            image_cell.image = UIImage(named: "SocialMessage")
+            title_cell.text = ""
         }
         description_cell.text = information.description
         

@@ -29,10 +29,14 @@ class ViewDefi: UIViewController {
     var consolePerHour = 137;
     var machineALaverPerHour = 1000;
     
+    var timer = Timer()
+    var isTimerRunning = false
+    var resumeTapped = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        runTimer()
         currentPicture.image = UIImage(named: "button-light-no")
         lightButton.setImage(UIImage(named: "button-light-yes"), for: .normal)
         getTotalEnergy()
@@ -41,25 +45,25 @@ class ViewDefi: UIViewController {
     
     func putTime(_ time: Int) -> String{
         var str: String = ""
-        var days: Int = 0
-        var hours: Int = 0
-        var minutes: Int = time
+        var heure: Int = 0
+        var minutes: Int = 0
+        var seconds: Int = time
         
-        while (minutes > 60){
-            minutes = minutes - 60
-            hours = hours + 1
-            if (hours == 24){
-                days = days + 1
-                hours = hours - 24
+        while (seconds > 60){
+            seconds = seconds - 60
+            minutes = minutes + 1
+            if (minutes == 60){
+                heure = heure + 1
+                minutes = minutes - 60
             }
         }
-        if (days > 0){
-            str = "\(days) jours "
+        if (heure > 0){
+            str = "\(heure) heures "
         }
-        if (hours > 0){
-            str = str + "\(hours) heures "
+        if (minutes > 0){
+            str = str + "\(minutes) minutes "
         }
-        str = str + "\(minutes) minutes"
+        str = str + "\(seconds) secondes"
         return str
     }
     
@@ -86,6 +90,17 @@ class ViewDefi: UIViewController {
             timeTotalLabel.text = putTime(time)
             textChangeLabel.text = "Ce qui vous permet de faire fonctionner un lave linge durant"
         }
+    }
+    
+    func runTimer() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 15, target: self, selector: (#selector(ViewCustomProgramStart.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+    }
+    
+    @objc func updateTimer() {
+        
+        getTotalEnergy()
     }
     
     func getTotalEnergy() {

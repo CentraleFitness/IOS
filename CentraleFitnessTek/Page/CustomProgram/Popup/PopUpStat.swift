@@ -73,25 +73,26 @@ class PopUpStat: UIViewController {
     
     func putTime(_ time: Int) -> String{
         var str: String = ""
-        var days: Int = 0
-        var hours: Int = 0
-        var minutes: Int = time
+        var heure: Int = 0
+        var minutes: Int = 0
+        var seconds: Int = time / 1000
         
-        while (minutes > 60){
-            minutes = minutes - 60
-            hours = hours + 1
-            if (hours == 24){
-                days = days + 1
-                hours = hours - 24
+        
+        while (seconds > 60){
+            seconds = seconds - 60
+            minutes = minutes + 1
+            if (minutes == 60){
+                heure = heure + 1
+                minutes = minutes - 60
             }
         }
-        if (days > 0){
-            str = "\(days) jours "
+        if (heure > 0){
+            str = "\(heure) heures "
         }
-        if (hours > 0){
-            str = str + "\(hours) heures "
+        if (minutes > 0){
+            str = str + "\(minutes) minutes "
         }
-        str = str + "\(minutes) minutes"
+        str = str + "\(seconds) secondes"
         return str
     }
     

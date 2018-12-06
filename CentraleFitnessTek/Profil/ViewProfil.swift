@@ -18,12 +18,17 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet weak var tableView: UITableView!
     var token: String = ""
     var sportcenterid = ""
+    var production:Double = 0.0
     
     let cellSpacingHeight: CGFloat = 5
     var list: [Information] = []
     var list_events: Array<Info> = []
     let bgColorView = UIView()
     var last_choice : Int = 0
+    
+    var timer = Timer()
+    var isTimerRunning = false
+    var resumeTapped = false
     
     
     @IBOutlet var top_bar_view: UIImageView!
@@ -32,10 +37,13 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet weak var button_settings: UIButton!
     var picture: String = ""//"data:image/png;base64,"
     @IBOutlet weak var _login: UILabel!
+    @IBOutlet weak var labelProduction: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        labelProduction.text = ""
+        runTimer()
         NotificationCenter.default.addObserver(self, selector: #selector(importImage), name: NSNotification.Name(rawValue: "showAlert"), object: nil)
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "enableSwipe"), object: nil)
@@ -44,6 +52,7 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         print("token profil")
         get_profil()
         getAfffiliation()
+        getTotalEnergy()
     }
 
     
@@ -57,6 +66,38 @@ class ViewProfil: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         exo.token = self.token;
         
         navigationController?.pushViewController(exo, animated: true)
+    }
+    
+    func runTimer() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 15, target: self, selector: (#selector(ViewCustomProgramStart.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+    }
+    
+    @objc func updateTimer() {
+       getTotalEnergy()
+    }
+    
+    func getTotalEnergy() {
+        print("Load production")
+        let parameters: Parameters = [
+            "token": self.token
+        ]
+        
+        Alamofire.request("\(network.ipAdress.rawValue)/user/get/totalproduction", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    let error = json["error"] as? String
+                    let code = json["code"] as? String
+                    if (error == "false"){
+                        self.production = json["production"] as! Double
+                        self.labelProduction.text = String(Int(self.production))
+                    }
+                    else{
+                        print("Bad")
+                    }
+                }
+        }
     }
     
     @objc func importImage()
@@ -267,6 +308,7 @@ extension ViewProfil: UITableViewDelegate, UITableViewDataSource{
                         var json2 = json["posts"] as? [Dictionary<String, Any>]
                         self.list_events.removeAll()
                         self.list_events += Info.getEventArrayLittle(dict: json2!)
+                        self.list_events.reverse()
                         self.fill_event()
                     }
                 }

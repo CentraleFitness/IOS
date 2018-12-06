@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import Alamofire
+import CoreNFC
 
-class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableViewDataSource, NFCNDEFReaderSessionDelegate{
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var endButton: UIButton!
     @IBOutlet weak var labelTime: UILabel!
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var apperageButton: UIButton!
     
+    var detectedMessages = [NFCNDEFMessage]()
+    var session: NFCNDEFReaderSession?
+    
+    var token: String = ""
     var indexSteps: Int = 0
     var seconds = 0
     var timer: Timer
@@ -24,7 +31,7 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
     
     var steps: [SessionCellMediaModel]
     
-    init(steps: [SessionCellMediaModel]){
+    init(steps: [SessionCellMediaModel], token: String){
         self.timer = Timer()
         self.steps = steps
         super.init(nibName: "ViewCustomProgramStart", bundle: nil)
@@ -40,10 +47,15 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
 
         pauseButton.isHidden = true
         pickStepsTime()
+        if (steps[indexSteps].needauth){
+            apperageButton.isHidden = false
+        }
+        else{
+            apperageButton.isHidden = true
+        }
         //tableview.dataSource = self
 //        /tableview.delegate = self
         tableview.register(UINib(nibName: "ProgramStartCell", bundle: nil), forCellReuseIdentifier: "ProgramStartCell")
-        
         // Do any additional setup after loading the view.
     }
 
@@ -52,9 +64,93 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+        var backToString: String = ""
+        DispatchQueue.main.async {
+            
+            self.seconds = self.seconds - self.steps[self.indexSteps].duration
+            self.labelTime.text = self.timeString(time: TimeInterval(self.seconds))
+            let vcNFC: ViewNFCTime = ViewNFCTime(seconds: self.steps[self.indexSteps].duration)
+            
+            
+                self.steps[self.indexSteps].duration = 1
+                self.changeTableCell()
+            for message in messages {
+                for payloadRecord in message.records {
+                    print("test")
+                    backToString = String(data: payloadRecord.payload, encoding: String.Encoding.utf8) as String!
+                    backToString.remove(at: backToString.startIndex)
+                    backToString.remove(at: backToString.startIndex)
+                    backToString.remove(at: backToString.startIndex)
+                    print(backToString)
+                    print("test")
+                    // Handle payloadRecord here
+                }
+                //            for (i, message) in messages.enumerated(){
+                //                print(message)
+                self.pairStartNfc(sessionId: backToString)
+            }
+            // Process detected NFCNDEFMessage objects.
+        }
+    }
+    
+    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+        // Check the invalidation reason from the returned error.
+        if let readerError = error as? NFCReaderError {
+            // Show an alert when the invalidation reason is not because of a success read
+            // during a single tag read mode, or user canceled a multi-tag read mode session
+            // from the UI or programmatically using the invalidate method call.
+            if (readerError.code != .readerSessionInvalidationErrorFirstNDEFTagRead)
+                && (readerError.code != .readerSessionInvalidationErrorUserCanceled) {
+                let alertController = UIAlertController(
+                    title: "Session Invalidated",
+                    message: error.localizedDescription,
+                    preferredStyle: .alert
+                )
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                DispatchQueue.main.async {
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        // A new session instance is required to read new tags.
+        self.session = nil
+    }
+    
+    func pairStartNfc(sessionId: String){
+        print("Appairage start")
+        let parameters: Parameters = [ "token": self.token, "session id": sessionId ]
+        
+        Alamofire.request("\(network.ipAdress.rawValue)/user/pair/start", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.result.value as? [String: Any] {
+                    let code = json["code"] as? String
+                    let error = json["error"] as? String
+                    let status = json["status"] as? String
+                    print(error!)
+                    if (error == "true"){
+                        print(error)
+                        print(code)
+                    }
+                    else{
+                        print("good !")
+                        let vcNFC: ViewNFCTime = ViewNFCTime(seconds: self.steps[self.indexSteps].duration)
+                        
+                        vcNFC.token = self.token
+                        self.present(vcNFC, animated: true, completion: nil)
+                    }
+                }
+                else{
+                    print("Bad")
+                }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return steps.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProgramStartCell", for: indexPath) as! ProgramStartCell
@@ -108,6 +204,7 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
     */
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
+        apperageButton.isHidden = true
         startButton.isHidden = true
         pauseButton.isHidden = false
         if (indexSteps == 0){
@@ -126,11 +223,12 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func pauseButtonTapped(_ sender: UIButton) {
+        apperageButton.isHidden = true
         if self.resumeTapped == false {
             timer.invalidate()
             isTimerRunning = false
             self.resumeTapped = true
-           self.pauseButton.setTitle("Resume",for: .normal)
+           self.pauseButton.setTitle("Reprendre",for: .normal)
         } else {
             runTimer()
             self.resumeTapped = false
@@ -143,9 +241,14 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func AppaireMe(_ sender: Any) {
+        session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
+        session?.alertMessage = "Hold your iPhone near the item to learn more about it."
+        session?.begin()
+    }
+    
     
     @objc func updateTimer() {
-        print(seconds)
         let alertPopUp = UIAlertController(title: "Felicitation !", message:
             "Vous avez finit votre session", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -153,13 +256,10 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
         if seconds < 1 {
             timer.invalidate()
             self.present(alertPopUp, animated: true, completion: nil)
-            //Send alert to indicate time's up.
         } else {
             changeTableCell()
             seconds -= 1
             labelTime.text = timeString(time: TimeInterval(seconds))
-            //labelTime.text = String(seconds)
-            //            labelButton.setTitle(timeString(time: TimeInterval(seconds)), for: UIControlState.normal)
         }
     }
     
@@ -170,11 +270,26 @@ class ViewCustomProgramStart: UIViewController, UITableViewDelegate, UITableView
         else{
             steps[indexSteps].duration = steps[indexSteps].duration - 1
             steps[indexSteps].stat = "Fini"
-            if (indexSteps != steps.count){
+            timer.invalidate()
+            isTimerRunning = false
+            self.resumeTapped = true
+            self.pauseButton.setTitle("Reprendre",for: .normal)
+            if (indexSteps != steps.count - 1){
+                steps[indexSteps + 1].stat = "En cours"
                 indexSteps = indexSteps + 1
+                if (steps[indexSteps].needauth){
+                    apperageButton.isHidden = false
+                }
             }
             else{
-                return
+                pauseButton.isHidden = true
+                let alertPopUp = UIAlertController(title: "Félicitation !", message:
+                    "Vous avez finit votre session", preferredStyle: UIAlertControllerStyle.alert)
+                
+                alertPopUp.addAction(UIAlertAction(title: "Terminer", style: UIAlertActionStyle.default,handler: nil))
+                steps[indexSteps].duration - 1
+                timer.invalidate()
+                self.present(alertPopUp, animated: true, completion: nil)
             }
         }
         tableview.reloadData()

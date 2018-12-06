@@ -160,6 +160,7 @@
                     <connections>
                         <outlet property="_login" destination="FMw-We-fsz" id="5M7-ZF-3jd"/>
                         <outlet property="button_settings" destination="Ce5-mT-kKh" id="uFR-5W-lpN"/>
+                        <outlet property="labelProduction" destination="gPL-Ni-3Ni" id="EQD-rv-FPR"/>
                         <outlet property="myImageView" destination="myI-YC-FyV" id="6J4-C4-8Tv"/>
                         <outlet property="page" destination="WAB-1c-ykD" id="rjN-uc-JnX"/>
                         <outlet property="tableView" destination="VN0-ls-maT" id="SsV-iE-imj"/>
@@ -899,7 +900,7 @@
                                             <segue destination="zRe-wd-JRW" kind="show" id="lJ5-Bd-137"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ys-LV-ez6">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ys-LV-ez6">
                                         <rect key="frame" x="217" y="622" width="150" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="9h6-tS-0A8"/>
